@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+  <rect width="800" height="800" fill="#ffffff"/>
+  <g fill="none" stroke="#000000" stroke-width="2">
+    <!-- Horizontal Lines -->
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="500" x2="800" y2="500"/>
+    <line x1="0" y1="600" x2="800" y2="600"/>
+    <line x1="0" y1="700" x2="800" y2="700"/>
+    
+    <!-- Vertical Lines -->
+    <line x1="100" y1="0" x2="100" y2="800"/>
+    <line x1="200" y1="0" x2="200" y2="800"/>
+    <line x1="300" y1="0" x2="300" y2="800"/>
+    <line x1="400" y1="0" x2="400" y2="800"/>
+    <line x1="500" y1="0" x2="500" y2="800"/>
+    <line x1="600" y1="0" x2="600" y2="800"/>
+    <line x1="700" y1="0" x2="700" y2="800"/>
+    
+    <!-- Nodes -->
+    <circle cx="100" cy="100" r="5"/>
+    <circle cx="300" cy="100" r="5"/>
+    <circle cx="500" cy="100" r="5"/>
+    <circle cx="700" cy="100" r="5"/>
+    
+    <circle cx="200" cy="200" r="5"/>
+    <circle cx="400" cy="200" r="5"/>
+    <circle cx="600" cy="200" r="5"/>
+    
+    <circle cx="100" cy="300" r="5"/>
+    <circle cx="300" cy="300" r="5"/>
+    <circle cx="500" cy="300" r="5"/>
+    <circle cx="700" cy="300" r="5"/>
+    
+    <circle cx="200" cy="400" r="5"/>
+    <circle cx="400" cy="400" r="5"/>
+    <circle cx="600" cy="400" r="5"/>
+    
+    <circle cx="100" cy="500" r="5"/>
+    <circle cx="300" cy="500" r="5"/>
+    <circle cx="500" cy="500" r="5"/>
+    <circle cx="700" cy="500" r="5"/>
+    
+    <circle cx="200" cy="600" r="5"/>
+    <circle cx="400" cy="600" r="5"/>
+    <circle cx="600" cy="600" r="5"/>
+    
+    <circle cx="100" cy="700" r="5"/>
+    <circle cx="300" cy="700" r="5"/>
+    <circle cx="500" cy="700" r="5"/>
+    <circle cx="700" cy="700" r="5"/>
+    
+    <!-- Connecting Paths -->
+    <path d="M100,100 C150,100 150,200 200,200"/>
+    <path d="M300,100 C350,100 350,200 400,200"/>
+    <path d="M500,100 C550,100 550,200 600,200"/>
+    
+    <path d="M200,200 C250,200 250,300 300,300"/>
+    <path d="M400,200 C450,200 450,300 500,300"/>
+    <path d="M600,200 C650,200 650,300 700,300"/>
+    
+    <path d="M100,300 C150,300 150,400 200,400"/>
+    <path d="M300,300 C350,300 350,400 400,400"/>
+    <path d="M500,300 C550,300 550,400 600,400"/>
+    
+    <path d="M200,400 C250,400 250,500 300,500"/>
+    <path d="M400,400 C450,400 450,500 500,500"/>
+    <path d="M600,400 C650,400 650,500 700,500"/>
+    
+    <path d="M100,500 C150,500 150,600 200,600"/>
+    <path d="M300,500 C350,500 350,600 400,600"/>
+    <path d="M500,500 C550,500 550,600 600,600"/>
+    
+    <path d="M200,600 C250,600 250,700 300,700"/>
+    <path d="M400,600 C450,600 450,700 500,700"/>
+    <path d="M600,600 C650,600 650,700 700,700"/>
+    
+    <!-- Circuit elements -->
+    <rect x="245" y="145" width="10" height="10" fill="#000000"/>
+    <rect x="445" y="145" width="10" height="10" fill="#000000"/>
+    <rect x="645" y="145" width="10" height="10" fill="#000000"/>
+    
+    <rect x="145" y="245" width="10" height="10" fill="#000000"/>
+    <rect x="345" y="245" width="10" height="10" fill="#000000"/>
+    <rect x="545" y="245" width="10" height="10" fill="#000000"/>
+    
+    <rect x="245" y="345" width="10" height="10" fill="#000000"/>
+    <rect x="445" y="345" width="10" height="10" fill="#000000"/>
+    <rect x="645" y="345" width="10" height="10" fill="#000000"/>
+    
+    <rect x="145" y="445" width="10" height="10" fill="#000000"/>
+    <rect x="345" y="445" width="10" height="10" fill="#000000"/>
+    <rect x="545" y="445" width="10" height="10" fill="#000000"/>
+    
+    <rect x="245" y="545" width="10" height="10" fill="#000000"/>
+    <rect x="445" y="545" width="10" height="10" fill="#000000"/>
+    <rect x="645" y="545" width="10" height="10" fill="#000000"/>
+    
+    <rect x="145" y="645" width="10" height="10" fill="#000000"/>
+    <rect x="345" y="645" width="10" height="10" fill="#000000"/>
+    <rect x="545" y="645" width="10" height="10" fill="#000000"/>
+  </g>
+</svg>

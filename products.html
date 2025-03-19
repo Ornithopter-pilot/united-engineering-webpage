@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - United Engineering Services</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .products-hero {
+            background: linear-gradient(rgba(26, 60, 107, 0.8), rgba(26, 60, 107, 0.9)), url('img/products-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-text);
+            padding: 70px 0;
+            text-align: center;
+        }
+
+        .products-content {
+            padding: 60px 0;
+        }
+
+        .products-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .products-categories {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: var(--secondary-color);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background-color: var(--background-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .product-info p {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid var(--secondary-color);
+        }
+
+        .product-category {
+            background-color: var(--secondary-color);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .product-link {
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .product-link:hover {
+            color: var(--tech-accent);
+        }
+
+        .tech-product {
+            position: relative;
+        }
+
+        .tech-product::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--tech-accent);
+        }
+
+        .tech-product .product-category {
+            background-color: rgba(255, 87, 34, 0.1);
+            color: var(--tech-accent);
+        }
+
+        .custom-solutions {
+            background-color: var(--secondary-color);
+            padding: 50px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .custom-solutions h2 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .custom-solutions p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>UES</h1>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="quality.html">Quality</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="products-hero">
+        <div class="container">
+            <h2>Our Products</h2>
+            <p>High-Quality Precision Engineered Components</p>
+        </div>
+    </section>
+
+    <!-- Products Content -->
+    <section class="products-content">
+        <div class="container">
+            <div class="products-intro">
+                <h2>Precision Engineered Components</h2>
+                <p>United Engineering Services offers a wide range of high-quality precision machined components designed to meet the exacting standards of various industries. Our state-of-the-art manufacturing facility and skilled team ensure exceptional quality and reliability.</p>
+            </div>
+
+            <div class="products-categories">
+                <button class="category-btn active">All Products</button>
+                <button class="category-btn">Gears</button>
+                <button class="category-btn">Shafts & Axles</button>
+                <button class="category-btn">Bearings</button>
+                <button class="category-btn">Custom Components</button>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="img/gears.jpg" alt="Precision Spur Gears">
+                    <div class="product-info">
+                        <h3>Precision Spur Gears</h3>
+                        <p>High-quality spur gears manufactured with precision to ensure smooth power transmission and optimal performance in various mechanical systems.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Gears</span>
+                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="img/helical-gears.jpg" alt="Helical Gears">
+                    <div class="product-info">
+                        <h3>Helical Gears</h3>
+                        <p>Precision-engineered helical gears designed for smooth, quiet operation and higher load capacity in industrial applications.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Gears</span>
+                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="img/bevel-gears.jpg" alt="Bevel Gears">
+                    <div class="product-info">
+                        <h3>Bevel Gears</h3>
+                        <p>Precision bevel gears for applications requiring changes in direction of rotating shafts, manufactured to exacting standards.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Gears</span>
+                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="img/shafts.jpg" alt="Precision Shafts">
+                    <div class="product-info">
+                        <h3>Precision Shafts</h3>
+                        <p>High-quality precision shafts manufactured to tight tolerances for various industrial applications, ensuring reliable power transmission.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Shafts & Axles</span>
+                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="img/splined-shafts.jpg" alt="Splined Shafts">
+                    <div class="product-info">
+                        <h3>Splined Shafts</h3>
+                        <p>Precision-engineered splined shafts designed for applications requiring torque transmission while allowing axial movement.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Shafts & Axles</span>
+                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="img/axles.jpg" alt="Industrial Axles">
+                    <div class="product-info">
+                        <h3>Industrial Axles</h3>
+                        <p>Robust and reliable industrial axles manufactured to withstand heavy loads and provide consistent performance in demanding environments.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Shafts & Axles</span>
+                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="img/bearings.jpg" alt="Precision Bearings">
+                    <div class="product-info">
+                        <h3>Precision Bearings</h3>
+                        <p>High-quality bearings designed to reduce friction and support loads in rotating machinery, ensuring smooth operation and long service life.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Bearings</span>
+                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="img/bushings.jpg" alt="Bushings">
+                    <div class="product-info">
+                        <h3>Bushings</h3>
+                        <p>Precision-engineered bushings for reducing friction between moving parts, manufactured from high-quality materials for durability and performance.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Bearings</span>
+                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card tech-product">
+                    <img src="img/custom-parts.jpg" alt="Custom Machined Components">
+                    <div class="product-info">
+                        <h3>Custom Machined Components</h3>
+                        <p>Bespoke precision components tailored to your specific requirements, manufactured using advanced CNC technology for optimal performance.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Custom Components</span>
+                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Solutions Section -->
+            <div class="custom-solutions">
+                <div class="container">
+                    <h2>Custom Engineering Solutions</h2>
+                    <p>Can't find what you're looking for? Our team of experienced engineers can design and manufacture custom components to meet your specific requirements. From concept to delivery, we work closely with you to ensure your needs are met with precision and quality.</p>
+                    <a href="contact.html" class="btn">Request a Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>United Engineering Services</h3>
+                    <p>123 Industrial Area, Bangalore, Karnataka, India</p>
+                    <p>Phone: +91 80 1234 5678</p>
+                    <p>Email: info@unitedengineering.org</p>
+                    <p>GSTIN: 29ABCDE1234F1Z5</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="quality.html">Quality</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 United Engineering Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Product Category Filter
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const productCards = document.querySelectorAll('.product-card');
+            
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const category = button.textContent.trim();
+                    
+                    productCards.forEach(card => {
+                        if (category === 'All Products') {
+                            card.style.display = 'block';
+                        } else {
+                            const productCategory = card.querySelector('.product-category').textContent.trim();
+                            if (productCategory === category) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

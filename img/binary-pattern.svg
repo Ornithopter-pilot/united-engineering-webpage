@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+  <rect width="800" height="800" fill="#ffffff"/>
+  <g fill="#000000">
+    <!-- Row 1 -->
+    <text x="20" y="30" font-family="monospace" font-size="12">10110101010101010011101010101010</text>
+    <text x="20" y="50" font-family="monospace" font-size="12">01010001010101001010010101010101</text>
+    <text x="20" y="70" font-family="monospace" font-size="12">10101010101001010101010100101010</text>
+    <text x="20" y="90" font-family="monospace" font-size="12">01010101010101010101010101010101</text>
+    <text x="20" y="110" font-family="monospace" font-size="12">10101010100101010101010010101010</text>
+    <text x="20" y="130" font-family="monospace" font-size="12">01010101010101010101010101010101</text>
+    <text x="20" y="150" font-family="monospace" font-size="12">10101010101001010101010100101010</text>
+    <text x="20" y="170" font-family="monospace" font-size="12">01010001010101001010010101010101</text>
+    <text x="20" y="190" font-family="monospace" font-size="12">10110101010101010011101010101010</text>
+    
+    <!-- Row 2 -->
+    <text x="20" y="230" font-family="monospace" font-size="12">10100101010101010101010101010101</text>
+    <text x="20" y="250" font-family="monospace" font-size="12">01010101010101010101010101010101</text>
+    <text x="20" y="270" font-family="monospace" font-size="12">10101010101001010101010100101010</text>
+    <text x="20" y="290" font-family="monospace" font-size="12">01011101010101010101010101010101</text>
+    <text x="20" y="310" font-family="monospace" font-size="12">10101010100101010101010010101010</text>
+    <text x="20" y="330" font-family="monospace" font-size="12">01010101010101010101010101010101</text>
+    <text x="20" y="350" font-family="monospace" font-size="12">10101010101001010101010100101010</text>
+    <text x="20" y="370" font-family="monospace" font-size="12">01010001010101001010010101010101</text>
+    <text x="20" y="390" font-family="monospace" font-size="12">10110101010101010011101010101010</text>
+    
+    <!-- Row 3 -->
+    <text x="20" y="430" font-family="monospace" font-size="12">10100101010101010101010101010101</text>
+    <text x="20" y="450" font-family="monospace" font-size="12">01010101010101010101010101010101</text>
+    <text x="20" y="470" font-family="monospace" font-size="12">10101010101001010101010100101010</text>
+    <text x="20" y="490" font-family="monospace" font-size="12">01011101010101010101010101010101</text>
+    <text x="20" y="510" font-family="monospace" font-size="12">10101010100101010101010010101010</text>
+    <text x="20" y="530" font-family="monospace" font-size="12">01010101010101010101010101010101</text>
+    <text x="20" y="550" font-family="monospace" font-size="12">10101010101001010101010100101010</text>
+    <text x="20" y="570" font-family="monospace" font-size="12">01010001010101001010010101010101</text>
+    <text x="20" y="590" font-family="monospace" font-size="12">10110101010101010011101010101010</text>
+    
+    <!-- Row 4 -->
+    <text x="20" y="630" font-family="monospace" font-size="12">10100101010101010101010101010101</text>
+    <text x="20" y="650" font-family="monospace" font-size="12">01010101010101010101010101010101</text>
+    <text x="20" y="670" font-family="monospace" font-size="12">10101010101001010101010100101010</text>
+    <text x="20" y="690" font-family="monospace" font-size="12">01011101010101010101010101010101</text>
+    <text x="20" y="710" font-family="monospace" font-size="12">10101010100101010101010010101010</text>
+    <text x="20" y="730" font-family="monospace" font-size="12">01010101010101010101010101010101</text>
+    <text x="20" y="750" font-family="monospace" font-size="12">10101010101001010101010100101010</text>
+    <text x="20" y="770" font-family="monospace" font-size="12">01010001010101001010010101010101</text>
+    <text x="20" y="790" font-family="monospace" font-size="12">10110101010101010011101010101010</text>
+  </g>
+</svg>
