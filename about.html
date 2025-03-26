@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - United Engineering Services</title>
+    <title>About Us - United Engineering</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <meta name="description" content="Learn about United Engineering's history, mission, and commitment to precision engineering excellence since 2005.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .about-hero {
-            background: linear-gradient(rgba(26, 60, 107, 0.8), rgba(26, 60, 107, 0.9)), url('img/about_bg.jpg');
+            background: linear-gradient(rgba(26, 60, 107, 0.8), rgba(26, 60, 107, 0.9)), url('img/about-bg.jpg');
             background-size: cover;
             background-position: center;
             color: var(--light-text);
@@ -26,6 +28,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
+            margin-bottom: 60px;
         }
 
         .about-image img {
@@ -34,107 +37,70 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .value-card {
-            padding: 20px;
-            background-color: var(--secondary-color);
-            border-radius: 8px;
+        .section-title {
             text-align: center;
-        }
-
-        .value-card i {
-            font-size: 2rem;
+            margin: 60px 0 30px;
             color: var(--primary-color);
-            margin-bottom: 15px;
         }
 
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 60px auto;
-        }
-
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 4px;
+        .section-divider {
+            width: 100px;
+            height: 3px;
             background-color: var(--primary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
+            margin: 0 auto 40px;
         }
 
-        .timeline-item {
-            padding: 10px 40px;
+        /* Mission Vision Section */
+        .mission-vision {
+            padding: 60px 0;
+            margin: 30px 0;
             position: relative;
-            width: 50%;
-            box-sizing: border-box;
         }
 
-        .timeline-item:nth-child(odd) {
-            left: 0;
+        .mission-vision-content {
+            display: flex;
+            max-width: 900px;
+            margin: 0 auto;
+            gap: 40px;
         }
 
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-content {
-            padding: 20px;
-            background-color: var(--secondary-color);
+        .mission-box, .vision-box {
+            flex: 1;
+            padding: 30px;
+            background-color: var(--background-color);
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .timeline-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            top: 20px;
-            z-index: 1;
-        }
-
-        .timeline-item:nth-child(odd)::after {
-            right: -10px;
-        }
-
-        .timeline-item:nth-child(even)::after {
-            left: -10px;
-        }
-
-        .tech-hint {
             position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
-        .tech-hint::before {
+        .mission-box:hover, .vision-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .mission-box::before, .vision-box::before {
             content: '';
             position: absolute;
-            left: 0;
             top: 0;
-            height: 100%;
-            width: 3px;
-            background-color: var(--tech-accent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
         }
 
-        .tech-hint:hover::before {
-            opacity: 1;
+        .mission-box h3, .vision-box h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .mission-box p, .vision-box p {
+            font-size: 1.05rem;
+            line-height: 1.7;
         }
 
         /* Circuit board pattern - subtle tech hint */
@@ -150,10 +116,234 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('img/circuit-pattern.svg');
-            background-size: cover;
+            background-image: url('img/binary-pattern.svg');
+            background-size: 500px;
             opacity: 0.03;
             pointer-events: none;
+        }
+
+        /* Industries Styles */
+        .industries-section {
+            padding: 60px 0;
+            background-color: var(--secondary-color);
+            margin: 80px 0;
+            border-radius: 10px;
+        }
+
+        .industries-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .industry-card {
+            background-color: var(--background-color);
+            padding: 30px 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .industry-card:hover {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .industry-card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .industry-card:hover i {
+            color: var(--light-text);
+        }
+
+        .industry-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .industry-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Standards Styles */
+        .standards-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .standards-intro {
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+
+        .standards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .standard-card {
+            background-color: var(--secondary-color);
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .standard-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .standard-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .standard-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Timeline Styles */
+        .timeline-section {
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .timeline-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 15px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 25px;
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            top: 28px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -12px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -12px;
+        }
+
+        .tech-hint {
+            position: relative;
+        }
+
+        .tech-hint::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background-color: var(--tech-accent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 8px 0 0 8px;
+        }
+
+        .tech-hint:hover::before {
+            opacity: 1;
+        }
+
+        .tech-accent {
+            color: var(--tech-accent);
+        }
+
+        @media (max-width: 991px) {
+            .mission-vision-content {
+                flex-direction: column;
+                gap: 30px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -162,13 +352,13 @@
             }
 
             .timeline::after {
-                left: 40px;
+                left: 31px;
             }
 
             .timeline-item {
                 width: 100%;
-                padding-left: 80px;
-                padding-right: 20px;
+                padding-left: 70px;
+                padding-right: 25px;
             }
 
             .timeline-item:nth-child(odd),
@@ -178,7 +368,22 @@
 
             .timeline-item:nth-child(odd)::after,
             .timeline-item:nth-child(even)::after {
-                left: 30px;
+                left: 19px;
+            }
+            
+            .industries-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .standards-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .industries-grid,
+            .standards-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -189,7 +394,7 @@
         <div class="container">
             <div class="logo">
                 <a href="index.html">
-                    <h1>UES</h1>
+                    <img src="img/united_engineering_logo.png" alt="United Engineering Logo" class="logo-img">
                 </a>
             </div>
             <nav>
@@ -197,8 +402,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html" class="active">About Us</a></li>
                     <li><a href="products.html">Products</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="quality.html">Quality</a></li>
+                    <li><a href="services-quality.html">Services & Quality</a></li>
                     <li><a href="careers.html">Careers</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -214,99 +418,170 @@
     <!-- Hero Section -->
     <section class="about-hero">
         <div class="container">
-            <h2>About United Engineering Services</h2>
-            <p>Excellence in Precision Engineering Since 2010</p>
+            <h2>About United Engineering</h2>
+            <p>Precision Engineering Excellence Since 2005</p>
         </div>
     </section>
 
     <!-- About Content -->
     <section class="about-content">
         <div class="container">
+            <!-- Company Overview -->
             <div class="about-grid">
                 <div class="about-image">
                     <img src="img/factory.jpg" alt="UES Manufacturing Facility">
                 </div>
                 <div class="about-text">
                     <h2>Our Story</h2>
-                    <p>Founded in 2010, United Engineering Services has evolved from a small workshop into a state-of-the-art manufacturing facility, committed to delivering precision components that meet the highest standards of quality and reliability.</p>
-                    <p>Our team of skilled engineers and technicians work tirelessly to ensure that every component we produce meets exacting specifications and exceeds customer expectations.</p>
-                    <p class="tech-hint">We continuously adopt cutting-edge technologies to optimize our operations and enhance client services, staying at the forefront of the rapidly evolving industrial landscape.</p>
+                    <p>Founded in 2005 in Bangalore, United Engineering began with a vision to become a leader in precision machining. Starting with a small team of skilled engineers and a modest workshop, we focused on delivering exceptional quality in every component we produced.</p>
+                    <p>Today, we've grown into an established medium-sized precision machining company with state-of-the-art facilities. Our reputation has been built on technical expertise, consistent quality, and responsiveness to customer needs across diverse industries.</p>
+                    <p>Throughout our growth, we've maintained our core focus on precision while embracing innovations in manufacturing processes. In recent years, we've invested significantly in advanced technologies to enhance our operational efficiency, maintain exceptional quality, and deliver greater value to our customers.</p>
                 </div>
             </div>
 
-            <!-- Mission, Vision & Values -->
-            <div class="mission-vision circuit-pattern">
-                <h2>Our Mission</h2>
-                <p>To provide innovative and reliable precision engineering solutions that exceed customer expectations.</p>
+            <!-- Mission & Vision Section -->
+            <section class="mission-vision">
+                <h2 class="section-title">Our Purpose</h2>
+                <div class="section-divider"></div>
                 
-                <h2>Our Vision</h2>
-                <p>To become the preferred partner for precision machinery components globally.</p>
-                
-                <h2>Our Values</h2>
-                <div class="values-grid">
-                    <div class="value-card">
-                        <i class="fas fa-medal"></i>
-                        <h3>Quality</h3>
-                        <p>We are committed to excellence in every component we produce.</p>
+                <div class="mission-vision-content">
+                    <div class="mission-box">
+                        <h3>Our Mission</h3>
+                        <p>To deliver precision-engineered components that exceed expectations while maintaining uncompromising quality standards, technical excellence, and customer-focused service.</p>
                     </div>
-                    <div class="value-card">
-                        <i class="fas fa-handshake"></i>
-                        <h3>Integrity</h3>
-                        <p>We conduct our business with honesty and transparency.</p>
-                    </div>
-                    <div class="value-card">
-                        <i class="fas fa-users"></i>
-                        <h3>Customer Focus</h3>
-                        <p>We prioritize understanding and meeting our customers' needs.</p>
-                    </div>
-                    <div class="value-card tech-hint">
-                        <i class="fas fa-lightbulb" style="color: var(--tech-accent);"></i>
-                        <h3>Innovation</h3>
-                        <p>We continuously seek better ways to serve our customers through technological advancement.</p>
+                    <div class="vision-box">
+                        <h3>Our Vision</h3>
+                        <p>To be recognized as a trusted partner for precision machined components, known for reliability, technical excellence, and innovative solutions that drive customer success.</p>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- Industries We Serve Section -->
+            <section class="industries-section">
+                <div class="industries-intro">
+                    <h2>Industries We Serve</h2>
+                    <p>We provide precision components to diverse industries, each with unique requirements and challenges. Our expertise allows us to deliver specialized solutions that meet the exacting standards of these sectors.</p>
+                </div>
+                <div class="industries-grid">
+                    <div class="industry-card">
+                        <i class="fas fa-industry"></i>
+                        <h3>Manufacturing</h3>
+                        <p>Critical components for industrial equipment and machinery that enhance operational reliability and performance in demanding environments.</p>
+                    </div>
+                    <div class="industry-card">
+                        <i class="fas fa-truck"></i>
+                        <h3>Automotive</h3>
+                        <p>Precision parts for automotive systems with tight tolerances, excellent surface finish, and strict quality control for optimal performance.</p>
+                    </div>
+                    <div class="industry-card">
+                        <i class="fas fa-cog"></i>
+                        <h3>Machinery</h3>
+                        <p>Custom components for industrial machinery, including power transmission, motion control, and specialized applications requiring exact specifications.</p>
+                    </div>
+                    <div class="industry-card">
+                        <i class="fas fa-plane"></i>
+                        <h3>Aerospace</h3>
+                        <p>High-precision components manufactured to meet stringent aerospace standards, ensuring safety, reliability, and performance in critical applications.</p>
+                    </div>
+                    <div class="industry-card">
+                        <i class="fas fa-medkit"></i>
+                        <h3>Medical</h3>
+                        <p>Specialized components for medical devices and equipment where precision, reliability, and biocompatibility are essential for patient safety.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Standards Section -->
+            <section class="standards-section">
+                <div class="standards-intro">
+                    <h2 class="section-title">Our Quality & Industry Standards</h2>
+                    <div class="section-divider"></div>
+                    <p>We maintain rigorous quality standards and certifications that ensure our manufacturing processes and products meet the highest industry benchmarks. Our commitment to these standards is fundamental to our promise of excellence.</p>
+                </div>
+                
+                <div class="standards-grid">
+                    <div class="standard-card">
+                        <img src="img/quality-standard.svg" alt="Quality Standard">
+                        <h3>ISO 9001:2015</h3>
+                        <p>Our certified quality management system ensures consistent quality through documented processes, continuous improvement protocols, and rigorous quality control at every stage.</p>
+                    </div>
+                    <div class="standard-card">
+                        <img src="img/environmental-standard.svg" alt="Environmental Standard">
+                        <h3>Environmental Management</h3>
+                        <p>We follow ISO 14001 guidelines, implementing responsible practices and waste reduction initiatives to minimize environmental impact throughout our manufacturing operations.</p>
+                    </div>
+                    <div class="standard-card">
+                        <img src="img/safety-standard.svg" alt="Safety Standard">
+                        <h3>Occupational Health & Safety</h3>
+                        <p>Safety is paramount in our operations, with strict protocols aligned with ISO 45001 standards to protect our employees and visitors in our manufacturing environment.</p>
+                    </div>
+                    <div class="standard-card">
+                        <img src="img/industry-standard.svg" alt="Industry Standard">
+                        <h3>Industry-Specific Compliance</h3>
+                        <p>We adhere to specialized industry requirements including IATF 16949 for automotive, AS9100 for aerospace, and other sector-specific standards ensuring components meet specialized requirements.</p>
+                    </div>
+                </div>
+            </section>
 
             <!-- Company Timeline -->
-            <h2 style="text-align: center; margin-top: 60px;">Our Journey</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>2010</h3>
-                        <p>United Engineering Services was founded with a small team of engineers and a workshop in Bangalore.</p>
+            <section class="timeline-section">
+                <div class="timeline-intro">
+                    <h2 class="section-title">Our Journey</h2>
+                    <div class="section-divider"></div>
+                    <p>Since our founding in 2005, United Engineering Services has evolved through strategic growth, technology adoption, and continuous improvement. Our journey reflects our commitment to excellence and adaptation to industry advancements.</p>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>2005</h3>
+                            <p>Established United Engineering Services in Bangalore with a modest workshop and a small team specializing in precision components for local manufacturing industries.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>2008</h3>
+                            <p>Expanded service offerings beyond local markets and secured our first major contracts with automotive and industrial machinery manufacturers in South India.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>2011</h3>
+                            <p>Relocated to a larger facility and invested in our first advanced CNC machinery to enhance precision capabilities and production capacity.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>2014</h3>
+                            <p>Achieved ISO 9001 certification and began serving aerospace and medical device industries with components requiring exceptional precision and quality assurance.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>2017</h3>
+                            <p>Expanded to our current manufacturing facility and implemented multi-axis CNC machinery to enhance production capabilities and precision.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>2020</h3>
+                            <p>Began international exports and expanded our client base to include companies across Asia-Pacific and European markets, establishing UES as a global provider of precision components.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>2023</h3>
+                            <p>Achieved ISO 14001 environmental management certification and expanded our capabilities in multi-material component manufacturing for specialized applications.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item tech-hint">
+                        <div class="timeline-content">
+                            <h3>2025</h3>
+                            <p>Established our <span class="tech-accent">internal technology wing</span> focused on digital transformation of processes, implementing advanced systems for workflow automation, inventory management, and enhanced customer relationship management.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>2013</h3>
-                        <p>Expanded operations and moved to a larger manufacturing facility to accommodate growing demand.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>2016</h3>
-                        <p>Implemented advanced CNC machinery to enhance precision and production capacity.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>2019</h3>
-                        <p>Began serving international clients and established a reputation for high-quality precision components.</p>
-                    </div>
-                </div>
-                <div class="timeline-item tech-hint">
-                    <div class="timeline-content">
-                        <h3>2022</h3>
-                        <p>Initiated digital transformation to optimize internal processes and enhance customer experience.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>2025</h3>
-                        <p>Continuing to grow and innovate, with a focus on sustainable manufacturing practices and expanding our product range.</p>
-                    </div>
-                </div>
-            </div>
+            </section>
         </div>
     </section>
 
@@ -315,7 +590,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-info">
-                    <h3>United Engineering Services</h3>
+                    <h3>United Engineering</h3>
                     <p>123 Industrial Area, Bangalore, Karnataka, India</p>
                     <p>Phone: +91 80 1234 5678</p>
                     <p>Email: info@unitedengineering.org</p>
@@ -327,8 +602,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="products.html">Products</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="quality.html">Quality</a></li>
+                        <li><a href="services-quality.html">Services & Quality</a></li>
                         <li><a href="careers.html">Careers</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
@@ -343,7 +617,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 United Engineering Services. All rights reserved.</p>
+                <p>&copy; 2025 United Engineering. All rights reserved.</p>
             </div>
         </div>
     </footer>

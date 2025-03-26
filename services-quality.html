@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Quality - United Engineering</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <meta name="description" content="United Engineering offers precision manufacturing, prototyping, and quality assurance services with unwavering commitment to excellence.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(26, 60, 107, 0.8), rgba(26, 60, 107, 0.9)), url('img/services-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-text);
+            padding: 70px 0;
+            text-align: center;
+        }
+
+        .page-content {
+            padding: 60px 0;
+        }
+
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        /* Services Section Styles */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .service-card {
+            background-color: var(--background-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+
+        .service-info {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .service-info p {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .service-icon {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .service-icon i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+        }
+
+        .service-features {
+            margin-bottom: 20px;
+        }
+
+        .service-features ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .service-features ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+        }
+
+        .service-features ul li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .tech-service .service-icon i,
+        .tech-service .service-features ul li:before {
+            color: var(--tech-accent);
+        }
+
+        .tech-service {
+            border-top: 4px solid var(--tech-accent);
+        }
+
+        /* Quality Section Styles */
+        .section-title {
+            text-align: center;
+            margin: 30px 0 50px;
+        }
+
+        .section-divider {
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 0 auto 50px;
+        }
+
+        .quality-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .quality-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .quality-text h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .quality-text p {
+            margin-bottom: 15px;
+        }
+
+        .quality-list {
+            margin-top: 20px;
+        }
+
+        .quality-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .quality-list ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+        }
+
+        .quality-list ul li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .reverse-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .reverse-grid .quality-text {
+            order: 1;
+        }
+
+        .reverse-grid .quality-image {
+            order: 2;
+        }
+
+        /* Process Section Styles */
+        .process-section {
+            background-color: var(--secondary-color);
+            padding: 60px 0;
+            margin: 80px 0;
+        }
+
+        .process-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .process-section .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .process-section .row {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-bottom: 60px; /* Increased from 30px to 60px for more spacing */
+        }
+        
+        .process-section .row:before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            z-index: 1;
+        }
+        
+        /* Add vertical connector between rows */
+        .process-section .row:first-child:after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            width: 3px;
+            height: 60px;
+            background-color: var(--primary-color);
+            z-index: 1;
+        }
+
+        .step {
+            text-align: center;
+            width: 22%;
+            position: relative;
+            z-index: 2;
+            padding-top: 70px;
+            margin: 0 10px;
+        }
+        
+        /* Adjust spacing for text descriptions */
+        .step h3 {
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+        
+        .step p {
+            line-height: 1.5;
+            margin-bottom: 15px;
+            min-height: 80px; /* Ensure consistent height */
+        }
+        
+        /* Process cycle arrow styles */
+        .process-cycle {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .cycle-arrow {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            border-radius: 25px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+        
+        .cycle-arrow i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-right: 10px;
+            animation: spin 8s linear infinite;
+        }
+        
+        .cycle-arrow span {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-text);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+
+        .step h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* Standards Section */
+        .standards-section {
+            background-color: var(--secondary-color);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .standards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .standard-card {
+            background-color: var(--background-color);
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .standard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .standard-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .standard-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Tech Wing Hint Section */
+        .tech-initiative {
+            background: linear-gradient(to right, rgba(255, 87, 34, 0.05), rgba(255, 255, 255, 1));
+            padding: 60px 0;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-initiative:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--tech-accent);
+        }
+
+        .tech-initiative-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .tech-initiative-image {
+            position: relative;
+        }
+
+        .tech-initiative-image:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 87, 34, 0.1);
+            border-radius: 8px;
+        }
+
+        .tech-initiative-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-initiative-text h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .tech-initiative-text h2 span {
+            color: var(--tech-accent);
+        }
+
+        .tech-initiative-text p {
+            margin-bottom: 20px;
+        }
+
+        .tech-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .tech-feature-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .tech-feature-item i {
+            color: var(--tech-accent);
+            font-size: 1.2rem;
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+
+        @media (max-width: 991px) {
+            .tech-initiative-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quality-section,
+            .reverse-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reverse-grid .quality-text,
+            .reverse-grid .quality-image {
+                order: 0;
+            }
+            
+            .process-section .row {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .process-section .row:before {
+                width: 3px;
+                height: 100%;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+            }
+
+            .step {
+                width: 100%;
+                max-width: 350px;
+                margin-bottom: 50px;
+                padding-top: 0;
+                padding-left: 70px;
+                text-align: left;
+            }
+
+            .step-number {
+                left: 25px;
+                top: 0;
+                transform: none;
+            }
+
+            .standards-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .tech-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .cycle-arrow {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+            
+            .cycle-arrow i {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .standards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Industries Styles */
+        .industries-section {
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .industry-card {
+            background-color: var(--secondary-color);
+            padding: 30px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .industry-card:hover {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            transform: translateY(-5px);
+        }
+
+        .industry-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .industry-card:hover i {
+            color: var(--light-text);
+        }
+
+        .tech-hint i {
+            color: var(--tech-accent) !important;
+        }
+
+        .industry-card.tech-hint:hover i {
+            color: var(--light-text) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/united_engineering_logo.png" alt="United Engineering Logo" class="logo-img">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="services-quality.html" class="active">Services & Quality</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h2>Services & Quality</h2>
+            <p>Precision Engineering Solutions with Unwavering Commitment to Excellence</p>
+        </div>
+    </section>
+
+    <!-- Page Content -->
+    <section class="page-content">
+        <div class="container">
+            <div class="intro">
+                <h2>Engineering Excellence Through Precision & Quality</h2>
+                <p>At United Engineering, we offer comprehensive precision engineering services backed by rigorous quality control. Our team of skilled engineers and technicians utilizes modern machinery and technologies to deliver exceptional components that meet your exact specifications and exceed quality expectations.</p>
+            </div>
+
+            <!-- Services Section -->
+            <h2 class="section-title">Our Services</h2>
+            <div class="section-divider"></div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="img/custom-manufacturing.jpg" alt="Custom Manufacturing">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                            <h3>Precision Manufacturing</h3>
+                        </div>
+                        <p>Specialized manufacturing solutions with exceptional accuracy for your unique requirements. Our experienced team delivers high-quality components that meet exact specifications across multiple industries.</p>
+                        <div class="service-features">
+                            <ul>
+                                <li>Multi-Axis CNC Machining</li>
+                                <li>Precision Component Production</li>
+                                <li>Small to Large Production Runs</li>
+                                <li>Complex Geometry Capabilities</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="btn">Request Service</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="img/prototyping.jpg" alt="Prototyping">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-icon">
+                            <i class="fas fa-drafting-compass"></i>
+                            <h3>Advanced Prototyping</h3>
+                        </div>
+                        <p>Specialized prototyping solutions for complex mechanical components and assemblies. We transform engineering concepts into functional prototypes with the precision required for meaningful testing and validation.</p>
+                        <div class="service-features">
+                            <ul>
+                                <li>Precision Prototype Manufacturing</li>
+                                <li>Design for Manufacturability Analysis</li>
+                                <li>Iterative Refinement Processes</li>
+                                <li>Performance Testing & Validation</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="btn">Request Service</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="img/quality-assurance.jpg" alt="Quality Assurance">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-icon">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Component Verification</h3>
+                        </div>
+                        <p>Independent testing and validation services for components produced in-house or sourced from other suppliers. We help you verify that critical parts meet specifications before they enter your production line.</p>
+                        <div class="service-features">
+                            <ul>
+                                <li>Third-Party Dimensional Verification</li>
+                                <li>Material Composition Analysis</li>
+                                <li>Failure Analysis & Reporting</li>
+                                <li>Certification Documentation</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="btn">Request Service</a>
+                    </div>
+                </div>
+
+                <div class="service-card tech-service">
+                    <div class="service-image">
+                        <img src="img/process-optimization.jpg" alt="Enhanced Production">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Enhanced Production</h3>
+                        </div>
+                        <p>At United Engineering, we utilize advanced digital systems and process optimization throughout our operations, enabling us to deliver your components with greater consistency, faster turnaround, and improved traceability.</p>
+                        <div class="service-features">
+                            <ul>
+                                <li>Real-Time Production Tracking</li>
+                                <li>Reduced Lead Times</li>
+                                <li>Enhanced Quality Consistency</li>
+                                <li>Complete Digital Documentation</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quality Section -->
+            <h2 class="section-title">Our Quality Promise</h2>
+            <div class="section-divider"></div>
+
+            <div class="quality-section">
+                <div class="quality-image">
+                    <img src="img/quality-control.jpg" alt="Quality Control Process">
+                </div>
+                <div class="quality-text">
+                    <h2>Quality Management System</h2>
+                    <p>Our ISO 9001-aligned quality management system ensures every component we manufacture meets rigorous standards of precision and reliability. Our dedicated quality team implements a systematic approach through all production phases.</p>
+                    <div class="quality-list">
+                        <ul>
+                            <li>Raw Material Inspection and Certification</li>
+                            <li>Statistical Process Control (SPC)</li>
+                            <li>Precision Measurement with Tolerances to ±0.01mm</li>
+                            <li>Surface Finish and Material Properties Testing</li>
+                            <li>Detailed First Article Inspection Reports</li>
+                            <li>Complete Traceability and Documentation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quality-section reverse-grid">
+                <div class="quality-text">
+                    <h2>Quality Assurance Capabilities</h2>
+                    <p>Our dedicated quality lab features modern measurement and testing equipment that ensures precision verification across all manufacturing processes. With significant investment in quality systems, we maintain accuracy standards that exceed industry requirements.</p>
+                    <div class="quality-list">
+                        <ul>
+                            <li>3D Coordinate Measuring Technology</li>
+                            <li>Advanced Vision Inspection Systems</li>
+                            <li>Surface Finish & Texture Analysis</li>
+                            <li>Materials Testing & Certification</li>
+                            <li>Environmental Testing Chambers</li>
+                            <li>Functional Testing Equipment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="quality-image">
+                    <img src="img/quality-equipment.jpg" alt="Quality Assurance Equipment">
+                </div>
+            </div>
+
+            <!-- Tech Initiative Section (Internal Tech Wing Hint) -->
+            <section class="tech-initiative">
+                <div class="container">
+                    <div class="tech-initiative-content">
+                        <div class="tech-initiative-text">
+                            <h2>Continuous <span>Innovation</span> Initiative</h2>
+                            <p>At United Engineering, we're committed to continuous improvement through technological innovation. Our dedicated team is implementing advanced digital solutions to enhance our internal processes, streamline workflows, and elevate the customer experience.</p>
+                            <p>By integrating cutting-edge technology into our operations, we're able to maintain precision while improving efficiency, reducing lead times, and ensuring consistent quality across all our manufacturing processes.</p>
+                            
+                            <div class="tech-features">
+                                <div class="tech-feature-item">
+                                    <i class="fas fa-database"></i>
+                                    <span>Streamlined information management</span>
+                                </div>
+                                <div class="tech-feature-item">
+                                    <i class="fas fa-tasks"></i>
+                                    <span>Enhanced project tracking</span>
+                                </div>
+                                <div class="tech-feature-item">
+                                    <i class="fas fa-boxes"></i>
+                                    <span>Optimized inventory control</span>
+                                </div>
+                                <div class="tech-feature-item">
+                                    <i class="fas fa-link"></i>
+                                    <span>Integrated supply chain</span>
+                                </div>
+                                <div class="tech-feature-item">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <span>Advanced performance analytics</span>
+                                </div>
+                                <div class="tech-feature-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>Enhanced customer relationship management</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tech-initiative-image">
+                            <img src="img/process-optimization.jpg" alt="Digital Innovation Initiative">
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Process Section -->
+            <section class="process-section">
+                <div class="process-intro">
+                    <h2>Our Process</h2>
+                    <p>We follow a comprehensive, structured approach to ensure your project is completed efficiently and to your exact specifications. Our end-to-end process is designed to keep you informed and involved from concept to delivery.</p>
+                </div>
+                <div class="container">
+                    <div class="row" style="margin-bottom: 50px;">
+                        <!-- First row of steps -->
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h3>Initial Consultation</h3>
+                            <p>We carefully assess your requirements, specifications, and project goals to ensure a clear understanding of your needs.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h3>Engineering Review</h3>
+                            <p>Our engineers analyze technical feasibility, material selection, and manufacturability to optimize your design.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h3>Design & Prototyping</h3>
+                            <p>We refine designs and create prototypes when needed, allowing for testing and validation before full production.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <h3>Production Planning</h3>
+                            <p>We establish tooling requirements, production schedules, and resource allocation to ensure efficient manufacturing.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Second row of steps -->
+                        <div class="step">
+                            <div class="step-number">5</div>
+                            <h3>Manufacturing</h3>
+                            <p>Components are produced using our precision equipment with in-process quality checks throughout production.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">6</div>
+                            <h3>Quality Assurance</h3>
+                            <p>Comprehensive inspection and testing verify all components meet required specifications and quality standards.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">7</div>
+                            <h3>Documentation</h3>
+                            <p>We provide complete documentation including inspection reports and material certificates as required.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">8</div>
+                            <h3>Delivery & Support</h3>
+                            <p>Final products are carefully packaged and delivered, with follow-up support to ensure your complete satisfaction.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Add cycle arrow indicator -->
+                <div class="process-cycle">
+                    <div class="cycle-arrow">
+                        <i class="fas fa-redo-alt"></i>
+                        <span>Continuous improvement and support for repeat projects</span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>United Engineering</h3>
+                    <p>123 Industrial Area, Bangalore, Karnataka, India</p>
+                    <p>Phone: +91 80 1234 5678</p>
+                    <p>Email: info@unitedengineering.org</p>
+                    <p>GSTIN: 29ABCDE1234F1Z5</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services-quality.html">Services & Quality</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 United Engineering. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers - United Engineering Services</title>
+    <title>Careers - United Engineering</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <meta name="description" content="Join United Engineering's team and build your career with a company that champions innovation and excellence in precision engineering.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -205,6 +207,116 @@
         }
 
         /* Binary code background - subtle tech hint */
+        /* Categories and Search */
+        .job-categories-section {
+            margin-bottom: 40px;
+        }
+
+        .job-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .category-btn {
+            padding: 8px 16px;
+            background-color: var(--secondary-color);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn.active, .category-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+        }
+
+        .job-search {
+            display: flex;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .job-search input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .search-btn {
+            padding: 10px 15px;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        /* Enhanced Job Cards */
+        .job-card {
+            position: relative;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            overflow: hidden;
+            border-left: 3px solid transparent;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .job-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 4px 10px;
+            background-color: rgba(26, 60, 107, 0.1);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .tech-badge {
+            background-color: rgba(255, 87, 34, 0.1);
+            color: var(--tech-accent);
+        }
+
+        .job-responsibilities {
+            margin-bottom: 20px;
+        }
+
+        .tech-job {
+            border-left-color: var(--tech-accent);
+        }
+
+        .tech-btn {
+            background-color: var(--tech-accent);
+        }
+
+        .tech-btn:hover {
+            background-color: #e64a19;
+        }
+
+        .step-timeline {
+            color: #666;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-timeline i {
+            margin-right: 5px;
+        }
+
+        /* Binary Pattern Background */
         .binary-bg {
             position: relative;
         }
@@ -222,13 +334,231 @@
             pointer-events: none;
         }
 
+        /* Open Application Card */
+        .open-application {
+            margin: 40px 0;
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            overflow: hidden;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .open-application h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .open-application p {
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        .open-app-btn {
+            padding: 12px 25px;
+        }
+
+        /* Enhanced Hiring Process Section */
+        .process-intro {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-align: center;
+        }
+
+        .process-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .process-tab {
+            padding: 10px 20px;
+            margin: 0 5px;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .process-tab.active {
+            border-bottom-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .process-content {
+            display: none;
+        }
+
+        .process-content.active {
+            display: block;
+        }
+
+        .tech-process-note {
+            margin-top: 30px;
+            padding: 15px 20px;
+            background-color: rgba(255, 87, 34, 0.05);
+            border-left: 3px solid var(--tech-accent);
+            border-radius: 4px;
+        }
+
+        .tech-process-note p {
+            margin: 0;
+        }
+
+        /* Two-step Form Styles */
+        .form-steps {
+            display: flex;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .form-steps::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ddd;
+            z-index: 1;
+        }
+
+        .form-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            background-color: var(--secondary-color);
+            padding: 10px;
+            font-weight: 500;
+            color: #666;
+        }
+
+        .form-step.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .step-indicator {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #ddd;
+            color: #666;
+            border-radius: 50%;
+            line-height: 40px;
+            margin-right: 10px;
+        }
+
+        .form-step.active .step-indicator {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+        }
+
+        .form-step-content {
+            display: none;
+        }
+
+        .form-step-content.active {
+            display: block;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .application-success {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+
+        .required {
+            color: #e74c3c;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
+        }
+
+        .checkbox-label input {
+            margin-top: 4px;
+            margin-right: 10px;
+        }
+
         @media (max-width: 768px) {
+            .job-categories {
+                flex-direction: column;
+            }
+
+            .process-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .process-tab {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
             .process-steps {
                 grid-template-columns: 1fr;
             }
 
             .application-form {
                 padding: 20px;
+            }
+
+            .form-steps {
+                flex-direction: column;
+            }
+
+            .form-steps::after {
+                display: none;
+            }
+
+            .form-step {
+                margin-bottom: 10px;
+            }
+
+            .form-actions {
+                flex-direction: column-reverse;
+                gap: 10px;
+            }
+
+            .form-actions button {
+                width: 100%;
             }
         }
     </style>
@@ -239,7 +569,7 @@
         <div class="container">
             <div class="logo">
                 <a href="index.html">
-                    <h1>UES</h1>
+                    <img src="img/united_engineering_logo.png" alt="United Engineering Logo" class="logo-img">
                 </a>
             </div>
             <nav>
@@ -247,8 +577,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="products.html">Products</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="quality.html">Quality</a></li>
+                    <li><a href="services-quality.html">Services & Quality</a></li>
                     <li><a href="careers.html" class="active">Careers</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -265,7 +594,7 @@
     <section class="careers-hero">
         <div class="container">
             <h2>Join Our Team</h2>
-            <p>Build Your Career with United Engineering Services</p>
+            <p>Build Your Career with United Engineering</p>
         </div>
     </section>
 
@@ -274,142 +603,364 @@
         <div class="container">
             <div class="careers-intro">
                 <h2>Why Work With Us</h2>
-                <p>Join United Engineering Services and contribute to a company that champions innovation and excellence. We're seeking talented individuals to help us grow and explore new opportunities.</p>
-                <p>At UES, we believe in fostering a collaborative environment where every team member can grow professionally while contributing to our shared success.</p>
+                <p>Join United Engineering and contribute to a company that champions innovation and excellence. We're seeking talented individuals to help us grow and explore new opportunities.</p>
+                <p>At United Engineering, we believe in fostering a collaborative environment where every team member can grow professionally while contributing to our shared success.</p>
             </div>
 
-            <h2>Current Openings</h2>
+            <div class="job-categories-section">
+                <h2>Current Openings</h2>
+                <div class="job-categories">
+                    <button class="category-btn active" data-category="all">All Departments</button>
+                    <button class="category-btn" data-category="engineering">Precision Engineering</button>
+                    <button class="category-btn" data-category="technology">Technology Division</button>
+                    <button class="category-btn" data-category="quality">Quality Assurance</button>
+                    <button class="category-btn" data-category="operations">Operations</button>
+                </div>
+                <div class="job-search">
+                    <input type="text" id="job-search-input" placeholder="Search positions...">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
             <div class="job-listings">
-                <div class="job-card">
+                <!-- Engineering Department Jobs -->
+                <div class="job-card" data-category="engineering">
                     <div class="job-header">
-                        <h3>Mechanical Engineer</h3>
+                        <div class="job-badge">Engineering</div>
+                        <h3>Senior Mechanical Engineer</h3>
                         <p><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
                         <p><i class="fas fa-briefcase"></i> Full-time</p>
                     </div>
                     <div class="job-body">
                         <div class="job-description">
                             <h4>Job Description</h4>
-                            <p>We are looking for a skilled Mechanical Engineer to design and oversee precision machinery production. The ideal candidate will have experience in designing mechanical components and systems for industrial applications.</p>
+                            <p>We're seeking a Senior Mechanical Engineer to lead the design and development of precision machinery components and systems. You'll collaborate with cross-functional teams to develop innovative engineering solutions while ensuring adherence to quality standards and manufacturing requirements.</p>
+                        </div>
+                        <div class="job-responsibilities">
+                            <h4>Key Responsibilities</h4>
+                            <ul>
+                                <li>Design and develop precision mechanical components using 3D CAD software</li>
+                                <li>Create detailed engineering drawings and specifications for manufacturing</li>
+                                <li>Conduct engineering analyses including FEA and tolerance studies</li>
+                                <li>Collaborate with manufacturing team to ensure producibility</li>
+                                <li>Troubleshoot and resolve technical issues during production</li>
+                            </ul>
                         </div>
                         <div class="job-requirements">
                             <h4>Requirements</h4>
                             <ul>
-                                <li>Bachelor's degree in Mechanical Engineering</li>
-                                <li>3+ years of experience in mechanical design</li>
-                                <li>Proficiency in CAD software</li>
-                                <li>Knowledge of manufacturing processes</li>
+                                <li>Bachelor's degree in Mechanical Engineering (Master's preferred)</li>
+                                <li>5+ years of experience in mechanical design for precision components</li>
+                                <li>Expert proficiency in SolidWorks or similar CAD software</li>
+                                <li>Experience with GD&T and tolerance analysis</li>
+                                <li>Knowledge of manufacturing processes including CNC machining</li>
                                 <li>Strong analytical and problem-solving skills</li>
                             </ul>
                         </div>
-                        <a href="#application-form" class="apply-btn">Apply Now</a>
+                        <a href="#application-form" class="apply-btn" data-job="Senior Mechanical Engineer">Apply Now</a>
                     </div>
                 </div>
 
-                <div class="job-card">
+                <div class="job-card" data-category="engineering">
                     <div class="job-header">
-                        <h3>Quality Control Inspector</h3>
+                        <div class="job-badge">Engineering</div>
+                        <h3>CNC Programmer</h3>
                         <p><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
                         <p><i class="fas fa-briefcase"></i> Full-time</p>
                     </div>
                     <div class="job-body">
                         <div class="job-description">
                             <h4>Job Description</h4>
-                            <p>We are seeking a detail-oriented Quality Control Inspector to ensure that our precision components meet the highest standards of quality. The successful candidate will conduct inspections, tests, and measurements on machined parts.</p>
+                            <p>We are looking for an experienced CNC Programmer to develop efficient machining programs for our multi-axis CNC machines. The ideal candidate will optimize production processes while maintaining precision and quality standards.</p>
+                        </div>
+                        <div class="job-responsibilities">
+                            <h4>Key Responsibilities</h4>
+                            <ul>
+                                <li>Develop CNC programs for multi-axis machining centers</li>
+                                <li>Optimize toolpaths for efficiency and quality</li>
+                                <li>Create and maintain programming documentation</li>
+                                <li>Collaborate with engineers to improve manufacturability</li>
+                                <li>Troubleshoot machining issues and implement solutions</li>
+                            </ul>
                         </div>
                         <div class="job-requirements">
                             <h4>Requirements</h4>
                             <ul>
-                                <li>Diploma or degree in Mechanical Engineering or related field</li>
-                                <li>2+ years of experience in quality control</li>
-                                <li>Experience with precision measuring instruments</li>
-                                <li>Knowledge of quality standards</li>
-                                <li>Attention to detail and strong documentation skills</li>
+                                <li>Diploma or degree in Manufacturing Engineering or related field</li>
+                                <li>3+ years of experience in CNC programming</li>
+                                <li>Proficiency with CAM software (Mastercam or similar)</li>
+                                <li>Knowledge of machining processes and tooling</li>
+                                <li>Experience with G-code programming</li>
+                                <li>Strong attention to detail and problem-solving skills</li>
                             </ul>
                         </div>
-                        <a href="#application-form" class="apply-btn">Apply Now</a>
+                        <a href="#application-form" class="apply-btn" data-job="CNC Programmer">Apply Now</a>
                     </div>
                 </div>
 
-                <div class="job-card">
+                <!-- Quality Department Jobs -->
+                <div class="job-card" data-category="quality">
                     <div class="job-header">
-                        <h3>Project Manager</h3>
+                        <div class="job-badge">Quality Assurance</div>
+                        <h3>Quality Control Engineer</h3>
                         <p><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
                         <p><i class="fas fa-briefcase"></i> Full-time</p>
                     </div>
                     <div class="job-body">
                         <div class="job-description">
                             <h4>Job Description</h4>
-                            <p>We are looking for an experienced Project Manager to coordinate and oversee engineering projects from inception to completion. The ideal candidate will have a strong background in mechanical engineering and project management.</p>
+                            <p>We are seeking a detail-oriented Quality Control Engineer to ensure our precision components meet the highest standards. You will develop inspection processes, manage quality documentation, and drive continuous improvement initiatives.</p>
+                        </div>
+                        <div class="job-responsibilities">
+                            <h4>Key Responsibilities</h4>
+                            <ul>
+                                <li>Develop and implement quality control procedures</li>
+                                <li>Conduct first article inspections and capability studies</li>
+                                <li>Create and maintain quality documentation and records</li>
+                                <li>Use CMM and precision measurement tools for inspection</li>
+                                <li>Analyze quality data and implement improvement initiatives</li>
+                            </ul>
                         </div>
                         <div class="job-requirements">
                             <h4>Requirements</h4>
                             <ul>
-                                <li>Bachelor's degree in Engineering</li>
-                                <li>5+ years of project management experience</li>
-                                <li>Strong leadership and communication skills</li>
-                                <li>Experience in engineering project scheduling and budgeting</li>
-                                <li>Ability to coordinate cross-functional teams</li>
+                                <li>Bachelor's degree in Mechanical Engineering or related field</li>
+                                <li>3+ years of experience in quality engineering</li>
+                                <li>Experience with CMM programming and GD&T</li>
+                                <li>Knowledge of ISO 9001 and related quality standards</li>
+                                <li>Strong analytical and documentation skills</li>
+                                <li>Experience with SPC and quality management software</li>
                             </ul>
                         </div>
-                        <a href="#application-form" class="apply-btn">Apply Now</a>
+                        <a href="#application-form" class="apply-btn" data-job="Quality Control Engineer">Apply Now</a>
                     </div>
                 </div>
 
-                <!-- Software Developer - Tech Wing Hint -->
-                <div class="job-card tech-job binary-bg">
+                <!-- Operations Department Jobs -->
+                <div class="job-card" data-category="operations">
                     <div class="job-header">
-                        <h3>Software Developer</h3>
+                        <div class="job-badge">Operations</div>
+                        <h3>Manufacturing Project Manager</h3>
                         <p><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
                         <p><i class="fas fa-briefcase"></i> Full-time</p>
                     </div>
                     <div class="job-body">
                         <div class="job-description">
                             <h4>Job Description</h4>
-                            <p>We're looking for a skilled software developer to create innovative solutions for our internal operations. The ideal candidate will be proficient in modern development technologies and have experience with enterprise applications.</p>
+                            <p>We are looking for an experienced Manufacturing Project Manager to oversee complex precision manufacturing projects from inception to delivery. You will coordinate cross-functional teams, manage resources, and ensure on-time delivery within budget.</p>
+                        </div>
+                        <div class="job-responsibilities">
+                            <h4>Key Responsibilities</h4>
+                            <ul>
+                                <li>Manage full lifecycle of manufacturing projects</li>
+                                <li>Develop project plans, timelines, and resource requirements</li>
+                                <li>Coordinate between engineering, production, and quality teams</li>
+                                <li>Monitor project progress and address issues promptly</li>
+                                <li>Implement process improvements to enhance efficiency</li>
+                                <li>Maintain project documentation and reporting</li>
+                            </ul>
                         </div>
                         <div class="job-requirements">
                             <h4>Requirements</h4>
                             <ul>
-                                <li>Bachelor's degree in Computer Science or related field</li>
-                                <li>3+ years of experience in software development</li>
-                                <li>Proficiency in JavaScript, Python, or Java</li>
-                                <li>Experience with database systems</li>
-                                <li>Understanding of software development lifecycle</li>
-                                <li>Knowledge of UI/UX principles</li>
+                                <li>Bachelor's degree in Engineering or related field</li>
+                                <li>5+ years of experience in manufacturing project management</li>
+                                <li>Strong understanding of precision manufacturing processes</li>
+                                <li>Experience with project management methodologies</li>
+                                <li>Excellent leadership and communication skills</li>
+                                <li>Problem-solving abilities and attention to detail</li>
                             </ul>
                         </div>
-                        <a href="#application-form" class="apply-btn">Apply Now</a>
+                        <a href="#application-form" class="apply-btn" data-job="Manufacturing Project Manager">Apply Now</a>
                     </div>
+                </div>
+
+                <!-- Technology Department Jobs -->
+                <div class="job-card tech-job" data-category="technology">
+                    <div class="job-header">
+                        <div class="job-badge tech-badge">Technology Division</div>
+                        <h3>Full Stack Developer</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
+                        <p><i class="fas fa-briefcase"></i> Full-time</p>
+                    </div>
+                    <div class="job-body">
+                        <div class="job-description">
+                            <h4>Job Description</h4>
+                            <p>Join our Technology Division to build innovative internal systems that drive operational efficiency. You'll develop full-stack applications for inventory management, production tracking, and supply chain optimization using modern web technologies.</p>
+                        </div>
+                        <div class="job-responsibilities">
+                            <h4>Key Responsibilities</h4>
+                            <ul>
+                                <li>Design and develop web applications with modern frameworks</li>
+                                <li>Create responsive and intuitive user interfaces</li>
+                                <li>Implement RESTful APIs and database integrations</li>
+                                <li>Optimize application performance and scalability</li>
+                                <li>Collaborate with stakeholders to understand business requirements</li>
+                                <li>Participate in code reviews and maintain coding standards</li>
+                            </ul>
+                        </div>
+                        <div class="job-requirements">
+                            <h4>Requirements</h4>
+                            <ul>
+                                <li>Bachelor's degree in Computer Science or equivalent experience</li>
+                                <li>3+ years of full-stack development experience</li>
+                                <li>Proficiency in JavaScript/TypeScript, React, and Node.js</li>
+                                <li>Experience with SQL and NoSQL databases</li>
+                                <li>Understanding of RESTful APIs and microservices architecture</li>
+                                <li>Knowledge of software development best practices and patterns</li>
+                            </ul>
+                        </div>
+                        <a href="#application-form" class="apply-btn tech-btn" data-job="Full Stack Developer">Apply Now</a>
+                    </div>
+                </div>
+
+                <div class="job-card tech-job" data-category="technology">
+                    <div class="job-header">
+                        <div class="job-badge tech-badge">Technology Division</div>
+                        <h3>DevOps Engineer</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
+                        <p><i class="fas fa-briefcase"></i> Full-time</p>
+                    </div>
+                    <div class="job-body">
+                        <div class="job-description">
+                            <h4>Job Description</h4>
+                            <p>We're seeking a DevOps Engineer to join our Technology Division to build and maintain our CI/CD pipelines, cloud infrastructure, and automation tools. You'll work closely with developers to streamline deployment processes and ensure system reliability.</p>
+                        </div>
+                        <div class="job-responsibilities">
+                            <h4>Key Responsibilities</h4>
+                            <ul>
+                                <li>Design and implement CI/CD pipelines for application deployment</li>
+                                <li>Manage cloud infrastructure using Infrastructure as Code</li>
+                                <li>Monitor system performance and implement improvements</li>
+                                <li>Automate routine operational tasks</li>
+                                <li>Implement security best practices and compliance requirements</li>
+                                <li>Provide technical support and troubleshooting</li>
+                            </ul>
+                        </div>
+                        <div class="job-requirements">
+                            <h4>Requirements</h4>
+                            <ul>
+                                <li>Bachelor's degree in Computer Science or equivalent experience</li>
+                                <li>3+ years of experience in DevOps or similar role</li>
+                                <li>Experience with cloud platforms (AWS, Azure, or GCP)</li>
+                                <li>Proficiency with containerization technologies (Docker, Kubernetes)</li>
+                                <li>Knowledge of CI/CD tools (Jenkins, GitLab CI, or similar)</li>
+                                <li>Experience with Infrastructure as Code (Terraform, CloudFormation)</li>
+                                <li>Strong scripting skills (Python, Bash)</li>
+                            </ul>
+                        </div>
+                        <a href="#application-form" class="apply-btn tech-btn" data-job="DevOps Engineer">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Open Application Option -->
+            <div class="open-application">
+                <div class="open-application-content">
+                    <h3>Don't see the right position?</h3>
+                    <p>We're always looking for talented professionals to join our team. Submit your resume for future consideration, and we'll contact you when a suitable position becomes available.</p>
+                    <a href="#application-form" class="btn open-app-btn" data-job="Open Application">Submit Open Application</a>
                 </div>
             </div>
 
             <!-- Application Process -->
             <div class="careers-process">
                 <h2>Our Hiring Process</h2>
-                <div class="process-steps">
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <i class="fas fa-file-alt"></i>
-                        <h3>Application</h3>
-                        <p>Submit your application with your resume and cover letter.</p>
+                <div class="process-intro">
+                    <p>At United Engineering, we've designed our recruitment process to identify candidates who not only have the right skills and experience but also align with our values of excellence, innovation, and collaboration. Our process may vary slightly depending on the department and role.</p>
+                </div>
+                
+                <div class="process-tabs">
+                    <button class="process-tab active" data-tab="engineering">Engineering & Manufacturing Roles</button>
+                    <button class="process-tab" data-tab="technology">Technology Division Roles</button>
+                </div>
+                
+                <div class="process-content engineering-process active">
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <i class="fas fa-file-alt"></i>
+                            <h3>Application Review</h3>
+                            <p>Our recruitment team carefully reviews your application, resume, and cover letter to assess your qualifications and experience.</p>
+                            <p class="step-timeline"><i class="far fa-clock"></i> 1-2 weeks</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <i class="fas fa-phone-alt"></i>
+                            <h3>Initial Screening</h3>
+                            <p>A phone or video call with our HR team to discuss your background, experience, and interest in the role.</p>
+                            <p class="step-timeline"><i class="far fa-clock"></i> 30-45 minutes</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <i class="fas fa-cogs"></i>
+                            <h3>Technical Assessment</h3>
+                            <p>In-depth discussion with department heads and technical specialists focused on your technical knowledge and problem-solving abilities.</p>
+                            <p class="step-timeline"><i class="far fa-clock"></i> 1-2 hours</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <i class="fas fa-user-tie"></i>
+                            <h3>Final Interview</h3>
+                            <p>Meet with senior management to discuss your fit with our team, values, and company culture.</p>
+                            <p class="step-timeline"><i class="far fa-clock"></i> 45-60 minutes</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">5</div>
+                            <i class="fas fa-handshake"></i>
+                            <h3>Offer & Onboarding</h3>
+                            <p>If selected, you'll receive a competitive offer and begin our comprehensive onboarding program.</p>
+                            <p class="step-timeline"><i class="far fa-clock"></i> Offer within 1 week</p>
+                        </div>
                     </div>
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <i class="fas fa-phone-alt"></i>
-                        <h3>Phone Interview</h3>
-                        <p>Initial screening call with our HR team.</p>
+                </div>
+                
+                <div class="process-content technology-process">
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <i class="fas fa-file-alt"></i>
+                            <h3>Application Review</h3>
+                            <p>Our tech team reviews your application, GitHub profile, portfolio, and any other submitted materials.</p>
+                            <p class="step-timeline"><i class="far fa-clock"></i> 1 week</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <i class="fas fa-phone-alt"></i>
+                            <h3>Initial HR Screening</h3>
+                            <p>A conversation with our HR team to understand your background, experience, and interest in joining our Technology Division.</p>
+                            <p class="step-timeline"><i class="far fa-clock"></i> 30 minutes</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <i class="fas fa-laptop-code"></i>
+                            <h3>Technical Assessment</h3>
+                            <p>A practical take-home project relevant to the role that demonstrates your hands-on skills and problem-solving approach.</p>
+                            <p class="step-timeline"><i class="far fa-clock"></i> 2-5 days to complete</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <i class="fas fa-users"></i>
+                            <h3>Technical Interview</h3>
+                            <p>In-depth discussion with our tech leads about your project solution, technical knowledge, and experience with relevant technologies.</p>
+                            <p class="step-timeline"><i class="far fa-clock"></i> 1-2 hours</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">5</div>
+                            <i class="fas fa-user-tie"></i>
+                            <h3>Culture & Team Fit</h3>
+                            <p>Meet with team members and the Tech Division Head to assess team compatibility and alignment with our collaborative approach.</p>
+                            <p class="step-timeline"><i class="far fa-clock"></i> 1 hour</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">6</div>
+                            <i class="fas fa-handshake"></i>
+                            <h3>Final Interview & Offer</h3>
+                            <p>Discussion with senior leadership followed by a competitive offer if selected.</p>
+                            <p class="step-timeline"><i class="far fa-clock"></i> Offer within 1 week</p>
+                        </div>
                     </div>
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <i class="fas fa-users"></i>
-                        <h3>Technical Interview</h3>
-                        <p>In-depth discussion about your skills and experience.</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <i class="fas fa-handshake"></i>
-                        <h3>Offer</h3>
-                        <p>If selected, you'll receive an offer to join our team.</p>
+                    <div class="tech-process-note">
+                        <p><i class="fas fa-info-circle"></i> <strong>Note:</strong> For Technology Division roles, we prioritize hands-on skills assessment through practical projects rather than abstract algorithm challenges. We believe this approach better reflects real-world problem-solving abilities and aligns with our focus on practical solutions.</p>
                     </div>
                 </div>
             </div>
@@ -417,45 +968,116 @@
             <!-- Application Form -->
             <div class="application-form" id="application-form">
                 <h2>Apply Now</h2>
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <label for="position">Position</label>
-                        <select id="position" name="position" required>
-                            <option value="">Select a position</option>
-                            <option value="Mechanical Engineer">Mechanical Engineer</option>
-                            <option value="Quality Control Inspector">Quality Control Inspector</option>
-                            <option value="Project Manager">Project Manager</option>
-                            <option value="Software Developer">Software Developer</option>
-                        </select>
+                <div class="form-steps">
+                    <div class="form-step active" data-step="1">
+                        <span class="step-indicator">1</span> Basic Information
                     </div>
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
+                    <div class="form-step" data-step="2">
+                        <span class="step-indicator">2</span> Detailed Application
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                </div>
+                
+                <form id="career-application-form" action="#" method="POST" class="multi-step-form">
+                    <!-- Step 1: Basic Information -->
+                    <div class="form-step-content active" id="step1-content">
+                        <div class="form-group">
+                            <label for="position">Position <span class="required">*</span></label>
+                            <select id="position" name="position" required>
+                                <option value="">Select a position</option>
+                                <option value="Open Application">Open Application</option>
+                                <optgroup label="Engineering Department">
+                                    <option value="Senior Mechanical Engineer">Senior Mechanical Engineer</option>
+                                    <option value="CNC Programmer">CNC Programmer</option>
+                                </optgroup>
+                                <optgroup label="Quality Department">
+                                    <option value="Quality Control Engineer">Quality Control Engineer</option>
+                                </optgroup>
+                                <optgroup label="Operations Department">
+                                    <option value="Manufacturing Project Manager">Manufacturing Project Manager</option>
+                                </optgroup>
+                                <optgroup label="Technology Division">
+                                    <option value="Full Stack Developer">Full Stack Developer</option>
+                                    <option value="DevOps Engineer">DevOps Engineer</option>
+                                </optgroup>
+                            </select>
+                            <div class="error-message" id="position-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required>
+                            <div class="error-message" id="name-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message" id="email-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <div class="error-message" id="phone-error"></div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" id="to-step2-btn" class="btn next-step">Continue</button>
+                            <button type="button" id="save-for-later-btn" class="btn btn-outline">Save for Later</button>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="experience">Years of Experience</label>
-                        <input type="number" id="experience" name="experience" min="0" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Cover Letter</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="resume">Resume (PDF/DOC)</label>
-                        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
-                    </div>
-                    <div class="form-submit">
-                        <button type="submit" class="btn">Submit Application</button>
+                    
+                    <!-- Step 2: Detailed Application -->
+                    <div class="form-step-content" id="step2-content">
+                        <div class="form-group">
+                            <label for="experience">Years of Experience <span class="required">*</span></label>
+                            <input type="number" id="experience" name="experience" min="0" required>
+                            <div class="error-message" id="experience-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="skills">Key Skills</label>
+                            <textarea id="skills" name="skills" placeholder="List your relevant skills separated by commas"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="portfolio">Portfolio/GitHub/LinkedIn URL</label>
+                            <input type="url" id="portfolio" name="portfolio" placeholder="https://">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Cover Letter <span class="required">*</span></label>
+                            <textarea id="message" name="message" required></textarea>
+                            <div class="error-message" id="message-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="resume">Resume (PDF/DOC) <span class="required">*</span></label>
+                            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                            <div class="error-message" id="resume-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms-checkbox" name="terms" required>
+                                I agree to the processing of my personal data in accordance with privacy policy
+                            </label>
+                            <div class="error-message" id="terms-error"></div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" id="back-to-step1-btn" class="btn btn-outline back-step">Back</button>
+                            <button type="submit" class="btn">Submit Application</button>
+                        </div>
                     </div>
                 </form>
+                
+                <div class="application-success" style="display: none;">
+                    <i class="fas fa-check-circle success-icon"></i>
+                    <h3>Application Submitted Successfully!</h3>
+                    <p>Thank you for your interest in joining United Engineering. We have received your application and will review it shortly. If your qualifications match our requirements, we will contact you to discuss the next steps.</p>
+                    <p>Reference number: <span id="application-reference"></span></p>
+                </div>
             </div>
         </div>
     </section>
@@ -465,7 +1087,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-info">
-                    <h3>United Engineering Services</h3>
+                    <h3>United Engineering</h3>
                     <p>123 Industrial Area, Bangalore, Karnataka, India</p>
                     <p>Phone: +91 80 1234 5678</p>
                     <p>Email: info@unitedengineering.org</p>
@@ -477,8 +1099,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="products.html">Products</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="quality.html">Quality</a></li>
+                        <li><a href="services-quality.html">Services & Quality</a></li>
                         <li><a href="careers.html">Careers</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
@@ -493,11 +1114,267 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 United Engineering Services. All rights reserved.</p>
+                <p>&copy; 2025 United Engineering. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Job category filtering
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const jobCards = document.querySelectorAll('.job-card');
+            const searchInput = document.getElementById('job-search-input');
+            const searchButton = document.querySelector('.search-btn');
+            
+            // Filter jobs based on category
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const category = button.getAttribute('data-category');
+                    
+                    jobCards.forEach(card => {
+                        if (category === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            if (card.getAttribute('data-category') === category) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+            
+            // Job search functionality
+            function performSearch() {
+                const searchText = searchInput.value.toLowerCase().trim();
+                
+                if (searchText === '') {
+                    // If search is empty, respect category filters
+                    const activeCategory = document.querySelector('.category-btn.active').getAttribute('data-category');
+                    
+                    jobCards.forEach(card => {
+                        if (activeCategory === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            if (card.getAttribute('data-category') === activeCategory) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                } else {
+                    // Search in job titles and descriptions
+                    jobCards.forEach(card => {
+                        const title = card.querySelector('h3').textContent.toLowerCase();
+                        const description = card.querySelector('.job-description p').textContent.toLowerCase();
+                        
+                        if (title.includes(searchText) || description.includes(searchText)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+            }
+            
+            searchButton.addEventListener('click', performSearch);
+            searchInput.addEventListener('keyup', function(event) {
+                if (event.key === 'Enter') {
+                    performSearch();
+                }
+            });
+            
+            // Process tabs functionality
+            const processTabs = document.querySelectorAll('.process-tab');
+            const processContents = document.querySelectorAll('.process-content');
+            
+            processTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs and contents
+                    processTabs.forEach(t => t.classList.remove('active'));
+                    processContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding content
+                    tab.classList.add('active');
+                    const tabTarget = tab.getAttribute('data-tab');
+                    document.querySelector(`.${tabTarget}-process`).classList.add('active');
+                });
+            });
+            
+            // Multi-step form functionality
+            const toStep2Btn = document.getElementById('to-step2-btn');
+            const backToStep1Btn = document.getElementById('back-to-step1-btn');
+            const saveForLaterBtn = document.getElementById('save-for-later-btn');
+            const step1Content = document.getElementById('step1-content');
+            const step2Content = document.getElementById('step2-content');
+            const formSteps = document.querySelectorAll('.form-step');
+            const applicationForm = document.getElementById('career-application-form');
+            
+            // Form validation functions
+            function validateStep1() {
+                let isValid = true;
+                
+                // Position validation
+                const position = document.getElementById('position');
+                if (position.value === '') {
+                    showError(position, 'position-error', 'Please select a position');
+                    isValid = false;
+                } else {
+                    clearError(position, 'position-error');
+                }
+                
+                // Name validation
+                const name = document.getElementById('name');
+                if (name.value.trim() === '') {
+                    showError(name, 'name-error', 'Please enter your name');
+                    isValid = false;
+                } else {
+                    clearError(name, 'name-error');
+                }
+                
+                // Email validation
+                const email = document.getElementById('email');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email.value)) {
+                    showError(email, 'email-error', 'Please enter a valid email address');
+                    isValid = false;
+                } else {
+                    clearError(email, 'email-error');
+                }
+                
+                // Phone validation
+                const phone = document.getElementById('phone');
+                if (phone.value.trim() === '') {
+                    showError(phone, 'phone-error', 'Please enter your phone number');
+                    isValid = false;
+                } else {
+                    clearError(phone, 'phone-error');
+                }
+                
+                return isValid;
+            }
+            
+            function showError(input, errorId, message) {
+                input.style.borderColor = '#e74c3c';
+                const errorElement = document.getElementById(errorId);
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+            }
+            
+            function clearError(input, errorId) {
+                input.style.borderColor = '';
+                const errorElement = document.getElementById(errorId);
+                errorElement.style.display = 'none';
+            }
+            
+            toStep2Btn.addEventListener('click', () => {
+                if (validateStep1()) {
+                    step1Content.classList.remove('active');
+                    step2Content.classList.add('active');
+                    formSteps[0].classList.remove('active');
+                    formSteps[1].classList.add('active');
+                }
+            });
+            
+            backToStep1Btn.addEventListener('click', () => {
+                step2Content.classList.remove('active');
+                step1Content.classList.add('active');
+                formSteps[1].classList.remove('active');
+                formSteps[0].classList.add('active');
+            });
+            
+            saveForLaterBtn.addEventListener('click', () => {
+                // Save current form data to localStorage
+                const formData = {
+                    position: document.getElementById('position').value,
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value
+                };
+                
+                localStorage.setItem('savedApplication', JSON.stringify(formData));
+                alert('Your application information has been saved. You can return to complete it later.');
+            });
+            
+            // Check for saved application data
+            const savedApplication = localStorage.getItem('savedApplication');
+            if (savedApplication) {
+                const formData = JSON.parse(savedApplication);
+                document.getElementById('position').value = formData.position || '';
+                document.getElementById('name').value = formData.name || '';
+                document.getElementById('email').value = formData.email || '';
+                document.getElementById('phone').value = formData.phone || '';
+            }
+            
+            // Form submission
+            applicationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show success message (in a real application, this would submit to a server)
+                applicationForm.style.display = 'none';
+                document.querySelector('.application-success').style.display = 'block';
+                
+                // Generate a random reference number
+                const referenceNumber = 'UE-' + new Date().getFullYear() + '-' + Math.floor(10000 + Math.random() * 90000);
+                document.getElementById('application-reference').textContent = referenceNumber;
+                
+                // Clear saved application
+                localStorage.removeItem('savedApplication');
+            });
+            
+            // Auto-fill position from job cards
+            const applyButtons = document.querySelectorAll('.apply-btn');
+            applyButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const jobTitle = button.getAttribute('data-job');
+                    const positionSelect = document.getElementById('position');
+                    
+                    // Find and select the option
+                    for (let i = 0; i < positionSelect.options.length; i++) {
+                        if (positionSelect.options[i].value === jobTitle) {
+                            positionSelect.selectedIndex = i;
+                            break;
+                        }
+                    }
+                    
+                    // Scroll to the form
+                    document.getElementById('application-form').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+            
+            // Add animation to job cards
+            jobCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // Use IntersectionObserver to animate job cards when they come into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, entries.indexOf(entry) * 100); // Staggered animation
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            jobCards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
 </body>
 </html>

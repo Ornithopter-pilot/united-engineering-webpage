@@ -110,6 +110,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    padding: 5px 0;
 }
 
 header .container {
@@ -125,6 +126,26 @@ header .container {
     color: var(--primary-color);
     margin: 0;
     padding: 15px 0;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-left: 10px;
+}
+
+.logo-img {
+    height: 70px;
+    width: auto;
+    display: block;
 }
 
 .nav-menu {
@@ -445,6 +466,10 @@ footer {
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+    
+    .logo-img {
+        height: 60px;
+    }
 
     .hero {
         padding: 70px 0;
@@ -488,5 +513,9 @@ footer {
 
     section {
         padding: 40px 0;
+    }
+    
+    .logo-img {
+        height: 50px;
     }
 }

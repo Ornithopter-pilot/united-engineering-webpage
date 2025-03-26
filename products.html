@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - United Engineering Services</title>
+    <title>Products - United Engineering</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <meta name="description" content="Explore United Engineering's range of precision-engineered components including gears, shafts, bearings, and custom machined parts.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -165,7 +167,7 @@
         <div class="container">
             <div class="logo">
                 <a href="index.html">
-                    <h1>UES</h1>
+                    <img src="img/united_engineering_logo.png" alt="United Engineering Logo" class="logo-img">
                 </a>
             </div>
             <nav>
@@ -173,8 +175,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="products.html" class="active">Products</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="quality.html">Quality</a></li>
+                    <li><a href="services-quality.html">Services & Quality</a></li>
                     <li><a href="careers.html">Careers</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -200,7 +201,7 @@
         <div class="container">
             <div class="products-intro">
                 <h2>Precision Engineered Components</h2>
-                <p>United Engineering Services offers a wide range of high-quality precision machined components designed to meet the exacting standards of various industries. Our state-of-the-art manufacturing facility and skilled team ensure exceptional quality and reliability.</p>
+                <p>United Engineering offers a wide range of high-quality precision machined components designed to meet the exacting standards of various industries. Our state-of-the-art manufacturing facility and skilled team ensure exceptional quality and reliability.</p>
             </div>
 
             <div class="products-categories">
@@ -209,6 +210,7 @@
                 <button class="category-btn">Shafts & Axles</button>
                 <button class="category-btn">Bearings</button>
                 <button class="category-btn">Custom Components</button>
+                <button class="category-btn">Specialty Systems</button>
             </div>
 
             <div class="products-grid">
@@ -319,6 +321,18 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="product-card tech-product">
+                    <img src="img/custom-parts.jpg" alt="Custom Multi-Material Component Systems">
+                    <div class="product-info">
+                        <h3>Custom Multi-Material Component Systems</h3>
+                        <p>Our engineering solutions combine multiple materials into integrated precision components that solve complex engineering challenges conventional single-material parts cannot address.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Specialty Systems</span>
+                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Custom Solutions Section -->
@@ -337,7 +351,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-info">
-                    <h3>United Engineering Services</h3>
+                    <h3>United Engineering</h3>
                     <p>123 Industrial Area, Bangalore, Karnataka, India</p>
                     <p>Phone: +91 80 1234 5678</p>
                     <p>Email: info@unitedengineering.org</p>
@@ -349,8 +363,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="products.html">Products</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="quality.html">Quality</a></li>
+                        <li><a href="services-quality.html">Services & Quality</a></li>
                         <li><a href="careers.html">Careers</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
@@ -365,7 +378,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 United Engineering Services. All rights reserved.</p>
+                <p>&copy; 2025 United Engineering. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -376,6 +389,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const categoryButtons = document.querySelectorAll('.category-btn');
             const productCards = document.querySelectorAll('.product-card');
+
             
             categoryButtons.forEach(button => {
                 button.addEventListener('click', () => {
@@ -386,6 +400,7 @@
                     button.classList.add('active');
                     
                     const category = button.textContent.trim();
+                    
                     
                     productCards.forEach(card => {
                         if (category === 'All Products') {
