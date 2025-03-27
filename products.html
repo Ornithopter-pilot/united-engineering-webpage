@@ -4,419 +4,999 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - United Engineering</title>
-    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    
+    <!-- Meta Tags -->
     <meta name="description" content="Explore United Engineering's range of precision-engineered components including gears, shafts, bearings, and custom machined parts.">
+    <meta name="keywords" content="precision gears, shafts, axles, bearings, custom components, precision machined parts">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        .products-hero {
-            background: linear-gradient(rgba(26, 60, 107, 0.8), rgba(26, 60, 107, 0.9)), url('img/products-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            color: var(--light-text);
-            padding: 70px 0;
-            text-align: center;
-        }
-
-        .products-content {
-            padding: 60px 0;
-        }
-
-        .products-intro {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 40px;
-        }
-
-        .products-categories {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .category-btn {
-            padding: 10px 20px;
-            margin: 5px;
-            background-color: var(--secondary-color);
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .category-btn:hover, .category-btn.active {
-            background-color: var(--primary-color);
-            color: var(--light-text);
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .product-card {
-            background-color: var(--background-color);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-info h3 {
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-
-        .product-info p {
-            margin-bottom: 15px;
-            color: var(--text-color);
-        }
-
-        .product-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 15px;
-            border-top: 1px solid var(--secondary-color);
-        }
-
-        .product-category {
-            background-color: var(--secondary-color);
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .product-link {
-            color: var(--primary-color);
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .product-link:hover {
-            color: var(--tech-accent);
-        }
-
-        .tech-product {
+        /* Modern Products Hero Banner with 3D Animation */
+        .products-hero-modern {
             position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 700px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            z-index: 1;
         }
 
-        .tech-product::before {
+        /* Animated background pattern */
+        .products-hero-modern::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 4px;
+            width: 100%;
             height: 100%;
-            background-color: var(--tech-accent);
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 1%, transparent 3%),
+                radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.1) 1%, transparent 3%),
+                linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+            background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+            z-index: 1;
+            opacity: 0.5;
+            animation: patternMove 60s linear infinite;
         }
 
-        .tech-product .product-category {
-            background-color: rgba(255, 87, 34, 0.1);
-            color: var(--tech-accent);
+        @keyframes patternMove {
+            0% { background-position: 0 0, 0 0, 0 0, 0 0; }
+            100% { background-position: 100px 100px, -100px -100px, 20px 20px, 20px 20px; }
         }
 
-        .custom-solutions {
-            background-color: var(--secondary-color);
-            padding: 50px 0;
+        /* Product gallery */
+        .products-gallery {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            perspective: 2000px;
+        }
+
+        .product-item {
+            position: absolute;
+            border-radius: 12px;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            transform: translateZ(0) rotateY(var(--rotation, 0deg)) rotateX(var(--tilt, 0deg));
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease;
+            animation: fadeInScale 0.8s backwards, float var(--float-duration, 6s) ease-in-out infinite var(--float-delay, 0s);
+            animation-delay: var(--delay, 0s);
+        }
+
+        .product-item:hover {
+            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.4);
+            transform: translateZ(50px) rotateY(0deg) rotateX(0deg) scale(1.05);
+            z-index: 10;
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+        }
+
+        /* Product item positioning and sizing - improved spacing */
+        .product-item:nth-child(1) {
+            width: 240px;
+            height: 240px;
+            top: 12%;
+            left: 5%;
+            --rotation: -8deg;
+            --tilt: 5deg;
+            --delay: 0.1s;
+            --float-duration: 7s;
+            --float-delay: 0.5s;
+        }
+
+        .product-item:nth-child(2) {
+            width: 220px;
+            height: 220px;
+            top: 55%;
+            left: 3%;
+            --rotation: 5deg;
+            --tilt: -3deg;
+            --delay: 0.3s;
+            --float-duration: 6s;
+            --float-delay: 1s;
+        }
+
+        .product-item:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            top: 35%;
+            left: 22%;
+            --rotation: -5deg;
+            --tilt: -5deg;
+            --delay: 0.5s;
+            --float-duration: 8s;
+            --float-delay: 0s;
+        }
+
+        .product-item:nth-child(4) {
+            width: 260px;
+            height: 260px;
+            top: 15%;
+            left: 30%;
+            --rotation: 3deg;
+            --tilt: 2deg;
+            --delay: 0.2s;
+            --float-duration: 9s;
+            --float-delay: 1.5s;
+        }
+
+        .product-item:nth-child(5) {
+            width: 230px;
+            height: 230px;
+            top: 58%;
+            left: 40%;
+            --rotation: -3deg;
+            --tilt: 3deg;
+            --delay: 0.4s;
+            --float-duration: 7.5s;
+            --float-delay: 0.8s;
+        }
+
+        .product-item:nth-child(6) {
+            width: 220px;
+            height: 220px;
+            top: 20%;
+            right: 35%;
+            --rotation: 7deg;
+            --tilt: -2deg;
+            --delay: 0.6s;
+            --float-duration: 6.5s;
+            --float-delay: 1.2s;
+        }
+
+        .product-item:nth-child(7) {
+            width: 210px;
+            height: 210px;
+            top: 53%;
+            right: 40%;
+            --rotation: -7deg;
+            --tilt: -4deg;
+            --delay: 0.35s;
+            --float-duration: 8.5s;
+            --float-delay: 0.3s;
+        }
+
+        .product-item:nth-child(8) {
+            width: 260px;
+            height: 260px;
+            top: 10%;
+            right: 12%;
+            --rotation: -4deg;
+            --tilt: 6deg;
+            --delay: 0.45s;
+            --float-duration: 7.2s;
+            --float-delay: 0.9s;
+        }
+
+        .product-item:nth-child(9) {
+            width: 190px;
+            height: 190px;
+            top: 38%;
+            right: 8%;
+            --rotation: 6deg;
+            --tilt: -3deg;
+            --delay: 0.7s;
+            --float-duration: 6.8s;
+            --float-delay: 1.7s;
+        }
+
+        .product-item:nth-child(10) {
+            width: 250px;
+            height: 250px;
+            top: 65%;
+            right: 10%;
+            --rotation: -2deg;
+            --tilt: 4deg;
+            --delay: 0.25s;
+            --float-duration: 8.2s;
+            --float-delay: 0.6s;
+        }
+        
+        /* New added items to fill the left space */
+        .product-item:nth-child(11) {
+            width: 200px;
+            height: 200px;
+            top: 30%;
+            left: 8%;
+            --rotation: 7deg;
+            --tilt: -4deg;
+            --delay: 0.55s;
+            --float-duration: 7.8s;
+            --float-delay: 1.3s;
+        }
+        
+        .product-item:nth-child(12) {
+            width: 185px;
+            height: 185px;
+            top: 75%;
+            left: 20%;
+            --rotation: -6deg;
+            --tilt: 3deg;
+            --delay: 0.65s;
+            --float-duration: 6.3s;
+            --float-delay: 0.7s;
+        }
+
+        /* Text content overlay */
+        .products-hero-content-modern {
+            position: absolute;
+            top: 50%;
+            left: 52%; /* Slightly adjusted to balance with left-side products */
+            transform: translate(-50%, -50%);
+            z-index: 10;
             text-align: center;
-            margin-top: 60px;
+            width: 90%;
+            max-width: 850px;
+            padding: 40px;
+            background: rgba(15, 23, 42, 0.80); /* Slightly darker for better contrast */
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border-left: 5px solid var(--primary);
+            border-right: 5px solid var(--primary-light);
+            animation: glowingBorder 3s ease-in-out infinite, fadeIn 1s ease-out 0.8s forwards;
+            opacity: 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
-        .custom-solutions h2 {
-            margin-bottom: 20px;
-            color: var(--primary-color);
+        @keyframes glowingBorder {
+            0%, 100% {
+                border-left: 5px solid var(--primary);
+                border-right: 5px solid var(--primary-light);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(59, 130, 246, 0.1);
+            }
+            50% {
+                border-left: 5px solid var(--primary-light);
+                border-right: 5px solid var(--primary);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(59, 130, 246, 0.4);
+            }
         }
 
-        .custom-solutions p {
+        .hero-title-modern {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: white;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            position: relative;
+        }
+
+        .hero-title-modern span {
+            position: relative;
+            display: inline-block;
+            color: transparent;
+            background: linear-gradient(to right, var(--primary-light), #60a5fa, var(--primary));
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            animation: textGradient 5s linear infinite;
+        }
+
+        @keyframes textGradient {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .hero-subtitle-modern {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
             max-width: 800px;
-            margin: 0 auto 30px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* Animations */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateZ(-50px) rotateY(var(--rotation)) rotateX(var(--tilt));
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateZ(0) rotateY(var(--rotation)) rotateX(var(--tilt));
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateZ(0) rotateY(var(--rotation)) rotateX(var(--tilt));
+            }
+            50% {
+                transform: translateY(-15px) translateZ(20px) rotateY(calc(var(--rotation) * 0.8)) rotateX(calc(var(--tilt) * 0.8));
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Wave animation for bottom transition */
+        .hero-wave {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            z-index: 5;
+            line-height: 0;
+        }
+
+        .hero-wave svg {
+            width: 100%;
+            height: auto;
+        }
+
+        .hero-wave path {
+            fill: var(--white);
+        }
+
+        /* Mouse scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 11;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 2s forwards;
+        }
+
+        .scroll-indicator span {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .mouse {
+            width: 30px;
+            height: 50px;
+            border: 2px solid white;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .mouse::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background-color: white;
+            border-radius: 50%;
+            animation: scrollAnim 2s infinite;
+        }
+
+        @keyframes scrollAnim {
+            0% {
+                top: 10px;
+                opacity: 1;
+            }
+            100% {
+                top: 30px;
+                opacity: 0;
+            }
+        }
+
+        /* Parallax effect on scroll */
+        .products-hero-modern.scrolling .product-item {
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1400px) {
+            .product-item {
+                transform: scale(0.9) rotateY(var(--rotation)) rotateX(var(--tilt));
+            }
+            
+            .hero-title-modern {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .product-item {
+                transform: scale(0.8) rotateY(var(--rotation)) rotateX(var(--tilt));
+            }
+            
+            .hero-title-modern {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .products-hero-modern {
+                height: auto;
+                min-height: 650px;
+                padding: 100px 0 50px;
+            }
+            
+            .products-gallery {
+                position: relative;
+                height: 500px;
+            }
+            
+            .product-item {
+                transform: scale(0.7) rotateY(var(--rotation)) rotateX(var(--tilt));
+            }
+            
+            .products-hero-content-modern {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+                margin: 0 auto 80px;
+                width: 90%;
+                padding: 30px;
+            }
+            
+            .hero-title-modern {
+                font-size: 2.5rem;
+            }
         }
 
         @media (max-width: 768px) {
-            .products-grid {
-                grid-template-columns: 1fr;
+            .products-hero-modern {
+                min-height: 600px;
+            }
+            
+            .products-gallery {
+                display: none;
+            }
+            
+            .products-hero-content-modern {
+                margin: 0 auto;
+                padding: 25px;
+                max-width: 100%;
+            }
+            
+            .hero-title-modern {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle-modern {
+                font-size: 1rem;
+            }
+            
+            .hero-cta-group {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+        
+        .product-solutions {
+            background-color: var(--gray-100);
+            border-radius: 1rem;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+        
+        .product-solutions h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-solutions p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .product-category-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .category-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            color: white;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+        .product-category-wrapper:hover .product-category-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-category-wrapper:hover .category-overlay {
+            background: linear-gradient(to bottom, rgba(37, 99, 235, 0.7), rgba(37, 99, 235, 0.9));
+        }
+        
+        .product-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .product-spec {
+            background-color: var(--gray-100);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .product-spec i {
+            color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .product-tabs {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            
+            .product-tab {
+                width: calc(50% - 0.5rem);
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .product-tab {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container">
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="img/united_engineering_logo.png" alt="United Engineering Logo" class="logo-img">
+                    <img src="img/united_engineering_logo.png" alt="United Engineering Logo">
                 </a>
             </div>
+            
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html" class="active">Products</a></li>
-                    <li><a href="services-quality.html">Services & Quality</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="products.html" class="nav-link active">Products</a></li>
+                    <li><a href="capabilities.html" class="nav-link">Capabilities</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
             </nav>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
-
-    <!-- Hero Section -->
-    <section class="products-hero">
-        <div class="container">
-            <h2>Our Products</h2>
-            <p>High-Quality Precision Engineered Components</p>
+    
+    <!-- Modern Hero Section with 3D Product Gallery -->
+    <section class="products-hero-modern" id="products-hero">
+        <!-- 3D Product Gallery -->
+        <div class="products-gallery">
+            <div class="product-item">
+                <img src="img/product_catalogue_img/Precision Spur Gears.png" alt="Precision Spur Gears">
+            </div>
+            <div class="product-item">
+                <img src="img/product_catalogue_img/helical-gears.png" alt="Helical Gears">
+            </div>
+            <div class="product-item">
+                <img src="img/product_catalogue_img/beavel_gears.png" alt="Bevel Gears">
+            </div>
+            <div class="product-item">
+                <img src="img/product_catalogue_img/precision_shafts.png" alt="Precision Shafts">
+            </div>
+            <div class="product-item">
+                <img src="img/product_catalogue_img/Splined Shafts.png" alt="Splined Shafts">
+            </div>
+            <div class="product-item">
+                <img src="img/product_catalogue_img/Industrial Axles.png" alt="Industrial Axles">
+            </div>
+            <div class="product-item">
+                <img src="img/product_catalogue_img/precision bearings.png" alt="Precision Bearings">
+            </div>
+            <div class="product-item">
+                <img src="img/product_catalogue_img/bushings.png" alt="Bushings">
+            </div>
+            <div class="product-item">
+                <img src="img/product_catalogue_img/Custom Machined Components.png" alt="Custom Machined Components">
+            </div>
+            <div class="product-item">
+                <img src="img/product_catalogue_img/Custom Multi-Material Component Systems.png" alt="Custom Multi-Material Component Systems">
+            </div>
+            <!-- Adding two more items to balance the composition -->
+            <div class="product-item">
+                <img src="img/product_catalogue_img/precision_shafts.png" alt="Precision Shafts - Additional View">
+            </div>
+            <div class="product-item">
+                <img src="img/product_catalogue_img/Precision Spur Gears.png" alt="Precision Spur Gears - Alternative View">
+            </div>
+        </div>
+        
+        <!-- Content Overlay -->
+        <div class="products-hero-content-modern">
+            <h1 class="hero-title-modern">Precision <span>Engineering</span> Excellence</h1>
+            <p class="hero-subtitle-modern">Discover our comprehensive range of high-quality precision components, manufactured with cutting-edge technology and expert craftsmanship for superior performance and reliability.</p>
+            <div class="hero-cta-group">
+                <a href="#product-categories" class="btn btn-primary btn-icon">
+                    EXPLORE PRODUCTS
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="contact.html" class="btn btn-outline">
+                    REQUEST CUSTOM SOLUTION
+                </a>
+            </div>
+        </div>
+        
+        <!-- Wave Transition -->
+        <div class="hero-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
+                <path d="M0,96L60,80C120,64,240,32,360,32C480,32,600,64,720,69.3C840,75,960,53,1080,48C1200,43,1320,53,1380,58.7L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z"></path>
+            </svg>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="mouse"></div>
         </div>
     </section>
-
-    <!-- Products Content -->
-    <section class="products-content">
+    
+    <!-- Products Introduction -->
+    <section class="section" id="product-categories">
         <div class="container">
-            <div class="products-intro">
+            <div class="section-title">
                 <h2>Precision Engineered Components</h2>
                 <p>United Engineering offers a wide range of high-quality precision machined components designed to meet the exacting standards of various industries. Our state-of-the-art manufacturing facility and skilled team ensure exceptional quality and reliability.</p>
             </div>
-
-            <div class="products-categories">
-                <button class="category-btn active">All Products</button>
-                <button class="category-btn">Gears</button>
-                <button class="category-btn">Shafts & Axles</button>
-                <button class="category-btn">Bearings</button>
-                <button class="category-btn">Custom Components</button>
-                <button class="category-btn">Specialty Systems</button>
+            
+            <div class="product-tabs">
+                <button class="product-tab active" data-category="all">All Products</button>
+                <button class="product-tab" data-category="gears">Gears</button>
+                <button class="product-tab" data-category="shafts">Shafts & Axles</button>
+                <button class="product-tab" data-category="bearings">Bearings</button>
+                <button class="product-tab" data-category="custom">Custom Components</button>
+                <button class="product-tab" data-category="specialty">Specialty Systems</button>
             </div>
+            
+            <div class="product-grid">
+                <div class="product-card animate" data-category="gears">
+                    <div class="product-image">
+                        <img src="img/product_catalogue_img/Precision Spur Gears.png" alt="Precision Spur Gears">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">Precision Spur Gears</h3>
+                        <p class="product-desc">High-quality spur gears manufactured with precision to ensure smooth power transmission and optimal performance in various mechanical systems.</p>
 
-            <div class="products-grid">
-                <div class="product-card">
-                    <img src="img/gears.jpg" alt="Precision Spur Gears">
-                    <div class="product-info">
-                        <h3>Precision Spur Gears</h3>
-                        <p>High-quality spur gears manufactured with precision to ensure smooth power transmission and optimal performance in various mechanical systems.</p>
-                        <div class="product-meta">
+                        <div class="product-footer">
                             <span class="product-category">Gears</span>
-                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="img/helical-gears.jpg" alt="Helical Gears">
-                    <div class="product-info">
-                        <h3>Helical Gears</h3>
-                        <p>Precision-engineered helical gears designed for smooth, quiet operation and higher load capacity in industrial applications.</p>
-                        <div class="product-meta">
-                            <span class="product-category">Gears</span>
-                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="img/bevel-gears.jpg" alt="Bevel Gears">
-                    <div class="product-info">
-                        <h3>Bevel Gears</h3>
-                        <p>Precision bevel gears for applications requiring changes in direction of rotating shafts, manufactured to exacting standards.</p>
-                        <div class="product-meta">
-                            <span class="product-category">Gears</span>
-                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="img/shafts.jpg" alt="Precision Shafts">
-                    <div class="product-info">
-                        <h3>Precision Shafts</h3>
-                        <p>High-quality precision shafts manufactured to tight tolerances for various industrial applications, ensuring reliable power transmission.</p>
-                        <div class="product-meta">
-                            <span class="product-category">Shafts & Axles</span>
-                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="img/splined-shafts.jpg" alt="Splined Shafts">
-                    <div class="product-info">
-                        <h3>Splined Shafts</h3>
-                        <p>Precision-engineered splined shafts designed for applications requiring torque transmission while allowing axial movement.</p>
-                        <div class="product-meta">
-                            <span class="product-category">Shafts & Axles</span>
-                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="img/axles.jpg" alt="Industrial Axles">
-                    <div class="product-info">
-                        <h3>Industrial Axles</h3>
-                        <p>Robust and reliable industrial axles manufactured to withstand heavy loads and provide consistent performance in demanding environments.</p>
-                        <div class="product-meta">
-                            <span class="product-category">Shafts & Axles</span>
-                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="img/bearings.jpg" alt="Precision Bearings">
-                    <div class="product-info">
-                        <h3>Precision Bearings</h3>
-                        <p>High-quality bearings designed to reduce friction and support loads in rotating machinery, ensuring smooth operation and long service life.</p>
-                        <div class="product-meta">
-                            <span class="product-category">Bearings</span>
-                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="img/bushings.jpg" alt="Bushings">
-                    <div class="product-info">
-                        <h3>Bushings</h3>
-                        <p>Precision-engineered bushings for reducing friction between moving parts, manufactured from high-quality materials for durability and performance.</p>
-                        <div class="product-meta">
-                            <span class="product-category">Bearings</span>
-                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card tech-product">
-                    <img src="img/custom-parts.jpg" alt="Custom Machined Components">
-                    <div class="product-info">
-                        <h3>Custom Machined Components</h3>
-                        <p>Bespoke precision components tailored to your specific requirements, manufactured using advanced CNC technology for optimal performance.</p>
-                        <div class="product-meta">
-                            <span class="product-category">Custom Components</span>
                             <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="product-card tech-product">
-                    <img src="img/custom-parts.jpg" alt="Custom Multi-Material Component Systems">
-                    <div class="product-info">
-                        <h3>Custom Multi-Material Component Systems</h3>
-                        <p>Our engineering solutions combine multiple materials into integrated precision components that solve complex engineering challenges conventional single-material parts cannot address.</p>
-                        <div class="product-meta">
-                            <span class="product-category">Specialty Systems</span>
+                <div class="product-card animate" data-category="gears">
+                    <div class="product-image">
+                        <img src="img/product_catalogue_img/helical-gears.png" alt="Helical Gears">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">Helical Gears</h3>
+                        <p class="product-desc">Precision-engineered helical gears designed for smooth, quiet operation and higher load capacity in industrial applications.</p>
+
+                        <div class="product-footer">
+                            <span class="product-category">Gears</span>
+                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card animate" data-category="gears">
+                    <div class="product-image">
+                        <img src="img/product_catalogue_img/beavel_gears.png" alt="Bevel Gears">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">Bevel Gears</h3>
+                        <p class="product-desc">Precision bevel gears for applications requiring changes in direction of rotating shafts, manufactured to exacting standards.</p>
+
+                        <div class="product-footer">
+                            <span class="product-category">Gears</span>
+                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card animate" data-category="shafts">
+                    <div class="product-image">
+                        <img src="img/product_catalogue_img/precision_shafts.png" alt="Precision Shafts">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">Precision Shafts</h3>
+                        <p class="product-desc">High-quality precision shafts manufactured to tight tolerances for various industrial applications, ensuring reliable power transmission.</p>
+
+                        <div class="product-footer">
+                            <span class="product-category">Shafts</span>
+                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card animate" data-category="shafts">
+                    <div class="product-image">
+                        <img src="img/product_catalogue_img/Splined Shafts.png" alt="Splined Shafts">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">Splined Shafts</h3>
+                        <p class="product-desc">Precision-engineered splined shafts designed for applications requiring torque transmission while allowing axial movement.</p>
+
+                        <div class="product-footer">
+                            <span class="product-category">Shafts</span>
+                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card animate" data-category="shafts">
+                    <div class="product-image">
+                        <img src="img/product_catalogue_img/Industrial Axles.png" alt="Industrial Axles">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">Industrial Axles</h3>
+                        <p class="product-desc">Robust and reliable industrial axles manufactured to withstand heavy loads and provide consistent performance in demanding environments.</p>
+
+                        <div class="product-footer">
+                            <span class="product-category">Shafts</span>
+                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card animate" data-category="bearings">
+                    <div class="product-image">
+                        <img src="img/product_catalogue_img/precision bearings.png" alt="Precision Bearings">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">Precision Bearings</h3>
+                        <p class="product-desc">High-quality bearings designed to reduce friction and support loads in rotating machinery, ensuring smooth operation and long service life.</p>
+
+                        <div class="product-footer">
+                            <span class="product-category">Bearings</span>
+                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card animate" data-category="bearings">
+                    <div class="product-image">
+                        <img src="img/product_catalogue_img/bushings.png" alt="Bushings">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">Bushings</h3>
+                        <p class="product-desc">Precision-engineered bushings for reducing friction between moving parts, manufactured from high-quality materials for durability and performance.</p>
+
+                        <div class="product-footer">
+                            <span class="product-category">Bearings</span>
+                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card animate" data-category="custom">
+                    <div class="product-image">
+                        <img src="img/product_catalogue_img/Custom Machined Components.png" alt="Custom Machined Components">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">Custom Machined Components</h3>
+                        <p class="product-desc">Bespoke precision components tailored to your specific requirements, manufactured using advanced CNC technology for optimal performance.</p>
+
+                        <div class="product-footer">
+                            <span class="product-category">Custom</span>
+                            <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card animate" data-category="specialty">
+                    <div class="product-image">
+                        <img src="img/product_catalogue_img/Custom Multi-Material Component Systems.png" alt="Custom Multi-Material Component Systems">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">Custom Multi-Material Component Systems</h3>
+                        <p class="product-desc">Our engineering solutions combine multiple materials into integrated precision components that solve complex engineering challenges conventional single-material parts cannot address.</p>
+
+                        <div class="product-footer">
+                            <span class="product-category">Specialty</span>
                             <a href="#" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Custom Solutions Section -->
-            <div class="custom-solutions">
-                <div class="container">
-                    <h2>Custom Engineering Solutions</h2>
-                    <p>Can't find what you're looking for? Our team of experienced engineers can design and manufacture custom components to meet your specific requirements. From concept to delivery, we work closely with you to ensure your needs are met with precision and quality.</p>
-                    <a href="contact.html" class="btn">Request a Quote</a>
+        </div>
+    </section>
+    
+    <!-- Product Categories Overview -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Product Categories</h2>
+                <p>Explore our comprehensive range of precision-engineered components designed to meet diverse industry requirements.</p>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-category-wrapper animate">
+                    <div class="product-category-image">
+                        <img src="img/product_catalogue_img/Precision Spur Gears.png" alt="Precision Gears">
+                        <div class="category-overlay">Precision Gears</div>
+                    </div>
+                    <p>Our precision gears are manufactured to exacting tolerances, ensuring optimal performance in power transmission applications. Available in various configurations including spur, helical, bevel, and worm gears to meet diverse industry requirements.</p>
+                </div>
+                
+                <div class="product-category-wrapper animate">
+                    <div class="product-category-image">
+                        <img src="img/product_catalogue_img/precision_shafts.png" alt="Shafts & Axles">
+                        <div class="category-overlay">Shafts & Axles</div>
+                    </div>
+                    <p>Our high-quality shafts and axles are designed to deliver reliable power transmission in various mechanical systems. We offer standard and custom designs with precise dimensional tolerances and excellent surface finishes.</p>
+                </div>
+                
+                <div class="product-category-wrapper animate">
+                    <div class="product-category-image">
+                        <img src="img/product_catalogue_img/precision bearings.png" alt="Bearings & Bushings">
+                        <div class="category-overlay">Bearings & Bushings</div>
+                    </div>
+                    <p>Our precision bearings and bushings provide smooth operation and reduced friction in rotating machinery applications. Manufactured from high-quality materials, they ensure long service life and reliable performance.</p>
+                </div>
+                
+                <div class="product-category-wrapper animate">
+                    <div class="product-category-image">
+                        <img src="img/product_catalogue_img/Custom Machined Components.png" alt="Custom Components">
+                        <div class="category-overlay">Custom Components</div>
+                    </div>
+                    <p>We specialize in manufacturing custom precision components tailored to specific client requirements. Our advanced CNC machining capabilities allow us to produce complex geometries with tight tolerances for unique applications.</p>
                 </div>
             </div>
         </div>
     </section>
-
+    
+    <!-- Custom Solutions Section -->
+    <section class="container">
+        <div class="product-solutions animate">
+            <h2>Custom Engineering Solutions</h2>
+            <p>Can't find what you're looking for? Our team of experienced engineers can design and manufacture custom components to meet your specific requirements. From concept to delivery, we work closely with you to ensure your needs are met with precision and quality.</p>
+            <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+        </div>
+    </section>
+    
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-info">
                     <h3>United Engineering</h3>
+                    <p>Leading provider of precision-engineered components and manufacturing solutions for industries worldwide.</p>
                     <p>123 Industrial Area, Bangalore, Karnataka, India</p>
                     <p>Phone: +91 80 1234 5678</p>
                     <p>Email: info@unitedengineering.org</p>
-                    <p>GSTIN: 29ABCDE1234F1Z5</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
                 </div>
+                
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="products.html">Products</a></li>
-                        <li><a href="services-quality.html">Services & Quality</a></li>
+                        <li><a href="capabilities.html">Capabilities</a></li>
                         <li><a href="careers.html">Careers</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-social">
-                    <h3>Connect With Us</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    </div>
+                
+                <div class="footer-links">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="products.html">Precision Gears</a></li>
+                        <li><a href="products.html">Shafts & Axles</a></li>
+                        <li><a href="products.html">Bearings</a></li>
+                        <li><a href="products.html">Custom Components</a></li>
+                        <li><a href="products.html">Specialty Systems</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Industries</h3>
+                    <ul>
+                        <li><a href="about.html">Manufacturing</a></li>
+                        <li><a href="about.html">Automotive</a></li>
+                        <li><a href="about.html">Aerospace</a></li>
+                        <li><a href="about.html">Medical</a></li>
+                        <li><a href="about.html">Machinery</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 United Engineering. All rights reserved.</p>
+            
+            <div class="footer-copyright">
+                <p>&copy; 2025 United Engineering. All rights reserved. GSTIN: 29ABCDE1234F1Z5</p>
             </div>
         </div>
     </footer>
-
+    
+    <!-- JavaScript -->
     <script src="js/script.js"></script>
-    <script>
-        // Product Category Filter
-        document.addEventListener('DOMContentLoaded', function() {
-            const categoryButtons = document.querySelectorAll('.category-btn');
-            const productCards = document.querySelectorAll('.product-card');
-
-            
-            categoryButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    categoryButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    button.classList.add('active');
-                    
-                    const category = button.textContent.trim();
-                    
-                    
-                    productCards.forEach(card => {
-                        if (category === 'All Products') {
-                            card.style.display = 'block';
-                        } else {
-                            const productCategory = card.querySelector('.product-category').textContent.trim();
-                            if (productCategory === category) {
-                                card.style.display = 'block';
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>

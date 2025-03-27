@@ -4,294 +4,658 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - United Engineering</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Contact United Engineering for precision engineering services, custom manufacturing, and quality components. Get in touch with our team today.">
+    <meta name="keywords" content="contact engineering company, precision manufacturing contact, engineering services contact">
+    
+    <!-- Favicon -->
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-    <meta name="description" content="Get in touch with United Engineering. Find our contact information, office address, business hours, and send us a message directly through our contact form.">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         .contact-hero {
-            background: linear-gradient(rgba(26, 60, 107, 0.8), rgba(26, 60, 107, 0.9)), url('img/contact-bg.jpg');
+            background: url('img/contact-bg.jpg');
             background-size: cover;
             background-position: center;
-            color: var(--light-text);
-            padding: 70px 0;
+            padding: 8rem 0 5rem;
+            color: white;
             text-align: center;
+            position: relative;
         }
-
-        .contact-content {
-            padding: 60px 0;
+        
+        /* Add a text shadow to ensure readability without the blue tint */
+        .contact-hero-content h1,
+        .contact-hero-content p {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
-
+        
+        .contact-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-section {
+            position: relative;
+        }
+        
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 3rem;
         }
-
-        .contact-info h2 {
-            margin-bottom: 30px;
-            color: var(--primary-color);
+        
+        .contact-form {
+            background-color: var(--white);
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            height: 100%;
         }
-
-        .contact-item {
+        
+        .form-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 0.375rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .contact-info {
+            height: 100%;
+        }
+        
+        .info-card {
+            background-color: var(--white);
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .info-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+        
+        .info-item {
             display: flex;
-            margin-bottom: 30px;
+            margin-bottom: 1.5rem;
         }
-
-        .contact-icon {
-            margin-right: 20px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-color);
-            color: var(--light-text);
+        
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(37, 99, 235, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--primary);
+            margin-right: 1rem;
             flex-shrink: 0;
         }
-
-        .contact-icon i {
-            font-size: 1.4rem;
+        
+        .info-content {
+            flex-grow: 1;
         }
-
-        .contact-text h3 {
-            margin-bottom: 5px;
-            color: var(--primary-color);
+        
+        .info-label {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.25rem;
         }
-
-        .contact-form h2 {
-            margin-bottom: 30px;
-            color: var(--primary-color);
+        
+        .info-text {
+            color: var(--text-light);
         }
-
-        .form-group {
-            margin-bottom: 20px;
+        
+        .info-text a {
+            color: var(--text-light);
+            transition: color 0.3s ease;
         }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
+        
+        .info-text a:hover {
+            color: var(--primary);
         }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Roboto', sans-serif;
+        
+        .business-hours {
+            margin-top: 0.5rem;
         }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
+        
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
         }
-
-        .contact-map {
-            margin-top: 60px;
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
         }
-
-        .contact-map h2 {
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            text-align: center;
-        }
-
-        .map-container {
-            height: 400px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .map-placeholder {
-            width: 100%;
-            height: 100%;
-            background-color: var(--secondary-color);
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--white);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary-color);
-            font-weight: 500;
+            color: var(--primary);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
         }
-
-        /* Tech hint button */
-        .btn-tech {
-            background-color: var(--tech-accent);
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            background-color: var(--primary);
+            color: var(--white);
+            box-shadow: var(--shadow);
         }
-
-        .btn-tech:hover {
-            background-color: #e64a19;
+        
+        .map-section {
+            margin-top: 3rem;
         }
-
-        @media (max-width: 768px) {
+        
+        .map-container {
+            height: 400px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .faq-section {
+            background-color: var(--gray-100);
+            padding: 5rem 0;
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            background-color: var(--white);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            padding: 0 2rem 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .faq-item.active {
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-item.active .faq-question {
+            color: var(--primary);
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+        
+        @media (max-width: 991px) {
             .contact-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
-
-            .map-container {
-                height: 300px;
+            
+            .info-card {
+                margin-bottom: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container">
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="img/united_engineering_logo.png" alt="United Engineering Logo" class="logo-img">
+                    <img src="img/united_engineering_logo.png" alt="United Engineering Logo">
                 </a>
             </div>
+            
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="services-quality.html">Services & Quality</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="capabilities.html" class="nav-link">Capabilities</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
             </nav>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
-
+    
     <!-- Hero Section -->
     <section class="contact-hero">
         <div class="container">
-            <h2>Contact Us</h2>
-            <p>Get in Touch with Our Team</p>
+            <div class="contact-hero-content animate">
+                <h1>Contact Us</h1>
+                <p>Get in Touch with Our Team for Any Inquiries or Support</p>
+            </div>
         </div>
     </section>
-
-    <!-- Contact Content -->
-    <section class="contact-content">
+    
+    <!-- Contact Section -->
+    <section class="section contact-section">
         <div class="container">
             <div class="contact-grid">
-                <div class="contact-info">
-                    <h2>Our Contact Information</h2>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                <div class="contact-form animate">
+                    <h2 class="form-title">Send Us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Your Name *</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company" class="form-label">Company Name</label>
+                                <input type="text" id="company" name="company" class="form-control">
+                            </div>
                         </div>
-                        <div class="contact-text">
-                            <h3>Address</h3>
-                            <p>123 Industrial Area, Bangalore, Karnataka, India</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-control">
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Phone</h3>
-                            <p>+91 80 1234 5678</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Email</h3>
-                            <p>info@unitedengineering.org</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Business Hours</h3>
-                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                            <p>Saturday: 9:00 AM - 1:00 PM</p>
-                            <p>Sunday: Closed</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h2>Send Us a Message</h2>
-                    <form action="#" method="POST">
+                        
                         <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <label for="subject" class="form-label">Subject *</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="message" class="form-label">Your Message *</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-tech">Send Message</button>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
                 </div>
+                
+                <div class="contact-info animate">
+                    <div class="info-card">
+                        <h2 class="info-title">Contact Information</h2>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">Office Location</div>
+                                <div class="info-text">123 Industrial Area, Bangalore, Karnataka, India</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">Phone Number</div>
+                                <div class="info-text">
+                                    <a href="tel:+918012345678">+91 80 1234 5678</a> (Main Office)<br>
+                                    <a href="tel:+918012345679">+91 80 1234 5679</a> (Sales Inquiries)
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">Email Address</div>
+                                <div class="info-text">
+                                    <a href="mailto:info@unitedengineering.org">info@unitedengineering.org</a> (General Inquiries)<br>
+                                    <a href="mailto:sales@unitedengineering.org">sales@unitedengineering.org</a> (Sales & Quotes)
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">Business Hours</div>
+                                <div class="info-text">
+                                    <div class="business-hours">
+                                        <div class="hours-row">
+                                            <span>Monday - Friday:</span>
+                                            <span>9:00 AM - 6:00 PM</span>
+                                        </div>
+                                        <div class="hours-row">
+                                            <span>Saturday:</span>
+                                            <span>9:00 AM - 1:00 PM</span>
+                                        </div>
+                                        <div class="hours-row">
+                                            <span>Sunday:</span>
+                                            <span>Closed</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-id-card"></i>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">GST Information</div>
+                                <div class="info-text">GSTIN: 29ABCDE1234F1Z5</div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-
+            
             <!-- Map Section -->
-            <div class="contact-map">
-                <h2>Our Location</h2>
+            <div class="map-section animate">
                 <div class="map-container">
-                    <!-- Placeholder for map -->
-                    <div class="map-placeholder">
-                        <p>Map of UES Location - 123 Industrial Area, Bangalore, Karnataka, India</p>
+                    <!-- Replace with your actual Google Maps embed code -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124425.57477124193!2d77.49086386354644!3d12.954037016397476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sus!4v1710989876042!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our services, ordering process, and more.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item animate active">
+                    <div class="faq-question">
+                        <span>How can I request a quote for your services?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can request a quote by filling out our contact form on this page, sending an email to sales@unitedengineering.org, or calling our sales team at +91 80 1234 5679. Please provide as much detail as possible about your requirements, including specifications, quantities, and timeline, to help us provide an accurate quote.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate">
+                    <div class="faq-question">
+                        <span>What information should I provide when requesting a quote?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To provide an accurate quote, we typically need the following information: technical drawings or specifications, material requirements, quantity needed, quality certifications required, delivery timeline, and any special requirements or considerations. The more details you can provide, the more precise our quote will be.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate">
+                    <div class="faq-question">
+                        <span>How long does it take to get a response to my inquiry?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We typically respond to all inquiries within 24-48 business hours. For complex technical inquiries that require detailed analysis or consultation with our engineering team, it may take up to 3-5 business days to provide a comprehensive response. Rest assured, we prioritize prompt communication and will keep you updated throughout the process.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate">
+                    <div class="faq-question">
+                        <span>Do you provide services internationally?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we serve clients globally and have experience with international shipping and logistics. We are familiar with export documentation requirements and can work with your preferred shipping method or arrange shipping on your behalf. Please note that international orders may have longer lead times and additional shipping costs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate">
+                    <div class="faq-question">
+                        <span>Can I visit your facility?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we welcome visits from current and prospective clients. Facility tours provide an opportunity to see our capabilities firsthand and meet our team. Tours are available by appointment only, so please contact us in advance to schedule a visit. We recommend providing at least one week's notice to ensure we can accommodate your visit and prepare accordingly.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-info">
                     <h3>United Engineering</h3>
+                    <p>Leading provider of precision-engineered components and manufacturing solutions for industries worldwide.</p>
                     <p>123 Industrial Area, Bangalore, Karnataka, India</p>
                     <p>Phone: +91 80 1234 5678</p>
                     <p>Email: info@unitedengineering.org</p>
-                    <p>GSTIN: 29ABCDE1234F1Z5</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
                 </div>
+                
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="products.html">Products</a></li>
-                        <li><a href="services-quality.html">Services & Quality</a></li>
+                        <li><a href="capabilities.html">Capabilities</a></li>
                         <li><a href="careers.html">Careers</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-social">
-                    <h3>Connect With Us</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    </div>
+                
+                <div class="footer-links">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="products.html">Precision Gears</a></li>
+                        <li><a href="products.html">Shafts & Axles</a></li>
+                        <li><a href="products.html">Bearings</a></li>
+                        <li><a href="products.html">Custom Components</a></li>
+                        <li><a href="products.html">Specialty Systems</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Industries</h3>
+                    <ul>
+                        <li><a href="about.html">Manufacturing</a></li>
+                        <li><a href="about.html">Automotive</a></li>
+                        <li><a href="about.html">Aerospace</a></li>
+                        <li><a href="about.html">Medical</a></li>
+                        <li><a href="about.html">Machinery</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 United Engineering. All rights reserved.</p>
+            
+            <div class="footer-copyright">
+                <p>&copy; 2025 United Engineering. All rights reserved. GSTIN: 29ABCDE1234F1Z5</p>
             </div>
         </div>
     </footer>
-
+    
+    <!-- JavaScript -->
     <script src="js/script.js"></script>
+    <script>
+        // Form submission handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // Simulate form submission
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    
+                    submitBtn.textContent = 'Sending...';
+                    submitBtn.disabled = true;
+                    
+                    setTimeout(() => {
+                        // Simulate success
+                        alert('Thank you for your message! We will get back to you soon.');
+                        contactForm.reset();
+                        
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 1500);
+                });
+            }
+            
+            // FAQ toggle functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Toggle current item
+                    item.classList.toggle('active');
+                    
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

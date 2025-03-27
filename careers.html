@@ -4,1375 +4,812 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Careers - United Engineering</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Join the United Engineering team. Explore career opportunities in precision engineering, manufacturing, quality control and more.">
+    <meta name="keywords" content="engineering careers, manufacturing jobs, precision engineering employment, job openings">
+    
+    <!-- Favicon -->
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-    <meta name="description" content="Join United Engineering's team and build your career with a company that champions innovation and excellence in precision engineering.">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         .careers-hero {
-            background: linear-gradient(rgba(26, 60, 107, 0.8), rgba(26, 60, 107, 0.9)), url('img/careers-bg.jpg');
+            background: url('img/careers-bg.jpg');
             background-size: cover;
             background-position: center;
-            color: var(--light-text);
-            padding: 70px 0;
+            padding: 8rem 0 5rem;
+            color: white;
             text-align: center;
         }
-
-        .careers-content {
-            padding: 60px 0;
-        }
-
-        .careers-intro {
-            text-align: center;
+        
+        .careers-hero-content {
             max-width: 800px;
-            margin: 0 auto 60px;
+            margin: 0 auto;
         }
-
-        .job-listings {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-
-        .job-card {
-            background-color: var(--secondary-color);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .job-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .job-header {
-            padding: 20px;
-            background-color: var(--primary-color);
-            color: var(--light-text);
-        }
-
-        .job-header h3 {
-            margin-bottom: 5px;
-            color: var(--light-text);
-        }
-
-        .job-header p {
-            margin-bottom: 0;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .job-header p i {
-            margin-right: 8px;
-        }
-
-        .job-body {
-            padding: 20px;
-        }
-
-        .job-description {
-            margin-bottom: 20px;
-        }
-
-        .job-requirements {
-            margin-bottom: 20px;
-        }
-
-        .job-requirements ul {
-            list-style: disc;
-            padding-left: 20px;
-        }
-
-        .job-requirements ul li {
-            margin-bottom: 8px;
-        }
-
-        .tech-job {
-            border-left: 3px solid var(--tech-accent);
-        }
-
-        .tech-job .job-header {
-            background: linear-gradient(90deg, var(--primary-color), #2e5083);
-        }
-
-        .tech-job h3 {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .apply-btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--light-text);
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .apply-btn:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-2px);
-        }
-
-        .tech-job .apply-btn {
-            background-color: var(--tech-accent);
-        }
-
-        .tech-job .apply-btn:hover {
-            background-color: #e64a19;
-        }
-
-        .careers-process {
-            margin-top: 80px;
-            text-align: center;
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .process-step {
-            padding: 30px 20px;
-            background-color: var(--secondary-color);
-            border-radius: 8px;
+        
+        .culture-section {
             position: relative;
         }
-
-        .step-number {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary-color);
-            color: var(--light-text);
+        
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .culture-card {
+            background-color: var(--white);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .culture-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .culture-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .culture-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .culture-card:hover .culture-image img {
+            transform: scale(1.1);
+        }
+        
+        .culture-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .culture-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .culture-desc {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        
+        .benefits-section {
+            background-color: var(--gray-100);
+            position: relative;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .benefit-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(37, 99, 235, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
+            margin: 0 auto 1.5rem;
+            color: var(--primary);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
         }
-
-        .process-step i {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
+        
+        .benefit-card:hover .benefit-icon {
+            background-color: var(--primary);
+            color: var(--white);
         }
-
-        .application-form {
-            max-width: 800px;
-            margin: 80px auto 0;
-            padding: 40px;
-            background-color: var(--secondary-color);
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        
+        .benefit-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text);
         }
-
-        .form-group {
-            margin-bottom: 20px;
+        
+        .benefit-desc {
+            color: var(--text-light);
         }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
+        
+        .openings-section {
+            padding: 5rem 0;
+        }
+        
+        .openings-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .opening-item {
+            background-color: var(--white);
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .opening-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .opening-header {
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .opening-title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .opening-department {
+            background-color: var(--gray-100);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
             font-weight: 500;
         }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Roboto', sans-serif;
+        
+        .opening-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text);
         }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
+        
+        .opening-location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.875rem;
         }
-
-        .form-submit {
-            text-align: center;
-            margin-top: 30px;
+        
+        .opening-toggle {
+            color: var(--primary);
+            transition: transform 0.3s ease;
         }
-
-        /* Binary code background - subtle tech hint */
-        /* Categories and Search */
-        .job-categories-section {
-            margin-bottom: 40px;
+        
+        .opening-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
-
-        .job-categories {
+        
+        .opening-inner {
+            padding: 1rem 2rem 2rem;
+            border-top: 1px solid var(--gray-200);
+        }
+        
+        .opening-desc {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .opening-requirements {
+            margin-bottom: 1.5rem;
+        }
+        
+        .opening-requirements h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .requirements-list {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .requirements-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .opening-meta {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
         }
-
-        .category-btn {
-            padding: 8px 16px;
-            background-color: var(--secondary-color);
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .category-btn.active, .category-btn:hover {
-            background-color: var(--primary-color);
-            color: var(--light-text);
-        }
-
-        .job-search {
-            display: flex;
-            margin-bottom: 30px;
-            max-width: 500px;
-        }
-
-        .job-search input {
-            flex: 1;
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px 0 0 4px;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .search-btn {
-            padding: 10px 15px;
-            background-color: var(--primary-color);
-            color: var(--light-text);
-            border: none;
-            border-radius: 0 4px 4px 0;
-            cursor: pointer;
-        }
-
-        /* Enhanced Job Cards */
-        .job-card {
-            position: relative;
-            transition: all 0.3s ease;
-            border-radius: 8px;
-            overflow: hidden;
-            border-left: 3px solid transparent;
-        }
-
-        .job-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .job-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 4px 10px;
-            background-color: rgba(26, 60, 107, 0.1);
-            color: var(--primary-color);
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .tech-badge {
-            background-color: rgba(255, 87, 34, 0.1);
-            color: var(--tech-accent);
-        }
-
-        .job-responsibilities {
-            margin-bottom: 20px;
-        }
-
-        .tech-job {
-            border-left-color: var(--tech-accent);
-        }
-
-        .tech-btn {
-            background-color: var(--tech-accent);
-        }
-
-        .tech-btn:hover {
-            background-color: #e64a19;
-        }
-
-        .step-timeline {
-            color: #666;
-            font-size: 0.85rem;
-            margin-top: 5px;
+        
+        .meta-item {
             display: flex;
             align-items: center;
+            gap: 0.5rem;
         }
-
-        .step-timeline i {
-            margin-right: 5px;
+        
+        .meta-item i {
+            color: var(--primary);
         }
-
-        /* Binary Pattern Background */
-        .binary-bg {
-            position: relative;
+        
+        .opening-item.active .opening-header {
+            background-color: var(--primary);
         }
-
-        .binary-bg::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('img/binary-pattern.svg');
-            background-size: cover;
-            opacity: 0.02;
-            pointer-events: none;
+        
+        .opening-item.active .opening-title {
+            color: var(--white);
         }
-
-        /* Open Application Card */
-        .open-application {
-            margin: 40px 0;
-            background-color: var(--secondary-color);
-            border-radius: 8px;
-            overflow: hidden;
-            padding: 30px;
-            text-align: center;
-            position: relative;
+        
+        .opening-item.active .opening-department {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--white);
         }
-
-        .open-application h3 {
-            margin-bottom: 15px;
-            color: var(--primary-color);
+        
+        .opening-item.active .opening-location {
+            color: rgba(255, 255, 255, 0.8);
         }
-
-        .open-application p {
-            max-width: 800px;
-            margin: 0 auto 20px;
+        
+        .opening-item.active .opening-toggle {
+            color: var(--white);
+            transform: rotate(180deg);
         }
-
-        .open-app-btn {
-            padding: 12px 25px;
+        
+        .opening-item.active .opening-content {
+            max-height: 1000px;
         }
-
-        /* Enhanced Hiring Process Section */
-        .process-intro {
-            max-width: 800px;
-            margin: 0 auto 30px;
+        
+        .apply-section {
+            background-color: var(--gray-100);
+            padding: 5rem 0;
             text-align: center;
         }
-
-        .process-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #ddd;
+        
+        .apply-content {
+            max-width: 700px;
+            margin: 0 auto;
         }
-
-        .process-tab {
-            padding: 10px 20px;
-            margin: 0 5px;
-            background: none;
-            border: none;
-            border-bottom: 3px solid transparent;
-            cursor: pointer;
-            font-weight: 500;
+        
+        .apply-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+        
+        .apply-desc {
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .process-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow);
             transition: all 0.3s ease;
-        }
-
-        .process-tab.active {
-            border-bottom-color: var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        .process-content {
-            display: none;
-        }
-
-        .process-content.active {
-            display: block;
-        }
-
-        .tech-process-note {
-            margin-top: 30px;
-            padding: 15px 20px;
-            background-color: rgba(255, 87, 34, 0.05);
-            border-left: 3px solid var(--tech-accent);
-            border-radius: 4px;
-        }
-
-        .tech-process-note p {
-            margin: 0;
-        }
-
-        /* Two-step Form Styles */
-        .form-steps {
-            display: flex;
-            margin-bottom: 30px;
             position: relative;
+            height: 100%;
         }
-
-        .form-steps::after {
-            content: '';
+        
+        .process-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .process-number {
             position: absolute;
-            top: 20px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #ddd;
-            z-index: 1;
-        }
-
-        .form-step {
-            flex: 1;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            background-color: var(--secondary-color);
-            padding: 10px;
-            font-weight: 500;
-            color: #666;
-        }
-
-        .form-step.active {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .step-indicator {
-            display: inline-block;
+            top: -15px;
+            right: -15px;
             width: 40px;
             height: 40px;
-            background-color: #ddd;
-            color: #666;
+            background-color: var(--primary);
+            color: var(--white);
             border-radius: 50%;
-            line-height: 40px;
-            margin-right: 10px;
-        }
-
-        .form-step.active .step-indicator {
-            background-color: var(--primary-color);
-            color: var(--light-text);
-        }
-
-        .form-step-content {
-            display: none;
-        }
-
-        .form-step-content.active {
-            display: block;
-        }
-
-        .form-actions {
             display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
         }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 1px solid var(--primary-color);
+        
+        .process-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
         }
-
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: var(--light-text);
+        
+        .process-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text);
         }
-
-        .error-message {
-            color: #e74c3c;
-            font-size: 0.85rem;
-            margin-top: 5px;
-            display: none;
+        
+        .process-desc {
+            color: var(--text-light);
         }
-
-        .application-success {
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .success-icon {
-            font-size: 4rem;
-            color: #27ae60;
-            margin-bottom: 20px;
-        }
-
-        .required {
-            color: #e74c3c;
-        }
-
-        .checkbox-label {
-            display: flex;
-            align-items: flex-start;
-            cursor: pointer;
-        }
-
-        .checkbox-label input {
-            margin-top: 4px;
-            margin-right: 10px;
-        }
-
+        
         @media (max-width: 768px) {
-            .job-categories {
+            .opening-header {
                 flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
             }
-
-            .process-tabs {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .process-tab {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-
-            .process-steps {
-                grid-template-columns: 1fr;
-            }
-
-            .application-form {
-                padding: 20px;
-            }
-
-            .form-steps {
-                flex-direction: column;
-            }
-
-            .form-steps::after {
-                display: none;
-            }
-
-            .form-step {
-                margin-bottom: 10px;
-            }
-
-            .form-actions {
-                flex-direction: column-reverse;
-                gap: 10px;
-            }
-
-            .form-actions button {
-                width: 100%;
+            
+            .opening-toggle {
+                position: absolute;
+                top: 1.5rem;
+                right: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container">
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="img/united_engineering_logo.png" alt="United Engineering Logo" class="logo-img">
+                    <img src="img/united_engineering_logo.png" alt="United Engineering Logo">
                 </a>
             </div>
+            
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="services-quality.html">Services & Quality</a></li>
-                    <li><a href="careers.html" class="active">Careers</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="capabilities.html" class="nav-link">Capabilities</a></li>
+                    <li><a href="careers.html" class="nav-link active">Careers</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
             </nav>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
-
+    
     <!-- Hero Section -->
     <section class="careers-hero">
         <div class="container">
-            <h2>Join Our Team</h2>
-            <p>Build Your Career with United Engineering</p>
+            <div class="careers-hero-content animate">
+                <h1>Join Our Team</h1>
+                <p>Build Your Career in Precision Engineering</p>
+            </div>
         </div>
     </section>
-
-    <!-- Careers Content -->
-    <section class="careers-content">
+    
+    <!-- Company Culture -->
+    <section class="section culture-section">
         <div class="container">
-            <div class="careers-intro">
-                <h2>Why Work With Us</h2>
-                <p>Join United Engineering and contribute to a company that champions innovation and excellence. We're seeking talented individuals to help us grow and explore new opportunities.</p>
-                <p>At United Engineering, we believe in fostering a collaborative environment where every team member can grow professionally while contributing to our shared success.</p>
-            </div>
-
-            <div class="job-categories-section">
-                <h2>Current Openings</h2>
-                <div class="job-categories">
-                    <button class="category-btn active" data-category="all">All Departments</button>
-                    <button class="category-btn" data-category="engineering">Precision Engineering</button>
-                    <button class="category-btn" data-category="technology">Technology Division</button>
-                    <button class="category-btn" data-category="quality">Quality Assurance</button>
-                    <button class="category-btn" data-category="operations">Operations</button>
-                </div>
-                <div class="job-search">
-                    <input type="text" id="job-search-input" placeholder="Search positions...">
-                    <button class="search-btn"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
-            <div class="job-listings">
-                <!-- Engineering Department Jobs -->
-                <div class="job-card" data-category="engineering">
-                    <div class="job-header">
-                        <div class="job-badge">Engineering</div>
-                        <h3>Senior Mechanical Engineer</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
-                        <p><i class="fas fa-briefcase"></i> Full-time</p>
-                    </div>
-                    <div class="job-body">
-                        <div class="job-description">
-                            <h4>Job Description</h4>
-                            <p>We're seeking a Senior Mechanical Engineer to lead the design and development of precision machinery components and systems. You'll collaborate with cross-functional teams to develop innovative engineering solutions while ensuring adherence to quality standards and manufacturing requirements.</p>
-                        </div>
-                        <div class="job-responsibilities">
-                            <h4>Key Responsibilities</h4>
-                            <ul>
-                                <li>Design and develop precision mechanical components using 3D CAD software</li>
-                                <li>Create detailed engineering drawings and specifications for manufacturing</li>
-                                <li>Conduct engineering analyses including FEA and tolerance studies</li>
-                                <li>Collaborate with manufacturing team to ensure producibility</li>
-                                <li>Troubleshoot and resolve technical issues during production</li>
-                            </ul>
-                        </div>
-                        <div class="job-requirements">
-                            <h4>Requirements</h4>
-                            <ul>
-                                <li>Bachelor's degree in Mechanical Engineering (Master's preferred)</li>
-                                <li>5+ years of experience in mechanical design for precision components</li>
-                                <li>Expert proficiency in SolidWorks or similar CAD software</li>
-                                <li>Experience with GD&T and tolerance analysis</li>
-                                <li>Knowledge of manufacturing processes including CNC machining</li>
-                                <li>Strong analytical and problem-solving skills</li>
-                            </ul>
-                        </div>
-                        <a href="#application-form" class="apply-btn" data-job="Senior Mechanical Engineer">Apply Now</a>
-                    </div>
-                </div>
-
-                <div class="job-card" data-category="engineering">
-                    <div class="job-header">
-                        <div class="job-badge">Engineering</div>
-                        <h3>CNC Programmer</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
-                        <p><i class="fas fa-briefcase"></i> Full-time</p>
-                    </div>
-                    <div class="job-body">
-                        <div class="job-description">
-                            <h4>Job Description</h4>
-                            <p>We are looking for an experienced CNC Programmer to develop efficient machining programs for our multi-axis CNC machines. The ideal candidate will optimize production processes while maintaining precision and quality standards.</p>
-                        </div>
-                        <div class="job-responsibilities">
-                            <h4>Key Responsibilities</h4>
-                            <ul>
-                                <li>Develop CNC programs for multi-axis machining centers</li>
-                                <li>Optimize toolpaths for efficiency and quality</li>
-                                <li>Create and maintain programming documentation</li>
-                                <li>Collaborate with engineers to improve manufacturability</li>
-                                <li>Troubleshoot machining issues and implement solutions</li>
-                            </ul>
-                        </div>
-                        <div class="job-requirements">
-                            <h4>Requirements</h4>
-                            <ul>
-                                <li>Diploma or degree in Manufacturing Engineering or related field</li>
-                                <li>3+ years of experience in CNC programming</li>
-                                <li>Proficiency with CAM software (Mastercam or similar)</li>
-                                <li>Knowledge of machining processes and tooling</li>
-                                <li>Experience with G-code programming</li>
-                                <li>Strong attention to detail and problem-solving skills</li>
-                            </ul>
-                        </div>
-                        <a href="#application-form" class="apply-btn" data-job="CNC Programmer">Apply Now</a>
-                    </div>
-                </div>
-
-                <!-- Quality Department Jobs -->
-                <div class="job-card" data-category="quality">
-                    <div class="job-header">
-                        <div class="job-badge">Quality Assurance</div>
-                        <h3>Quality Control Engineer</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
-                        <p><i class="fas fa-briefcase"></i> Full-time</p>
-                    </div>
-                    <div class="job-body">
-                        <div class="job-description">
-                            <h4>Job Description</h4>
-                            <p>We are seeking a detail-oriented Quality Control Engineer to ensure our precision components meet the highest standards. You will develop inspection processes, manage quality documentation, and drive continuous improvement initiatives.</p>
-                        </div>
-                        <div class="job-responsibilities">
-                            <h4>Key Responsibilities</h4>
-                            <ul>
-                                <li>Develop and implement quality control procedures</li>
-                                <li>Conduct first article inspections and capability studies</li>
-                                <li>Create and maintain quality documentation and records</li>
-                                <li>Use CMM and precision measurement tools for inspection</li>
-                                <li>Analyze quality data and implement improvement initiatives</li>
-                            </ul>
-                        </div>
-                        <div class="job-requirements">
-                            <h4>Requirements</h4>
-                            <ul>
-                                <li>Bachelor's degree in Mechanical Engineering or related field</li>
-                                <li>3+ years of experience in quality engineering</li>
-                                <li>Experience with CMM programming and GD&T</li>
-                                <li>Knowledge of ISO 9001 and related quality standards</li>
-                                <li>Strong analytical and documentation skills</li>
-                                <li>Experience with SPC and quality management software</li>
-                            </ul>
-                        </div>
-                        <a href="#application-form" class="apply-btn" data-job="Quality Control Engineer">Apply Now</a>
-                    </div>
-                </div>
-
-                <!-- Operations Department Jobs -->
-                <div class="job-card" data-category="operations">
-                    <div class="job-header">
-                        <div class="job-badge">Operations</div>
-                        <h3>Manufacturing Project Manager</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
-                        <p><i class="fas fa-briefcase"></i> Full-time</p>
-                    </div>
-                    <div class="job-body">
-                        <div class="job-description">
-                            <h4>Job Description</h4>
-                            <p>We are looking for an experienced Manufacturing Project Manager to oversee complex precision manufacturing projects from inception to delivery. You will coordinate cross-functional teams, manage resources, and ensure on-time delivery within budget.</p>
-                        </div>
-                        <div class="job-responsibilities">
-                            <h4>Key Responsibilities</h4>
-                            <ul>
-                                <li>Manage full lifecycle of manufacturing projects</li>
-                                <li>Develop project plans, timelines, and resource requirements</li>
-                                <li>Coordinate between engineering, production, and quality teams</li>
-                                <li>Monitor project progress and address issues promptly</li>
-                                <li>Implement process improvements to enhance efficiency</li>
-                                <li>Maintain project documentation and reporting</li>
-                            </ul>
-                        </div>
-                        <div class="job-requirements">
-                            <h4>Requirements</h4>
-                            <ul>
-                                <li>Bachelor's degree in Engineering or related field</li>
-                                <li>5+ years of experience in manufacturing project management</li>
-                                <li>Strong understanding of precision manufacturing processes</li>
-                                <li>Experience with project management methodologies</li>
-                                <li>Excellent leadership and communication skills</li>
-                                <li>Problem-solving abilities and attention to detail</li>
-                            </ul>
-                        </div>
-                        <a href="#application-form" class="apply-btn" data-job="Manufacturing Project Manager">Apply Now</a>
-                    </div>
-                </div>
-
-                <!-- Technology Department Jobs -->
-                <div class="job-card tech-job" data-category="technology">
-                    <div class="job-header">
-                        <div class="job-badge tech-badge">Technology Division</div>
-                        <h3>Full Stack Developer</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
-                        <p><i class="fas fa-briefcase"></i> Full-time</p>
-                    </div>
-                    <div class="job-body">
-                        <div class="job-description">
-                            <h4>Job Description</h4>
-                            <p>Join our Technology Division to build innovative internal systems that drive operational efficiency. You'll develop full-stack applications for inventory management, production tracking, and supply chain optimization using modern web technologies.</p>
-                        </div>
-                        <div class="job-responsibilities">
-                            <h4>Key Responsibilities</h4>
-                            <ul>
-                                <li>Design and develop web applications with modern frameworks</li>
-                                <li>Create responsive and intuitive user interfaces</li>
-                                <li>Implement RESTful APIs and database integrations</li>
-                                <li>Optimize application performance and scalability</li>
-                                <li>Collaborate with stakeholders to understand business requirements</li>
-                                <li>Participate in code reviews and maintain coding standards</li>
-                            </ul>
-                        </div>
-                        <div class="job-requirements">
-                            <h4>Requirements</h4>
-                            <ul>
-                                <li>Bachelor's degree in Computer Science or equivalent experience</li>
-                                <li>3+ years of full-stack development experience</li>
-                                <li>Proficiency in JavaScript/TypeScript, React, and Node.js</li>
-                                <li>Experience with SQL and NoSQL databases</li>
-                                <li>Understanding of RESTful APIs and microservices architecture</li>
-                                <li>Knowledge of software development best practices and patterns</li>
-                            </ul>
-                        </div>
-                        <a href="#application-form" class="apply-btn tech-btn" data-job="Full Stack Developer">Apply Now</a>
-                    </div>
-                </div>
-
-                <div class="job-card tech-job" data-category="technology">
-                    <div class="job-header">
-                        <div class="job-badge tech-badge">Technology Division</div>
-                        <h3>DevOps Engineer</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
-                        <p><i class="fas fa-briefcase"></i> Full-time</p>
-                    </div>
-                    <div class="job-body">
-                        <div class="job-description">
-                            <h4>Job Description</h4>
-                            <p>We're seeking a DevOps Engineer to join our Technology Division to build and maintain our CI/CD pipelines, cloud infrastructure, and automation tools. You'll work closely with developers to streamline deployment processes and ensure system reliability.</p>
-                        </div>
-                        <div class="job-responsibilities">
-                            <h4>Key Responsibilities</h4>
-                            <ul>
-                                <li>Design and implement CI/CD pipelines for application deployment</li>
-                                <li>Manage cloud infrastructure using Infrastructure as Code</li>
-                                <li>Monitor system performance and implement improvements</li>
-                                <li>Automate routine operational tasks</li>
-                                <li>Implement security best practices and compliance requirements</li>
-                                <li>Provide technical support and troubleshooting</li>
-                            </ul>
-                        </div>
-                        <div class="job-requirements">
-                            <h4>Requirements</h4>
-                            <ul>
-                                <li>Bachelor's degree in Computer Science or equivalent experience</li>
-                                <li>3+ years of experience in DevOps or similar role</li>
-                                <li>Experience with cloud platforms (AWS, Azure, or GCP)</li>
-                                <li>Proficiency with containerization technologies (Docker, Kubernetes)</li>
-                                <li>Knowledge of CI/CD tools (Jenkins, GitLab CI, or similar)</li>
-                                <li>Experience with Infrastructure as Code (Terraform, CloudFormation)</li>
-                                <li>Strong scripting skills (Python, Bash)</li>
-                            </ul>
-                        </div>
-                        <a href="#application-form" class="apply-btn tech-btn" data-job="DevOps Engineer">Apply Now</a>
-                    </div>
-                </div>
+            <div class="section-title">
+                <h2>Our Culture</h2>
+                <p>At United Engineering, we foster a collaborative and innovative environment where talented individuals can thrive, develop their skills, and contribute to our success.</p>
             </div>
             
-            <!-- Open Application Option -->
-            <div class="open-application">
-                <div class="open-application-content">
-                    <h3>Don't see the right position?</h3>
-                    <p>We're always looking for talented professionals to join our team. Submit your resume for future consideration, and we'll contact you when a suitable position becomes available.</p>
-                    <a href="#application-form" class="btn open-app-btn" data-job="Open Application">Submit Open Application</a>
-                </div>
-            </div>
-
-            <!-- Application Process -->
-            <div class="careers-process">
-                <h2>Our Hiring Process</h2>
-                <div class="process-intro">
-                    <p>At United Engineering, we've designed our recruitment process to identify candidates who not only have the right skills and experience but also align with our values of excellence, innovation, and collaboration. Our process may vary slightly depending on the department and role.</p>
-                </div>
-                
-                <div class="process-tabs">
-                    <button class="process-tab active" data-tab="engineering">Engineering & Manufacturing Roles</button>
-                    <button class="process-tab" data-tab="technology">Technology Division Roles</button>
-                </div>
-                
-                <div class="process-content engineering-process active">
-                    <div class="process-steps">
-                        <div class="process-step">
-                            <div class="step-number">1</div>
-                            <i class="fas fa-file-alt"></i>
-                            <h3>Application Review</h3>
-                            <p>Our recruitment team carefully reviews your application, resume, and cover letter to assess your qualifications and experience.</p>
-                            <p class="step-timeline"><i class="far fa-clock"></i> 1-2 weeks</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">2</div>
-                            <i class="fas fa-phone-alt"></i>
-                            <h3>Initial Screening</h3>
-                            <p>A phone or video call with our HR team to discuss your background, experience, and interest in the role.</p>
-                            <p class="step-timeline"><i class="far fa-clock"></i> 30-45 minutes</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">3</div>
-                            <i class="fas fa-cogs"></i>
-                            <h3>Technical Assessment</h3>
-                            <p>In-depth discussion with department heads and technical specialists focused on your technical knowledge and problem-solving abilities.</p>
-                            <p class="step-timeline"><i class="far fa-clock"></i> 1-2 hours</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">4</div>
-                            <i class="fas fa-user-tie"></i>
-                            <h3>Final Interview</h3>
-                            <p>Meet with senior management to discuss your fit with our team, values, and company culture.</p>
-                            <p class="step-timeline"><i class="far fa-clock"></i> 45-60 minutes</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">5</div>
-                            <i class="fas fa-handshake"></i>
-                            <h3>Offer & Onboarding</h3>
-                            <p>If selected, you'll receive a competitive offer and begin our comprehensive onboarding program.</p>
-                            <p class="step-timeline"><i class="far fa-clock"></i> Offer within 1 week</p>
-                        </div>
+            <div class="culture-grid">
+                <div class="culture-card animate">
+                    <div class="culture-image">
+                        <img src="img/factory.jpg" alt="Innovation">
+                    </div>
+                    <div class="culture-content">
+                        <h3 class="culture-title">Innovation & Excellence</h3>
+                        <p class="culture-desc">We encourage creative thinking and the pursuit of excellence in everything we do. Our team members are empowered to propose new ideas, challenge conventional approaches, and develop innovative solutions to complex engineering challenges.</p>
                     </div>
                 </div>
                 
-                <div class="process-content technology-process">
-                    <div class="process-steps">
-                        <div class="process-step">
-                            <div class="step-number">1</div>
-                            <i class="fas fa-file-alt"></i>
-                            <h3>Application Review</h3>
-                            <p>Our tech team reviews your application, GitHub profile, portfolio, and any other submitted materials.</p>
-                            <p class="step-timeline"><i class="far fa-clock"></i> 1 week</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">2</div>
-                            <i class="fas fa-phone-alt"></i>
-                            <h3>Initial HR Screening</h3>
-                            <p>A conversation with our HR team to understand your background, experience, and interest in joining our Technology Division.</p>
-                            <p class="step-timeline"><i class="far fa-clock"></i> 30 minutes</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">3</div>
-                            <i class="fas fa-laptop-code"></i>
-                            <h3>Technical Assessment</h3>
-                            <p>A practical take-home project relevant to the role that demonstrates your hands-on skills and problem-solving approach.</p>
-                            <p class="step-timeline"><i class="far fa-clock"></i> 2-5 days to complete</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">4</div>
-                            <i class="fas fa-users"></i>
-                            <h3>Technical Interview</h3>
-                            <p>In-depth discussion with our tech leads about your project solution, technical knowledge, and experience with relevant technologies.</p>
-                            <p class="step-timeline"><i class="far fa-clock"></i> 1-2 hours</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">5</div>
-                            <i class="fas fa-user-tie"></i>
-                            <h3>Culture & Team Fit</h3>
-                            <p>Meet with team members and the Tech Division Head to assess team compatibility and alignment with our collaborative approach.</p>
-                            <p class="step-timeline"><i class="far fa-clock"></i> 1 hour</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">6</div>
-                            <i class="fas fa-handshake"></i>
-                            <h3>Final Interview & Offer</h3>
-                            <p>Discussion with senior leadership followed by a competitive offer if selected.</p>
-                            <p class="step-timeline"><i class="far fa-clock"></i> Offer within 1 week</p>
-                        </div>
+                <div class="culture-card animate">
+                    <div class="culture-image">
+                        <img src="img/quality-control.jpg" alt="Collaboration">
                     </div>
-                    <div class="tech-process-note">
-                        <p><i class="fas fa-info-circle"></i> <strong>Note:</strong> For Technology Division roles, we prioritize hands-on skills assessment through practical projects rather than abstract algorithm challenges. We believe this approach better reflects real-world problem-solving abilities and aligns with our focus on practical solutions.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Application Form -->
-            <div class="application-form" id="application-form">
-                <h2>Apply Now</h2>
-                <div class="form-steps">
-                    <div class="form-step active" data-step="1">
-                        <span class="step-indicator">1</span> Basic Information
-                    </div>
-                    <div class="form-step" data-step="2">
-                        <span class="step-indicator">2</span> Detailed Application
+                    <div class="culture-content">
+                        <h3 class="culture-title">Collaboration & Teamwork</h3>
+                        <p class="culture-desc">We believe in the power of teamwork and cross-functional collaboration. Our open work environment facilitates communication, knowledge sharing, and collective problem-solving, enabling us to deliver exceptional results for our clients.</p>
                     </div>
                 </div>
                 
-                <form id="career-application-form" action="#" method="POST" class="multi-step-form">
-                    <!-- Step 1: Basic Information -->
-                    <div class="form-step-content active" id="step1-content">
-                        <div class="form-group">
-                            <label for="position">Position <span class="required">*</span></label>
-                            <select id="position" name="position" required>
-                                <option value="">Select a position</option>
-                                <option value="Open Application">Open Application</option>
-                                <optgroup label="Engineering Department">
-                                    <option value="Senior Mechanical Engineer">Senior Mechanical Engineer</option>
-                                    <option value="CNC Programmer">CNC Programmer</option>
-                                </optgroup>
-                                <optgroup label="Quality Department">
-                                    <option value="Quality Control Engineer">Quality Control Engineer</option>
-                                </optgroup>
-                                <optgroup label="Operations Department">
-                                    <option value="Manufacturing Project Manager">Manufacturing Project Manager</option>
-                                </optgroup>
-                                <optgroup label="Technology Division">
-                                    <option value="Full Stack Developer">Full Stack Developer</option>
-                                    <option value="DevOps Engineer">DevOps Engineer</option>
-                                </optgroup>
-                            </select>
-                            <div class="error-message" id="position-error"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="name">Full Name <span class="required">*</span></label>
-                            <input type="text" id="name" name="name" required>
-                            <div class="error-message" id="name-error"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required>
-                            <div class="error-message" id="email-error"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone <span class="required">*</span></label>
-                            <input type="tel" id="phone" name="phone" required>
-                            <div class="error-message" id="phone-error"></div>
-                        </div>
-                        
-                        <div class="form-actions">
-                            <button type="button" id="to-step2-btn" class="btn next-step">Continue</button>
-                            <button type="button" id="save-for-later-btn" class="btn btn-outline">Save for Later</button>
-                        </div>
+                <div class="culture-card animate">
+                    <div class="culture-image">
+                        <img src="img/quality-equipment.jpg" alt="Growth">
                     </div>
-                    
-                    <!-- Step 2: Detailed Application -->
-                    <div class="form-step-content" id="step2-content">
-                        <div class="form-group">
-                            <label for="experience">Years of Experience <span class="required">*</span></label>
-                            <input type="number" id="experience" name="experience" min="0" required>
-                            <div class="error-message" id="experience-error"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="skills">Key Skills</label>
-                            <textarea id="skills" name="skills" placeholder="List your relevant skills separated by commas"></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="portfolio">Portfolio/GitHub/LinkedIn URL</label>
-                            <input type="url" id="portfolio" name="portfolio" placeholder="https://">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Cover Letter <span class="required">*</span></label>
-                            <textarea id="message" name="message" required></textarea>
-                            <div class="error-message" id="message-error"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="resume">Resume (PDF/DOC) <span class="required">*</span></label>
-                            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
-                            <div class="error-message" id="resume-error"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="terms-checkbox" name="terms" required>
-                                I agree to the processing of my personal data in accordance with privacy policy
-                            </label>
-                            <div class="error-message" id="terms-error"></div>
-                        </div>
-                        
-                        <div class="form-actions">
-                            <button type="button" id="back-to-step1-btn" class="btn btn-outline back-step">Back</button>
-                            <button type="submit" class="btn">Submit Application</button>
-                        </div>
+                    <div class="culture-content">
+                        <h3 class="culture-title">Continuous Learning & Growth</h3>
+                        <p class="culture-desc">We are committed to the professional development of our team members. Through training programs, mentorship opportunities, and challenging projects, we support our employees in expanding their skills and advancing their careers.</p>
                     </div>
-                </form>
-                
-                <div class="application-success" style="display: none;">
-                    <i class="fas fa-check-circle success-icon"></i>
-                    <h3>Application Submitted Successfully!</h3>
-                    <p>Thank you for your interest in joining United Engineering. We have received your application and will review it shortly. If your qualifications match our requirements, we will contact you to discuss the next steps.</p>
-                    <p>Reference number: <span id="application-reference"></span></p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer>
+    
+    <!-- Benefits -->
+    <section class="section benefits-section">
         <div class="container">
-            <div class="footer-content">
+            <div class="section-title">
+                <h2>Employee Benefits</h2>
+                <p>We offer a comprehensive benefits package designed to support the well-being and professional growth of our team members.</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card animate">
+                    <div class="benefit-icon">
+                        <i class="fas fa-briefcase-medical"></i>
+                    </div>
+                    <h3 class="benefit-title">Health & Wellness</h3>
+                    <p class="benefit-desc">Comprehensive health insurance, dental and vision coverage, wellness programs, and fitness reimbursements to support your physical and mental well-being.</p>
+                </div>
+                
+                <div class="benefit-card animate">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="benefit-title">Professional Development</h3>
+                    <p class="benefit-desc">Tuition assistance, technical training programs, conference attendance, and opportunities to earn industry certifications to advance your skills and career.</p>
+                </div>
+                
+                <div class="benefit-card animate">
+                    <div class="benefit-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3 class="benefit-title">Financial Benefits</h3>
+                    <p class="benefit-desc">Competitive salaries, performance bonuses, retirement plans with company matching, and employee stock purchase options to secure your financial future.</p>
+                </div>
+                
+                <div class="benefit-card animate">
+                    <div class="benefit-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="benefit-title">Work-Life Balance</h3>
+                    <p class="benefit-desc">Generous paid time off, flexible work arrangements, parental leave, and company-sponsored events to help you maintain a healthy balance between work and personal life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Current Openings -->
+    <section class="section openings-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Current Openings</h2>
+                <p>Explore available positions and join our team of dedicated professionals.</p>
+            </div>
+            
+            <div class="openings-container">
+                <div class="opening-item animate active">
+                    <div class="opening-header">
+                        <div class="opening-title-wrapper">
+                            <span class="opening-department">Engineering</span>
+                            <h3 class="opening-title">Senior CNC Programmer</h3>
+                        </div>
+                        <div class="opening-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bangalore, Karnataka</span>
+                        </div>
+                        <i class="fas fa-chevron-down opening-toggle"></i>
+                    </div>
+                    <div class="opening-content">
+                        <div class="opening-inner">
+                            <p class="opening-desc">We are seeking an experienced CNC Programmer to join our engineering team. In this role, you will develop and optimize CNC programs for multi-axis machining centers, collaborate with manufacturing engineers, and implement process improvements to enhance efficiency and quality.</p>
+                            
+                            <div class="opening-requirements">
+                                <h4>Requirements:</h4>
+                                <ul class="requirements-list">
+                                    <li>Bachelor's degree in Mechanical Engineering or related field</li>
+                                    <li>5+ years of experience in CNC programming for precision components</li>
+                                    <li>Proficiency in CAM software (Mastercam, SolidCAM, or similar)</li>
+                                    <li>Experience with multi-axis CNC machining centers</li>
+                                    <li>Strong understanding of GD&T and machining processes</li>
+                                    <li>Ability to optimize programs for efficiency and quality</li>
+                                    <li>Experience with precision gear manufacturing preferred</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="opening-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>Full-time</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Posted: March 15, 2025</span>
+                                </div>
+                            </div>
+                            
+                            <a href="contact.html" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="opening-item animate">
+                    <div class="opening-header">
+                        <div class="opening-title-wrapper">
+                            <span class="opening-department">Quality</span>
+                            <h3 class="opening-title">Quality Control Inspector</h3>
+                        </div>
+                        <div class="opening-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bangalore, Karnataka</span>
+                        </div>
+                        <i class="fas fa-chevron-down opening-toggle"></i>
+                    </div>
+                    <div class="opening-content">
+                        <div class="opening-inner">
+                            <p class="opening-desc">We are looking for a detail-oriented Quality Control Inspector to ensure that our precision components meet all specifications and quality standards. You will perform dimensional inspections, maintain quality records, and collaborate with production teams to address quality issues.</p>
+                            
+                            <div class="opening-requirements">
+                                <h4>Requirements:</h4>
+                                <ul class="requirements-list">
+                                    <li>Diploma or Bachelor's degree in Mechanical Engineering or related field</li>
+                                    <li>3+ years of experience in quality inspection of precision machined components</li>
+                                    <li>Proficiency in using precision measurement equipment (CMM, micrometers, calipers, etc.)</li>
+                                    <li>Experience with quality documentation and reporting</li>
+                                    <li>Knowledge of ISO 9001 quality management systems</li>
+                                    <li>Familiarity with GD&T and blueprint reading</li>
+                                    <li>Strong attention to detail and problem-solving skills</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="opening-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>Full-time</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Posted: March 10, 2025</span>
+                                </div>
+                            </div>
+                            
+                            <a href="contact.html" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="opening-item animate">
+                    <div class="opening-header">
+                        <div class="opening-title-wrapper">
+                            <span class="opening-department">Production</span>
+                            <h3 class="opening-title">CNC Machine Operator</h3>
+                        </div>
+                        <div class="opening-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bangalore, Karnataka</span>
+                        </div>
+                        <i class="fas fa-chevron-down opening-toggle"></i>
+                    </div>
+                    <div class="opening-content">
+                        <div class="opening-inner">
+                            <p class="opening-desc">We are seeking skilled CNC Machine Operators to join our production team. In this role, you will set up and operate CNC machines to produce precision components according to specifications, perform in-process quality checks, and maintain equipment to ensure optimal performance.</p>
+                            
+                            <div class="opening-requirements">
+                                <h4>Requirements:</h4>
+                                <ul class="requirements-list">
+                                    <li>ITI or Diploma in Mechanical Engineering or related field</li>
+                                    <li>2+ years of experience operating CNC machines (lathes, mills, grinders)</li>
+                                    <li>Ability to read and interpret technical drawings and work instructions</li>
+                                    <li>Experience with precision measurement tools</li>
+                                    <li>Knowledge of machining processes and cutting tools</li>
+                                    <li>Basic understanding of G-code programming</li>
+                                    <li>Strong attention to detail and commitment to quality</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="opening-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>Full-time</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Posted: March 5, 2025</span>
+                                </div>
+                            </div>
+                            
+                            <a href="contact.html" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Application Process -->
+    <section class="section apply-section">
+        <div class="container">
+            <div class="apply-content">
+                <h2 class="apply-title">Our Hiring Process</h2>
+                <p class="apply-desc">We have designed a comprehensive hiring process to identify candidates who not only possess the technical skills required for the role but also align with our company culture and values.</p>
+                
+                <div class="process-grid">
+                    <div class="process-card animate">
+                        <div class="process-number">1</div>
+                        <div class="process-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3 class="process-title">Application Review</h3>
+                        <p class="process-desc">Our hiring team carefully reviews all applications to evaluate qualifications, experience, and potential fit with our organization.</p>
+                    </div>
+                    
+                    <div class="process-card animate">
+                        <div class="process-number">2</div>
+                        <div class="process-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3 class="process-title">Initial Interview</h3>
+                        <p class="process-desc">Selected candidates are invited for a phone or video interview to discuss their background, skills, and career aspirations.</p>
+                    </div>
+                    
+                    <div class="process-card animate">
+                        <div class="process-number">3</div>
+                        <div class="process-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3 class="process-title">Technical Assessment</h3>
+                        <p class="process-desc">Depending on the role, candidates may be asked to complete a technical assessment or practical exercise to demonstrate their skills.</p>
+                    </div>
+                    
+                    <div class="process-card animate">
+                        <div class="process-number">4</div>
+                        <div class="process-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="process-title">Final Interview</h3>
+                        <p class="process-desc">Promising candidates meet with the hiring team and potential colleagues to assess technical abilities and cultural fit.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem;">
+                    <a href="contact.html" class="btn btn-primary btn-lg">Apply for Open Positions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="container">
+        <div class="cta animate">
+            <div class="cta-content">
+                <h2 class="cta-title">Don't See the Right Position?</h2>
+                <p class="cta-text">We're always interested in hearing from talented individuals. Submit your resume for future opportunities.</p>
+                <a href="contact.html" class="btn cta-btn">Submit Your Resume</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
                 <div class="footer-info">
                     <h3>United Engineering</h3>
+                    <p>Leading provider of precision-engineered components and manufacturing solutions for industries worldwide.</p>
                     <p>123 Industrial Area, Bangalore, Karnataka, India</p>
                     <p>Phone: +91 80 1234 5678</p>
                     <p>Email: info@unitedengineering.org</p>
-                    <p>GSTIN: 29ABCDE1234F1Z5</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
                 </div>
+                
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="products.html">Products</a></li>
-                        <li><a href="services-quality.html">Services & Quality</a></li>
+                        <li><a href="capabilities.html">Capabilities</a></li>
                         <li><a href="careers.html">Careers</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-social">
-                    <h3>Connect With Us</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    </div>
+                
+                <div class="footer-links">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="products.html">Precision Gears</a></li>
+                        <li><a href="products.html">Shafts & Axles</a></li>
+                        <li><a href="products.html">Bearings</a></li>
+                        <li><a href="products.html">Custom Components</a></li>
+                        <li><a href="products.html">Specialty Systems</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Industries</h3>
+                    <ul>
+                        <li><a href="about.html">Manufacturing</a></li>
+                        <li><a href="about.html">Automotive</a></li>
+                        <li><a href="about.html">Aerospace</a></li>
+                        <li><a href="about.html">Medical</a></li>
+                        <li><a href="about.html">Machinery</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 United Engineering. All rights reserved.</p>
+            
+            <div class="footer-copyright">
+                <p>&copy; 2025 United Engineering. All rights reserved. GSTIN: 29ABCDE1234F1Z5</p>
             </div>
         </div>
     </footer>
-
+    
+    <!-- JavaScript -->
     <script src="js/script.js"></script>
     <script>
+        // Job openings toggle functionality
         document.addEventListener('DOMContentLoaded', function() {
-            // Job category filtering
-            const categoryButtons = document.querySelectorAll('.category-btn');
-            const jobCards = document.querySelectorAll('.job-card');
-            const searchInput = document.getElementById('job-search-input');
-            const searchButton = document.querySelector('.search-btn');
+            const openingItems = document.querySelectorAll('.opening-item');
             
-            // Filter jobs based on category
-            categoryButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    categoryButtons.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to clicked button
-                    button.classList.add('active');
+            openingItems.forEach(item => {
+                const header = item.querySelector('.opening-header');
+                
+                header.addEventListener('click', () => {
+                    // Toggle current item
+                    item.classList.toggle('active');
                     
-                    const category = button.getAttribute('data-category');
-                    
-                    jobCards.forEach(card => {
-                        if (category === 'all') {
-                            card.style.display = 'block';
-                        } else {
-                            if (card.getAttribute('data-category') === category) {
-                                card.style.display = 'block';
-                            } else {
-                                card.style.display = 'none';
-                            }
+                    // Close other items (optional - remove if you want multiple open at once)
+                    openingItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
                         }
                     });
                 });
-            });
-            
-            // Job search functionality
-            function performSearch() {
-                const searchText = searchInput.value.toLowerCase().trim();
-                
-                if (searchText === '') {
-                    // If search is empty, respect category filters
-                    const activeCategory = document.querySelector('.category-btn.active').getAttribute('data-category');
-                    
-                    jobCards.forEach(card => {
-                        if (activeCategory === 'all') {
-                            card.style.display = 'block';
-                        } else {
-                            if (card.getAttribute('data-category') === activeCategory) {
-                                card.style.display = 'block';
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        }
-                    });
-                } else {
-                    // Search in job titles and descriptions
-                    jobCards.forEach(card => {
-                        const title = card.querySelector('h3').textContent.toLowerCase();
-                        const description = card.querySelector('.job-description p').textContent.toLowerCase();
-                        
-                        if (title.includes(searchText) || description.includes(searchText)) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                }
-            }
-            
-            searchButton.addEventListener('click', performSearch);
-            searchInput.addEventListener('keyup', function(event) {
-                if (event.key === 'Enter') {
-                    performSearch();
-                }
-            });
-            
-            // Process tabs functionality
-            const processTabs = document.querySelectorAll('.process-tab');
-            const processContents = document.querySelectorAll('.process-content');
-            
-            processTabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    // Remove active class from all tabs and contents
-                    processTabs.forEach(t => t.classList.remove('active'));
-                    processContents.forEach(c => c.classList.remove('active'));
-                    
-                    // Add active class to clicked tab and corresponding content
-                    tab.classList.add('active');
-                    const tabTarget = tab.getAttribute('data-tab');
-                    document.querySelector(`.${tabTarget}-process`).classList.add('active');
-                });
-            });
-            
-            // Multi-step form functionality
-            const toStep2Btn = document.getElementById('to-step2-btn');
-            const backToStep1Btn = document.getElementById('back-to-step1-btn');
-            const saveForLaterBtn = document.getElementById('save-for-later-btn');
-            const step1Content = document.getElementById('step1-content');
-            const step2Content = document.getElementById('step2-content');
-            const formSteps = document.querySelectorAll('.form-step');
-            const applicationForm = document.getElementById('career-application-form');
-            
-            // Form validation functions
-            function validateStep1() {
-                let isValid = true;
-                
-                // Position validation
-                const position = document.getElementById('position');
-                if (position.value === '') {
-                    showError(position, 'position-error', 'Please select a position');
-                    isValid = false;
-                } else {
-                    clearError(position, 'position-error');
-                }
-                
-                // Name validation
-                const name = document.getElementById('name');
-                if (name.value.trim() === '') {
-                    showError(name, 'name-error', 'Please enter your name');
-                    isValid = false;
-                } else {
-                    clearError(name, 'name-error');
-                }
-                
-                // Email validation
-                const email = document.getElementById('email');
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email.value)) {
-                    showError(email, 'email-error', 'Please enter a valid email address');
-                    isValid = false;
-                } else {
-                    clearError(email, 'email-error');
-                }
-                
-                // Phone validation
-                const phone = document.getElementById('phone');
-                if (phone.value.trim() === '') {
-                    showError(phone, 'phone-error', 'Please enter your phone number');
-                    isValid = false;
-                } else {
-                    clearError(phone, 'phone-error');
-                }
-                
-                return isValid;
-            }
-            
-            function showError(input, errorId, message) {
-                input.style.borderColor = '#e74c3c';
-                const errorElement = document.getElementById(errorId);
-                errorElement.textContent = message;
-                errorElement.style.display = 'block';
-            }
-            
-            function clearError(input, errorId) {
-                input.style.borderColor = '';
-                const errorElement = document.getElementById(errorId);
-                errorElement.style.display = 'none';
-            }
-            
-            toStep2Btn.addEventListener('click', () => {
-                if (validateStep1()) {
-                    step1Content.classList.remove('active');
-                    step2Content.classList.add('active');
-                    formSteps[0].classList.remove('active');
-                    formSteps[1].classList.add('active');
-                }
-            });
-            
-            backToStep1Btn.addEventListener('click', () => {
-                step2Content.classList.remove('active');
-                step1Content.classList.add('active');
-                formSteps[1].classList.remove('active');
-                formSteps[0].classList.add('active');
-            });
-            
-            saveForLaterBtn.addEventListener('click', () => {
-                // Save current form data to localStorage
-                const formData = {
-                    position: document.getElementById('position').value,
-                    name: document.getElementById('name').value,
-                    email: document.getElementById('email').value,
-                    phone: document.getElementById('phone').value
-                };
-                
-                localStorage.setItem('savedApplication', JSON.stringify(formData));
-                alert('Your application information has been saved. You can return to complete it later.');
-            });
-            
-            // Check for saved application data
-            const savedApplication = localStorage.getItem('savedApplication');
-            if (savedApplication) {
-                const formData = JSON.parse(savedApplication);
-                document.getElementById('position').value = formData.position || '';
-                document.getElementById('name').value = formData.name || '';
-                document.getElementById('email').value = formData.email || '';
-                document.getElementById('phone').value = formData.phone || '';
-            }
-            
-            // Form submission
-            applicationForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Show success message (in a real application, this would submit to a server)
-                applicationForm.style.display = 'none';
-                document.querySelector('.application-success').style.display = 'block';
-                
-                // Generate a random reference number
-                const referenceNumber = 'UE-' + new Date().getFullYear() + '-' + Math.floor(10000 + Math.random() * 90000);
-                document.getElementById('application-reference').textContent = referenceNumber;
-                
-                // Clear saved application
-                localStorage.removeItem('savedApplication');
-            });
-            
-            // Auto-fill position from job cards
-            const applyButtons = document.querySelectorAll('.apply-btn');
-            applyButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const jobTitle = button.getAttribute('data-job');
-                    const positionSelect = document.getElementById('position');
-                    
-                    // Find and select the option
-                    for (let i = 0; i < positionSelect.options.length; i++) {
-                        if (positionSelect.options[i].value === jobTitle) {
-                            positionSelect.selectedIndex = i;
-                            break;
-                        }
-                    }
-                    
-                    // Scroll to the form
-                    document.getElementById('application-form').scrollIntoView({ behavior: 'smooth' });
-                });
-            });
-            
-            // Add animation to job cards
-            jobCards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            });
-            
-            // Use IntersectionObserver to animate job cards when they come into view
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0)';
-                        }, entries.indexOf(entry) * 100); // Staggered animation
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            jobCards.forEach(card => {
-                observer.observe(card);
             });
         });
     </script>

@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Capabilities - United Engineering</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Explore United Engineering's comprehensive manufacturing capabilities, quality systems, and precision engineering expertise. Our integrated approach ensures exceptional results.">
+    <meta name="keywords" content="engineering capabilities, precision machining, manufacturing excellence, quality assurance, engineering services">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .capabilities-hero {
+            background: url('img/services-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 8rem 0 5rem;
+            color: white;
+            text-align: center;
+        }
+        
+        .capabilities-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .capabilities-card {
+            background-color: var(--white);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .capabilities-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .capabilities-image {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .capabilities-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .capabilities-card:hover .capabilities-image img {
+            transform: scale(1.1);
+        }
+        
+        .capabilities-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .capabilities-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .capabilities-desc {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .capabilities-features {
+            margin-bottom: 1.5rem;
+        }
+        
+        .capabilities-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-light);
+        }
+        
+        .capabilities-feature i {
+            color: var(--primary);
+            font-size: 1rem;
+        }
+        
+        .tabs-container {
+            margin-bottom: 3rem;
+        }
+        
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+            gap: 0.5rem;
+        }
+        
+        .tab {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .tab.active {
+            background-color: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .quality-pillars {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .quality-pillar {
+            background-color: var(--white);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-top: 3px solid var(--primary);
+            height: 100%;
+        }
+        
+        .quality-pillar:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .pillar-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pillar-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .pillar-desc {
+            color: var(--text-light);
+        }
+        
+        .process-section {
+            background-color: var(--gray-100);
+            position: relative;
+            padding: 5rem 0;
+        }
+        
+        .process-container {
+            margin: 4rem 0 2rem;
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .process-card {
+            height: 280px;
+            perspective: 1000px;
+        }
+        
+        .process-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .process-card:hover .process-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .process-card-front, .process-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .process-card-front {
+            background: linear-gradient(145deg, var(--white), var(--gray-100));
+            color: var(--text);
+        }
+        
+        .process-card-back {
+            background: linear-gradient(145deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            transform: rotateY(180deg);
+        }
+        
+        .process-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(145deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .process-card-front h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .process-card-back p {
+            color: var(--white);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        @media (max-width: 1200px) {
+            .process-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .process-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+            
+            .process-card {
+                height: 250px;
+            }
+            
+            .process-number {
+                width: 70px;
+                height: 70px;
+                font-size: 2.5rem;
+            }
+            
+            .process-card-front h3 {
+                font-size: 1.3rem;
+            }
+            
+            .process-card-back p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+                max-width: 320px;
+                margin: 0 auto;
+            }
+        }
+        
+        .equipment-section {
+            padding: 5rem 0;
+        }
+        
+        .equipment-image {
+            height: 350px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .equipment-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .certifications-section {
+            background-color: var(--gray-100);
+            padding: 5rem 0;
+        }
+        
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .certification-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            text-align: center;
+            height: 100%;
+        }
+        
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .certification-image {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .certification-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .certification-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .manufacturing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .manufacturing-card {
+            background-color: var(--white);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            text-align: center;
+            height: 100%;
+        }
+        
+        .manufacturing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .manufacturing-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .manufacturing-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        @media (max-width: 991px) {
+            .process-step {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .process-step::after {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/united_engineering_logo.png" alt="United Engineering Logo">
+                </a>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="capabilities.html" class="nav-link active">Capabilities</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="capabilities-hero">
+        <div class="container">
+            <div class="capabilities-hero-content animate">
+                <h1>Engineering Capabilities</h1>
+                <p>Advanced Manufacturing Solutions with Unwavering Quality Standards</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Intro Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Integrated Approach</h2>
+                <p>At United Engineering, we combine precision manufacturing capabilities with rigorous quality systems to deliver exceptional engineering solutions. Our integrated approach ensures that every component we produce meets the highest standards of quality, reliability, and performance.</p>
+            </div>
+            
+            <div class="tabs-container">
+                <div class="tabs">
+                    <div class="tab active" data-tab="services">Engineering Services</div>
+                    <div class="tab" data-tab="quality">Quality Excellence</div>
+                    <div class="tab" data-tab="manufacturing">Manufacturing Capabilities</div>
+                    <div class="tab" data-tab="certifications">Certifications</div>
+                </div>
+                
+                <!-- Services Tab Content -->
+                <div class="tab-content active" id="services-tab">
+                    <div class="product-grid">
+                        <div class="capabilities-card animate">
+                            <div class="capabilities-image">
+                                <img src="img/custom-manufacturing.jpg" alt="Precision Machining">
+                            </div>
+                            <div class="capabilities-content">
+                                <h3 class="capabilities-title">Precision Machining</h3>
+                                <p class="capabilities-desc">Our advanced CNC machining capabilities enable us to produce complex components with tight tolerances and excellent surface finishes.</p>
+                                <div class="capabilities-features">
+                                    <div class="capabilities-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Multi-axis CNC machining</span>
+                                    </div>
+                                    <div class="capabilities-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Tight tolerance manufacturing (±0.005mm)</span>
+                                    </div>
+                                    <div class="capabilities-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Complex geometries and profiles</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="capabilities-card animate">
+                            <div class="capabilities-image">
+                                <img src="img/custom-parts.jpg" alt="Custom Manufacturing">
+                            </div>
+                            <div class="capabilities-content">
+                                <h3 class="capabilities-title">Custom Manufacturing</h3>
+                                <p class="capabilities-desc">We specialize in developing and manufacturing custom components tailored to your specific requirements.</p>
+                                <div class="capabilities-features">
+                                    <div class="capabilities-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Design consultation and optimization</span>
+                                    </div>
+                                    <div class="capabilities-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Material selection expertise</span>
+                                    </div>
+                                    <div class="capabilities-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Specialized manufacturing processes</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="capabilities-card animate">
+                            <div class="capabilities-image">
+                                <img src="img/prototyping.jpg" alt="Prototyping">
+                            </div>
+                            <div class="capabilities-content">
+                                <h3 class="capabilities-title">Prototyping</h3>
+                                <p class="capabilities-desc">Our rapid prototyping services help validate designs and optimize components before full production.</p>
+                                <div class="capabilities-features">
+                                    <div class="capabilities-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Rapid prototype development</span>
+                                    </div>
+                                    <div class="capabilities-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Design refinement and iteration</span>
+                                    </div>
+                                    <div class="capabilities-feature">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Functional testing and validation</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quality Tab Content -->
+                <div class="tab-content" id="quality-tab">
+                    <h3 class="text-center" style="margin-bottom: 2rem;">Our Quality Management System</h3>
+                    
+                    <div class="quality-pillars">
+                        <div class="quality-pillar animate">
+                            <div class="pillar-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3 class="pillar-title">Quality Assurance</h3>
+                            <p class="pillar-desc">Our comprehensive quality assurance program is designed to prevent defects through systematic monitoring of production processes. We implement robust procedures to ensure that every component meets or exceeds specified requirements.</p>
+                        </div>
+                        
+                        <div class="quality-pillar animate">
+                            <div class="pillar-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3 class="pillar-title">Quality Control</h3>
+                            <p class="pillar-desc">We employ rigorous inspection and testing methodologies throughout the manufacturing process. Our skilled quality control technicians verify dimensional accuracy, material properties, and functional performance of all components.</p>
+                        </div>
+                        
+                        <div class="quality-pillar animate">
+                            <div class="pillar-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <h3 class="pillar-title">Continuous Improvement</h3>
+                            <p class="pillar-desc">We are committed to ongoing enhancement of our processes, methodologies, and capabilities. Through regular audits, data analysis, and implementation of best practices, we continuously refine our operations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="equipment-image animate" style="margin-top: 3rem;">
+                        <img src="img/quality-equipment.jpg" alt="Quality Control Equipment">
+                    </div>
+                </div>
+                
+                <!-- Manufacturing Tab Content -->
+                <div class="tab-content" id="manufacturing-tab">
+                    <h3 class="text-center" style="margin-bottom: 2rem;">Advanced Manufacturing Capabilities</h3>
+                    
+                    <div class="manufacturing-grid">
+                        <div class="manufacturing-card animate">
+                            <div class="manufacturing-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3 class="manufacturing-title">CNC Machining</h3>
+                            <p>Multi-axis CNC machines capable of producing complex components with tight tolerances and excellent surface finishes.</p>
+                        </div>
+                        
+                        <div class="manufacturing-card animate">
+                            <div class="manufacturing-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3 class="manufacturing-title">Gear Manufacturing</h3>
+                            <p>Specialized equipment for producing precision gears, including spur, helical, bevel, and worm gears to AGMA standards.</p>
+                        </div>
+                        
+                        <div class="manufacturing-card animate">
+                            <div class="manufacturing-icon">
+                                <i class="fas fa-drafting-compass"></i>
+                            </div>
+                            <h3 class="manufacturing-title">Precision Grinding</h3>
+                            <p>Advanced surface, cylindrical, and centerless grinding capabilities for achieving superior surface finishes and tight tolerances.</p>
+                        </div>
+                        
+                        <div class="manufacturing-card animate">
+                            <div class="manufacturing-icon">
+                                <i class="fas fa-ruler-combined"></i>
+                            </div>
+                            <h3 class="manufacturing-title">Metrology</h3>
+                            <p>State-of-the-art measurement and inspection equipment, including CMMs, for verifying dimensional accuracy and quality compliance.</p>
+                        </div>
+                        
+                        <div class="manufacturing-card animate">
+                            <div class="manufacturing-icon">
+                                <i class="fas fa-fire-alt"></i>
+                            </div>
+                            <h3 class="manufacturing-title">Heat Treatment</h3>
+                            <p>Comprehensive heat treatment facilities for improving material properties, including hardening, tempering, annealing, and case hardening.</p>
+                        </div>
+                        
+                        <div class="manufacturing-card animate">
+                            <div class="manufacturing-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <h3 class="manufacturing-title">Material Testing</h3>
+                            <p>In-house capabilities for material verification, mechanical testing, and metallurgical analysis to ensure quality and compliance.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certifications Tab Content -->
+                <div class="tab-content" id="certifications-tab">
+                    <h3 class="text-center" style="margin-bottom: 2rem;">Industry Standards & Certifications</h3>
+                    
+                    <div class="certifications-grid">
+                        <div class="certification-card animate">
+                            <div class="certification-image">
+                                <img src="img/quality-standard.svg" alt="ISO 9001:2015">
+                            </div>
+                            <h3 class="certification-title">ISO 9001:2015</h3>
+                            <p>Our quality management system is certified to ISO 9001:2015, demonstrating our commitment to consistent quality through documented processes, continuous improvement protocols, and rigorous quality control at every stage.</p>
+                        </div>
+                        
+                        <div class="certification-card animate">
+                            <div class="certification-image">
+                                <img src="img/environmental-standard.svg" alt="ISO 14001:2015">
+                            </div>
+                            <h3 class="certification-title">Environmental Management</h3>
+                            <p>We follow ISO 14001 guidelines, implementing responsible practices and waste reduction initiatives to minimize environmental impact throughout our manufacturing operations while maintaining product quality.</p>
+                        </div>
+                        
+                        <div class="certification-card animate">
+                            <div class="certification-image">
+                                <img src="img/industry-standard.svg" alt="Industry Standards">
+                            </div>
+                            <h3 class="certification-title">Industry-Specific Compliance</h3>
+                            <p>We adhere to specialized industry requirements including IATF 16949 for automotive, AS9100 for aerospace, and other sector-specific standards ensuring components meet specialized quality requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section class="section process-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Process</h2>
+                <p>We follow a comprehensive, structured approach to ensure your project is completed efficiently and to your exact specifications. Our end-to-end process is designed to keep you informed and involved from concept to delivery.</p>
+            </div>
+            
+            <div class="process-container">
+                <div class="process-grid">
+                    <!-- Step 1 -->
+                    <div class="process-card animate">
+                        <div class="process-card-inner">
+                            <div class="process-card-front">
+                                <div class="process-number">1</div>
+                                <h3>Initial Consultation</h3>
+                            </div>
+                            <div class="process-card-back">
+                                <p>We carefully assess your requirements, specifications, and project goals to ensure a clear understanding of your needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="process-card animate">
+                        <div class="process-card-inner">
+                            <div class="process-card-front">
+                                <div class="process-number">2</div>
+                                <h3>Engineering Review</h3>
+                            </div>
+                            <div class="process-card-back">
+                                <p>Our engineers analyze technical feasibility, material selection, and manufacturability to optimize your design.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="process-card animate">
+                        <div class="process-card-inner">
+                            <div class="process-card-front">
+                                <div class="process-number">3</div>
+                                <h3>Design & Prototyping</h3>
+                            </div>
+                            <div class="process-card-back">
+                                <p>We refine designs and create prototypes when needed, allowing for testing and validation before full production.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="process-card animate">
+                        <div class="process-card-inner">
+                            <div class="process-card-front">
+                                <div class="process-number">4</div>
+                                <h3>Production Planning</h3>
+                            </div>
+                            <div class="process-card-back">
+                                <p>We establish tooling requirements, production schedules, and resource allocation to ensure efficient manufacturing.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 5 -->
+                    <div class="process-card animate">
+                        <div class="process-card-inner">
+                            <div class="process-card-front">
+                                <div class="process-number">5</div>
+                                <h3>Manufacturing</h3>
+                            </div>
+                            <div class="process-card-back">
+                                <p>Components are produced using our precision equipment with in-process quality checks throughout production.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 6 -->
+                    <div class="process-card animate">
+                        <div class="process-card-inner">
+                            <div class="process-card-front">
+                                <div class="process-number">6</div>
+                                <h3>Quality Assurance</h3>
+                            </div>
+                            <div class="process-card-back">
+                                <p>Comprehensive inspection and testing verify all components meet required specifications and quality standards.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 7 -->
+                    <div class="process-card animate">
+                        <div class="process-card-inner">
+                            <div class="process-card-front">
+                                <div class="process-number">7</div>
+                                <h3>Documentation</h3>
+                            </div>
+                            <div class="process-card-back">
+                                <p>We provide complete documentation including inspection reports and material certificates as required.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 8 -->
+                    <div class="process-card animate">
+                        <div class="process-card-inner">
+                            <div class="process-card-front">
+                                <div class="process-number">8</div>
+                                <h3>Delivery & Support</h3>
+                            </div>
+                            <div class="process-card-back">
+                                <p>Final products are carefully packaged and delivered, with follow-up support to ensure your complete satisfaction.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Materials Section -->
+    <section class="section equipment-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Materials Expertise</h2>
+                <p>Our engineering team has extensive experience working with a wide range of materials to meet diverse application requirements.</p>
+            </div>
+            
+            <div class="product-grid">
+                <div class="capabilities-card animate">
+                    <div class="capabilities-content">
+                        <h3 class="capabilities-title">Ferrous Metals</h3>
+                        <div class="capabilities-features">
+                            <div class="capabilities-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Carbon Steel (AISI 1018, 1045, 1095)</span>
+                            </div>
+                            <div class="capabilities-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Alloy Steel (4140, 4340, 8620)</span>
+                            </div>
+                            <div class="capabilities-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Stainless Steel (303, 304, 316, 410, 440C)</span>
+                            </div>
+                            <div class="capabilities-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Tool Steel (A2, D2, H13, M2, O1)</span>
+                            </div>
+                            <div class="capabilities-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Cast Iron (Gray, Ductile, Malleable)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="capabilities-card animate">
+                    <div class="capabilities-content">
+                        <h3 class="capabilities-title">Non-Ferrous Metals</h3>
+                        <div class="capabilities-features">
+                            <div class="capabilities-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Aluminum Alloys (6061, 7075, 2024, 5052)</span>
+                            </div>
+                            <div class="capabilities-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Copper Alloys (Brass, Bronze, Beryllium Copper)</span>
+                            </div>
+                            <div class="capabilities-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Titanium Alloys (Grade 2, Grade 5/Ti-6Al-4V)</span>
+                            </div>
+                            <div class="capabilities-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Nickel Alloys (Inconel, Monel, Hastelloy)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="capabilities-card animate">
+                    <div class="capabilities-content">
+                        <h3 class="capabilities-title">Specialty Materials</h3>
+                        <div class="capabilities-features">
+                            <div class="capabilities-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Engineering Plastics (Delrin/POM, PEEK, Nylon)</span>
+                            </div>
+                            <div class="capabilities-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Composite Materials</span>
+                            </div>
+                            <div class="capabilities-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>High-Temperature Alloys</span>
+                            </div>
+                            <div class="capabilities-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Multi-Material Solutions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="container">
+        <div class="cta animate">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Leverage Our Capabilities?</h2>
+                <p class="cta-text">Contact our team today to discuss how our precision engineering capabilities can benefit your projects.</p>
+                <a href="contact.html" class="btn cta-btn">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3>United Engineering</h3>
+                    <p>Leading provider of precision-engineered components and manufacturing solutions for industries worldwide.</p>
+                    <p>123 Industrial Area, Bangalore, Karnataka, India</p>
+                    <p>Phone: +91 80 1234 5678</p>
+                    <p>Email: info@unitedengineering.org</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="capabilities.html">Capabilities</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="products.html">Precision Gears</a></li>
+                        <li><a href="products.html">Shafts & Axles</a></li>
+                        <li><a href="products.html">Bearings</a></li>
+                        <li><a href="products.html">Custom Components</a></li>
+                        <li><a href="products.html">Specialty Systems</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Industries</h3>
+                    <ul>
+                        <li><a href="about.html">Manufacturing</a></li>
+                        <li><a href="about.html">Automotive</a></li>
+                        <li><a href="about.html">Aerospace</a></li>
+                        <li><a href="about.html">Medical</a></li>
+                        <li><a href="about.html">Machinery</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>&copy; 2025 United Engineering. All rights reserved. GSTIN: 29ABCDE1234F1Z5</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+                    
+                    // Hide all tab contents
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Show the corresponding tab content
+                    const tabId = tab.getAttribute('data-tab');
+                    document.getElementById(tabId + '-tab').classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

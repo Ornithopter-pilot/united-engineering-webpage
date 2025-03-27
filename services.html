@@ -3,483 +3,671 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - United Engineering Services</title>
+    <title>Services - United Engineering</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Explore United Engineering's comprehensive services including precision machining, custom manufacturing, prototyping and process optimization.">
+    <meta name="keywords" content="precision machining, custom manufacturing, prototyping, engineering services, process optimization">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         .services-hero {
-            background: linear-gradient(rgba(26, 60, 107, 0.8), rgba(26, 60, 107, 0.9)), url('img/services-bg.jpg');
+            background: linear-gradient(rgba(37, 99, 235, 0.9), rgba(37, 99, 235, 0.8)), url('img/services-bg.jpg');
             background-size: cover;
             background-position: center;
-            color: var(--light-text);
-            padding: 70px 0;
+            padding: 8rem 0 5rem;
+            color: white;
             text-align: center;
         }
-
-        .services-content {
-            padding: 60px 0;
-        }
-
-        .services-intro {
-            text-align: center;
+        
+        .services-hero-content {
             max-width: 800px;
-            margin: 0 auto 60px;
+            margin: 0 auto;
         }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 40px;
-        }
-
+        
         .service-card {
-            background-color: var(--background-color);
-            border-radius: 8px;
+            border-radius: 0.5rem;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background-color: var(--white);
+            box-shadow: var(--shadow);
             transition: all 0.3s ease;
+            height: 100%;
             display: flex;
             flex-direction: column;
         }
-
+        
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-md);
         }
-
+        
         .service-image {
-            height: 200px;
+            height: 220px;
             overflow: hidden;
         }
-
+        
         .service-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-
+        
         .service-card:hover .service-image img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
-
-        .service-info {
-            padding: 25px;
+        
+        .service-content {
+            padding: 2rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
-
-        .service-info h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
+        
+        .service-title {
             font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
         }
-
-        .service-info p {
-            margin-bottom: 20px;
+        
+        .service-desc {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
             flex-grow: 1;
         }
-
-        .service-icon {
+        
+        .service-features {
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-feature {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-light);
         }
-
-        .service-icon i {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-right: 15px;
+        
+        .service-feature i {
+            color: var(--primary);
+            font-size: 1rem;
         }
-
-        .tech-service .service-icon i {
-            color: var(--tech-accent);
-        }
-
-        .service-features {
-            margin-bottom: 20px;
-        }
-
-        .service-features ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .service-features ul li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 8px;
-        }
-
-        .service-features ul li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        .tech-service .service-features ul li:before {
-            color: var(--tech-accent);
-        }
-
-        .tech-service {
-            border-top: 4px solid var(--tech-accent);
-        }
-
+        
         .process-section {
-            margin-top: 80px;
-            background-color: var(--secondary-color);
-            padding: 60px 0;
+            background-color: var(--gray-100);
+            position: relative;
         }
-
-        .process-intro {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 40px;
-        }
-
+        
         .process-steps {
             display: flex;
-            justify-content: space-between;
-            max-width: 1000px;
-            margin: 0 auto;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .process-step {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
             position: relative;
         }
-
-        .process-steps:before {
-            content: '';
-            position: absolute;
-            top: 50px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: var(--primary-color);
-            z-index: 1;
-        }
-
-        .step {
-            text-align: center;
-            width: 22%;
-            position: relative;
-            z-index: 2;
-            padding-top: 70px;
-        }
-
+        
         .step-number {
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-color);
+            min-width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--light-text);
-            font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-content {
+            flex-grow: 1;
+            padding: 1.5rem 2rem;
+            background-color: var(--white);
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .process-step::after {
+            content: '';
             position: absolute;
-            top: 25px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3;
+            top: 60px;
+            left: 30px;
+            width: 2px;
+            height: calc(100% + 2rem);
+            background-color: var(--primary);
+            opacity: 0.3;
+            z-index: 1;
         }
-
-        .step h3 {
-            margin-bottom: 10px;
-            color: var(--primary-color);
+        
+        .process-step:last-child::after {
+            display: none;
         }
-
-        .industries-section {
-            margin-top: 80px;
-            text-align: center;
+        
+        .capabilities-section {
+            padding: 5rem 0;
         }
-
-        .industries-grid {
+        
+        .capabilities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
         }
-
-        .industry-card {
-            background-color: var(--secondary-color);
-            padding: 30px 20px;
-            border-radius: 8px;
+        
+        .capability-card {
+            padding: 2rem;
+            border-radius: 0.5rem;
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            text-align: center;
+            height: 100%;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .capability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+        
+        .capability-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            color: var(--primary);
+            font-size: 1.75rem;
             transition: all 0.3s ease;
         }
-
-        .industry-card:hover {
-            background-color: var(--primary-color);
-            color: var(--light-text);
-            transform: translateY(-5px);
+        
+        .capability-card:hover .capability-icon {
+            background-color: var(--primary);
+            color: var(--white);
         }
-
-        .industry-card i {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
+        
+        .capability-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
         }
-
-        .industry-card:hover i {
-            color: var(--light-text);
+        
+        .faq-section {
+            background-color: var(--gray-100);
+            padding: 5rem 0;
         }
-
-        @media (max-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .process-steps {
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            background-color: var(--white);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            padding: 0 2rem 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .faq-item.active {
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-item.active .faq-question {
+            color: var(--primary);
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+        
+        @media (max-width: 991px) {
+            .process-step {
                 flex-direction: column;
-                align-items: center;
+                gap: 1rem;
             }
-
-            .process-steps:before {
-                width: 3px;
-                height: 100%;
-                left: 50%;
-                top: 0;
-                transform: translateX(-50%);
-            }
-
-            .step {
-                width: 100%;
-                max-width: 350px;
-                margin-bottom: 50px;
-                padding-top: 0;
-                padding-left: 70px;
-                text-align: left;
-            }
-
-            .step-number {
-                left: 25px;
-                top: 0;
-                transform: none;
-            }
-
-            .industries-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .industries-grid {
-                grid-template-columns: 1fr;
+            
+            .process-step::after {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container">
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
             <div class="logo">
                 <a href="index.html">
-                    <h1>UES</h1>
+                    <img src="img/united_engineering_logo.png" alt="United Engineering Logo">
                 </a>
             </div>
+            
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="services.html" class="active">Services</a></li>
-                    <li><a href="quality.html">Quality</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="quality.html" class="nav-link">Quality</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
             </nav>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
-
+    
     <!-- Hero Section -->
     <section class="services-hero">
         <div class="container">
-            <h2>Our Services</h2>
-            <p>Comprehensive Engineering Solutions for Your Industry Needs</p>
+            <div class="services-hero-content animate">
+                <h1>Our Services</h1>
+                <p>Comprehensive Engineering and Manufacturing Solutions</p>
+            </div>
         </div>
     </section>
-
-    <!-- Services Content -->
-    <section class="services-content">
+    
+    <!-- Services Overview -->
+    <section class="section">
         <div class="container">
-            <div class="services-intro">
-                <h2>Engineering Excellence</h2>
-                <p>At United Engineering Services, we offer a comprehensive range of precision engineering services. Our team of experienced engineers and technicians are equipped with state-of-the-art technology to deliver exceptional results that meet your exact specifications.</p>
+            <div class="section-title">
+                <h2>Engineering Services</h2>
+                <p>We offer a comprehensive range of precision engineering and manufacturing services tailored to meet your specific requirements. Our team combines technical expertise with advanced technology to deliver exceptional results.</p>
             </div>
-
-            <div class="services-grid">
-                <div class="service-card">
+            
+            <div class="product-grid">
+                <div class="service-card animate">
                     <div class="service-image">
-                        <img src="img/custom-manufacturing.jpg" alt="Custom Manufacturing">
+                        <img src="img/custom-manufacturing.jpg" alt="Precision Machining">
                     </div>
-                    <div class="service-info">
-                        <div class="service-icon">
-                            <i class="fas fa-cogs"></i>
-                            <h3>Custom Manufacturing</h3>
-                        </div>
-                        <p>Tailored manufacturing solutions to meet your unique requirements. Our skilled team works closely with you to understand your needs and deliver precision components that exceed expectations.</p>
+                    <div class="service-content">
+                        <h3 class="service-title">Precision Machining</h3>
+                        <p class="service-desc">Our advanced CNC machining capabilities enable us to produce complex components with tight tolerances and excellent surface finishes. We specialize in multi-axis machining for demanding applications.</p>
                         <div class="service-features">
-                            <ul>
-                                <li>Precision CNC Machining</li>
-                                <li>Custom Component Design</li>
-                                <li>Small to Medium Batch Production</li>
-                                <li>Comprehensive Documentation</li>
-                            </ul>
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Multi-axis CNC machining</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Tight tolerance manufacturing (±0.005mm)</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Complex geometries and profiles</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Various materials (steel, aluminum, titanium)</span>
+                            </div>
                         </div>
-                        <a href="contact.html" class="btn">Request Service</a>
+                        <a href="contact.html" class="btn btn-primary btn-sm">Request Service</a>
                     </div>
                 </div>
-
-                <div class="service-card">
+                
+                <div class="service-card animate">
+                    <div class="service-image">
+                        <img src="img/custom-parts.jpg" alt="Custom Manufacturing">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Custom Manufacturing</h3>
+                        <p class="service-desc">We specialize in developing and manufacturing custom components tailored to your specific requirements. From concept to production, our team works closely with you to ensure optimal solutions.</p>
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Design consultation and optimization</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Material selection and recommendations</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Specialized manufacturing processes</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Quality verification and documentation</span>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary btn-sm">Request Service</a>
+                    </div>
+                </div>
+                
+                <div class="service-card animate">
                     <div class="service-image">
                         <img src="img/prototyping.jpg" alt="Prototyping">
                     </div>
-                    <div class="service-info">
-                        <div class="service-icon">
-                            <i class="fas fa-drafting-compass"></i>
-                            <h3>Prototyping</h3>
-                        </div>
-                        <p>Expert support in developing prototypes for new products. From concept to reality, we help you bring your ideas to life with precision and attention to detail.</p>
+                    <div class="service-content">
+                        <h3 class="service-title">Prototyping</h3>
+                        <p class="service-desc">Our rapid prototyping services help validate designs and optimize components before full production. We provide quick turnaround times without compromising on quality or precision.</p>
                         <div class="service-features">
-                            <ul>
-                                <li>Rapid Prototype Development</li>
-                                <li>Functional Testing</li>
-                                <li>Design Refinement</li>
-                                <li>Material Selection Consultation</li>
-                            </ul>
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Rapid prototype development</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Design refinement and iteration</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Functional testing and validation</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Small batch production</span>
+                            </div>
                         </div>
-                        <a href="contact.html" class="btn">Request Service</a>
+                        <a href="contact.html" class="btn btn-primary btn-sm">Request Service</a>
                     </div>
                 </div>
-
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="img/quality-assurance.jpg" alt="Quality Assurance">
-                    </div>
-                    <div class="service-info">
-                        <div class="service-icon">
-                            <i class="fas fa-check-circle"></i>
-                            <h3>Quality Assurance</h3>
-                        </div>
-                        <p>Comprehensive testing and inspection to guarantee top quality. Our rigorous quality control processes ensure that every component meets or exceeds industry standards.</p>
-                        <div class="service-features">
-                            <ul>
-                                <li>Dimensional Inspection</li>
-                                <li>Material Testing</li>
-                                <li>Performance Validation</li>
-                                <li>Detailed Quality Reports</li>
-                            </ul>
-                        </div>
-                        <a href="contact.html" class="btn">Request Service</a>
-                    </div>
-                </div>
-
-                <div class="service-card tech-service">
+                
+                <div class="service-card animate">
                     <div class="service-image">
                         <img src="img/process-optimization.jpg" alt="Process Optimization">
                     </div>
-                    <div class="service-info">
-                        <div class="service-icon">
-                            <i class="fas fa-chart-line"></i>
-                            <h3>Process Optimization</h3>
-                        </div>
-                        <p>Advanced solutions to streamline manufacturing processes and enhance operational efficiency. We leverage cutting-edge technologies to optimize your production workflows.</p>
+                    <div class="service-content">
+                        <h3 class="service-title">Process Optimization</h3>
+                        <p class="service-desc">We analyze and refine manufacturing processes to enhance efficiency, quality, and cost-effectiveness. Our team identifies improvement opportunities and implements targeted solutions.</p>
                         <div class="service-features">
-                            <ul>
-                                <li>Workflow Analysis</li>
-                                <li>Efficiency Improvement</li>
-                                <li>Digital Integration Solutions</li>
-                                <li>Performance Monitoring Systems</li>
-                            </ul>
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Process analysis and evaluation</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Lean manufacturing principles</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Quality improvement methodologies</span>
+                            </div>
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Cost reduction strategies</span>
+                            </div>
                         </div>
-                        <a href="contact.html" class="btn">Request Service</a>
+                        <a href="contact.html" class="btn btn-primary btn-sm">Request Service</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Process Section -->
-            <section class="process-section">
-                <div class="process-intro">
-                    <h2>Our Process</h2>
-                    <p>We follow a structured approach to ensure your project is completed efficiently and to your satisfaction. Our process is designed to keep you informed and involved at every stage.</p>
-                </div>
-                <div class="process-steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <h3>Consultation</h3>
-                        <p>We discuss your requirements and provide expert advice on materials, design, and manufacturing processes.</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <h3>Design</h3>
-                        <p>Our engineers develop detailed designs based on your specifications, ensuring manufacturability.</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <h3>Production</h3>
-                        <p>Using state-of-the-art equipment, we manufacture your components with precision and care.</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <h3>Quality Check</h3>
-                        <p>Rigorous inspection and testing ensure that all components meet the highest standards of quality.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Industries Section -->
-            <section class="industries-section">
-                <h2>Industries We Serve</h2>
-                <p>United Engineering Services provides precision components and services to a wide range of industries. Our expertise and capabilities allow us to meet the unique requirements of diverse sectors.</p>
-                <div class="industries-grid">
-                    <div class="industry-card">
-                        <i class="fas fa-industry"></i>
-                        <h3>Manufacturing</h3>
-                    </div>
-                    <div class="industry-card">
-                        <i class="fas fa-truck"></i>
-                        <h3>Automotive</h3>
-                    </div>
-                    <div class="industry-card">
-                        <i class="fas fa-cog"></i>
-                        <h3>Machinery</h3>
-                    </div>
-                    <div class="industry-card">
-                        <i class="fas fa-plane"></i>
-                        <h3>Aerospace</h3>
-                    </div>
-                    <div class="industry-card">
-                        <i class="fas fa-medkit"></i>
-                        <h3>Medical</h3>
-                    </div>
-                    <div class="industry-card tech-hint">
-                        <i class="fas fa-microchip" style="color: var(--tech-accent);"></i>
-                        <h3>Technology</h3>
-                    </div>
-                </div>
-            </section>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer>
+    
+    <!-- Process Section -->
+    <section class="section process-section">
         <div class="container">
-            <div class="footer-content">
+            <div class="section-title">
+                <h2>Our Process</h2>
+                <p>We follow a systematic approach to ensure the successful delivery of high-quality components and services that meet or exceed your requirements.</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step animate">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Consultation & Requirements Analysis</h3>
+                        <p>We begin by thoroughly understanding your requirements, specifications, and application context. Our team works closely with you to gather all necessary information and clarify technical details.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step animate">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Design & Engineering</h3>
+                        <p>Our engineering team develops detailed designs and manufacturing plans based on your requirements. We leverage our technical expertise to optimize designs for manufacturability, performance, and cost-effectiveness.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step animate">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Prototype Development (Optional)</h3>
+                        <p>For new designs or complex components, we can develop prototypes to validate designs, functionality, and fit before proceeding to full production. This step ensures optimal results and minimizes risks.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step animate">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Manufacturing & Production</h3>
+                        <p>Using our advanced manufacturing facilities and skilled technicians, we produce components according to approved designs and specifications. Rigorous quality control measures are implemented throughout the production process.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step animate">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Quality Assurance & Testing</h3>
+                        <p>All components undergo comprehensive inspection and testing to verify dimensional accuracy, material properties, and functional performance. We ensure that every product meets our stringent quality standards before delivery.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step animate">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Delivery & Support</h3>
+                        <p>We deliver completed components with all necessary documentation and certifications. Our commitment extends beyond delivery, as we provide ongoing support and maintenance services to ensure long-term satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Manufacturing Capabilities -->
+    <section class="section capabilities-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Manufacturing Capabilities</h2>
+                <p>Our state-of-the-art facility is equipped with advanced machinery and technology to handle diverse manufacturing requirements with precision and efficiency.</p>
+            </div>
+            
+            <div class="capabilities-grid">
+                <div class="capability-card animate">
+                    <div class="capability-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="capability-title">CNC Machining</h3>
+                    <p>Multi-axis CNC machines capable of producing complex components with tight tolerances and excellent surface finishes.</p>
+                </div>
+                
+                <div class="capability-card animate">
+                    <div class="capability-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="capability-title">Gear Manufacturing</h3>
+                    <p>Specialized equipment for producing precision gears, including spur, helical, bevel, and worm gears to AGMA standards.</p>
+                </div>
+                
+                <div class="capability-card animate">
+                    <div class="capability-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3 class="capability-title">Precision Grinding</h3>
+                    <p>Advanced surface, cylindrical, and centerless grinding capabilities for achieving superior surface finishes and tight tolerances.</p>
+                </div>
+                
+                <div class="capability-card animate">
+                    <div class="capability-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3 class="capability-title">Metrology</h3>
+                    <p>State-of-the-art measurement and inspection equipment, including CMMs, for verifying dimensional accuracy and quality compliance.</p>
+                </div>
+                
+                <div class="capability-card animate">
+                    <div class="capability-icon">
+                        <i class="fas fa-fire-alt"></i>
+                    </div>
+                    <h3 class="capability-title">Heat Treatment</h3>
+                    <p>Comprehensive heat treatment facilities for improving material properties, including hardening, tempering, annealing, and case hardening.</p>
+                </div>
+                
+                <div class="capability-card animate">
+                    <div class="capability-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3 class="capability-title">Material Testing</h3>
+                    <p>In-house capabilities for material verification, mechanical testing, and metallurgical analysis to ensure quality and compliance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our services and capabilities.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item animate active">
+                    <div class="faq-question">
+                        <span>What materials can you work with?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We have extensive experience working with a wide range of materials, including various grades of steel (carbon, alloy, stainless, tool steel), aluminum alloys, titanium, copper alloys, plastics, and composite materials. Our material selection is based on application requirements, considering factors such as mechanical properties, corrosion resistance, weight, and cost.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate">
+                    <div class="faq-question">
+                        <span>What tolerances can you achieve?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our advanced CNC machinery and precision grinding capabilities allow us to achieve tight tolerances, typically up to ±0.005mm (±0.0002") for critical dimensions. The achievable tolerances may vary depending on the specific component, material, and geometry. Our engineering team can provide guidance on optimal tolerances for your application.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate">
+                    <div class="faq-question">
+                        <span>What is your minimum order quantity?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We are flexible with order quantities and can accommodate both small and large production runs. For prototyping and development projects, we can produce single units or small batches. For production runs, we typically recommend minimum quantities based on setup costs and economic efficiency, but we work with clients to find solutions that meet their specific needs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate">
+                    <div class="faq-question">
+                        <span>What quality certifications do you have?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>United Engineering maintains ISO 9001:2015 certification for our quality management system. We also adhere to industry-specific standards such as IATF 16949 for automotive components and AS9100 for aerospace applications. Our quality control processes include comprehensive documentation, material certifications, dimensional reports, and performance testing as required.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate">
+                    <div class="faq-question">
+                        <span>What is your typical lead time?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Lead times vary depending on the complexity of the components, quantity, material availability, and current production schedules. Simple components can typically be delivered within 2-3 weeks, while more complex or specialized parts may require 4-6 weeks. For urgent requirements, we offer expedited services when possible. We provide detailed delivery schedules during the quotation process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="container">
+        <div class="cta animate">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Get Started?</h2>
+                <p class="cta-text">Contact our team today to discuss your engineering and manufacturing requirements. We're ready to provide the precision solutions you need.</p>
+                <a href="contact.html" class="btn cta-btn">Request a Quote</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
                 <div class="footer-info">
-                    <h3>United Engineering Services</h3>
+                    <h3>United Engineering</h3>
+                    <p>Leading provider of precision-engineered components and manufacturing solutions for industries worldwide.</p>
                     <p>123 Industrial Area, Bangalore, Karnataka, India</p>
                     <p>Phone: +91 80 1234 5678</p>
                     <p>Email: info@unitedengineering.org</p>
-                    <p>GSTIN: 29ABCDE1234F1Z5</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
                 </div>
+                
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
@@ -492,21 +680,59 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-social">
-                    <h3>Connect With Us</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    </div>
+                
+                <div class="footer-links">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="products.html">Precision Gears</a></li>
+                        <li><a href="products.html">Shafts & Axles</a></li>
+                        <li><a href="products.html">Bearings</a></li>
+                        <li><a href="products.html">Custom Components</a></li>
+                        <li><a href="products.html">Specialty Systems</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Industries</h3>
+                    <ul>
+                        <li><a href="about.html">Manufacturing</a></li>
+                        <li><a href="about.html">Automotive</a></li>
+                        <li><a href="about.html">Aerospace</a></li>
+                        <li><a href="about.html">Medical</a></li>
+                        <li><a href="about.html">Machinery</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 United Engineering Services. All rights reserved.</p>
+            
+            <div class="footer-copyright">
+                <p>&copy; 2025 United Engineering. All rights reserved. GSTIN: 29ABCDE1234F1Z5</p>
             </div>
         </div>
     </footer>
-
+    
+    <!-- JavaScript -->
     <script src="js/script.js"></script>
+    <script>
+        // FAQ toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Toggle current item
+                    item.classList.toggle('active');
+                    
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

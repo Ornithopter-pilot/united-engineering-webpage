@@ -3,335 +3,654 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quality - United Engineering Services</title>
+    <title>Quality - United Engineering</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Learn about United Engineering's commitment to quality through our rigorous quality management system, inspection processes, and industry certifications.">
+    <meta name="keywords" content="quality assurance, quality control, ISO 9001, manufacturing quality, precision engineering quality">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         .quality-hero {
-            background: linear-gradient(rgba(26, 60, 107, 0.8), rgba(26, 60, 107, 0.9)), url('img/quality-bg.jpg');
+            background: linear-gradient(rgba(37, 99, 235, 0.9), rgba(37, 99, 235, 0.8)), url('img/quality-bg.jpg');
             background-size: cover;
             background-position: center;
-            color: var(--light-text);
-            padding: 70px 0;
+            padding: 8rem 0 5rem;
+            color: white;
             text-align: center;
         }
-
-        .quality-content {
-            padding: 60px 0;
-        }
-
-        .quality-intro {
-            text-align: center;
+        
+        .quality-hero-content {
             max-width: 800px;
-            margin: 0 auto 60px;
+            margin: 0 auto;
         }
-
-        .quality-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            margin-bottom: 60px;
-        }
-
-        .quality-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .quality-text h2 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .quality-text p {
-            margin-bottom: 15px;
-        }
-
-        .quality-list {
-            margin-top: 20px;
-        }
-
-        .quality-list ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .quality-list ul li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 12px;
-        }
-
-        .quality-list ul li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        .reverse-grid {
-            grid-template-columns: 1fr 1fr;
-        }
-
-        .reverse-grid .quality-text {
-            order: 1;
-        }
-
-        .reverse-grid .quality-image {
-            order: 2;
-        }
-
-        .quality-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
+        
         .quality-card {
-            background-color: var(--secondary-color);
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
+            background-color: var(--white);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 100%;
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
-
+        
         .quality-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-md);
         }
-
-        .quality-card i {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .quality-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        .tech-card {
-            background: linear-gradient(145deg, var(--secondary-color), #f0f3f8);
-            border-left: 4px solid var(--tech-accent);
-        }
-
-        .tech-card i {
-            color: var(--tech-accent);
-        }
-
-        .standards-section {
-            margin-top: 80px;
-            background-color: var(--secondary-color);
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .standards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .standard-card {
-            background-color: var(--background-color);
-            padding: 30px 20px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        
+        .quality-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            color: var(--primary);
+            font-size: 2rem;
             transition: all 0.3s ease;
         }
-
-        .standard-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        
+        .quality-card:hover .quality-icon {
+            background-color: var(--primary);
+            color: var(--white);
         }
-
-        .standard-card img {
+        
+        .quality-content {
+            padding: 2rem;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .quality-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .quality-desc {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .approach-section {
+            background-color: var(--gray-100);
+        }
+        
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .approach-card {
+            background-color: var(--white);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-top: 3px solid var(--primary);
+            height: 100%;
+        }
+        
+        .approach-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .approach-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .approach-number {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        
+        .approach-title {
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+        
+        .approach-desc {
+            color: var(--text-light);
+        }
+        
+        .certification-section {
+            padding: 5rem 0;
+        }
+        
+        .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .certification-card {
+            padding: 2rem;
+            border-radius: 0.5rem;
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-200);
+            height: 100%;
+        }
+        
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+        
+        .certification-image {
             width: 100px;
             height: 100px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .certification-image img {
+            width: 100%;
+            height: 100%;
             object-fit: contain;
-            margin-bottom: 20px;
         }
-
-        .standard-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
+        
+        .certification-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text);
         }
-
+        
+        .certification-desc {
+            color: var(--text-light);
+        }
+        
+        .equipment-section {
+            background-color: var(--white);
+            position: relative;
+        }
+        
+        .equipment-image {
+            height: 350px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .equipment-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .equipment-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .equipment-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: var(--gray-100);
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .equipment-item:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .equipment-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .equipment-item:hover i {
+            color: var(--white);
+        }
+        
+        .equipment-name {
+            font-weight: 500;
+        }
+        
+        .quality-process-section {
+            background-color: var(--gray-100);
+            position: relative;
+        }
+        
+        .process-steps {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 0;
+            counter-reset: step;
+        }
+        
+        .process-step {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 3rem;
+            counter-increment: step;
+        }
+        
+        .process-step:last-child {
+            margin-bottom: 0;
+        }
+        
+        .process-step::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        
+        .process-step::after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            width: 2px;
+            height: calc(100% + 3rem);
+            background-color: var(--primary);
+            opacity: 0.3;
+        }
+        
+        .process-step:last-child::after {
+            display: none;
+        }
+        
+        .process-content {
+            padding: 1.5rem 2rem;
+            background-color: var(--white);
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .process-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
         @media (max-width: 768px) {
-            .quality-section,
-            .reverse-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .reverse-grid .quality-text,
-            .reverse-grid .quality-image {
-                order: 0;
-            }
-
-            .standards-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .standards-grid {
+            .approach-grid,
+            .certification-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container">
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
             <div class="logo">
                 <a href="index.html">
-                    <h1>UES</h1>
+                    <img src="img/united_engineering_logo.png" alt="United Engineering Logo">
                 </a>
             </div>
+            
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="quality.html" class="active">Quality</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="quality.html" class="nav-link active">Quality</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
             </nav>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
-
+    
     <!-- Hero Section -->
     <section class="quality-hero">
         <div class="container">
-            <h2>Our Commitment to Quality</h2>
-            <p>Excellence in Every Component We Produce</p>
+            <div class="quality-hero-content animate">
+                <h1>Quality Management</h1>
+                <p>Our Commitment to Excellence and Continuous Improvement</p>
+            </div>
         </div>
     </section>
-
-    <!-- Quality Content -->
-    <section class="quality-content">
+    
+    <!-- Quality Overview -->
+    <section class="section">
         <div class="container">
-            <div class="quality-intro">
-                <h2>Quality Drives Everything We Do</h2>
-                <p>At UES, quality drives everything we do. We implement rigorous quality control at every production stage, ensuring components meet or exceed customer standards. Our commitment to quality is not just a policy—it's a core value that defines how we operate.</p>
+            <div class="section-title">
+                <h2>Quality Philosophy</h2>
+                <p>At United Engineering, quality is embedded in every aspect of our business. Our comprehensive quality management system ensures consistent excellence in all our products and services.</p>
             </div>
-
-            <div class="quality-section">
-                <div class="quality-image">
-                    <img src="img/quality-control.jpg" alt="Quality Control Process">
+            
+            <div class="product-grid">
+                <div class="quality-card animate">
+                    <div class="quality-content">
+                        <div class="quality-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="quality-title">Quality Assurance</h3>
+                        <p class="quality-desc">Our quality assurance program is designed to prevent defects through systematic monitoring of production processes. We implement robust procedures to ensure that every component meets or exceeds specified requirements.</p>
+                    </div>
                 </div>
-                <div class="quality-text">
-                    <h2>Quality Control Process</h2>
-                    <p>Our comprehensive quality control process ensures that every component we manufacture meets the highest standards of precision and reliability. From raw material inspection to final product testing, we maintain strict quality checks at every stage.</p>
-                    <div class="quality-list">
-                        <ul>
-                            <li>Raw Material Inspection and Verification</li>
-                            <li>In-Process Quality Checks</li>
-                            <li>Dimensional and Geometric Tolerance Verification</li>
-                            <li>Surface Finish Inspection</li>
-                            <li>Final Product Testing and Validation</li>
-                            <li>Comprehensive Documentation</li>
-                        </ul>
+                
+                <div class="quality-card animate">
+                    <div class="quality-content">
+                        <div class="quality-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="quality-title">Quality Control</h3>
+                        <p class="quality-desc">We employ rigorous inspection and testing methodologies throughout the manufacturing process. Our skilled quality control technicians verify dimensional accuracy, material properties, and functional performance of all components.</p>
+                    </div>
+                </div>
+                
+                <div class="quality-card animate">
+                    <div class="quality-content">
+                        <div class="quality-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3 class="quality-title">Continuous Improvement</h3>
+                        <p class="quality-desc">We are committed to ongoing enhancement of our processes, methodologies, and capabilities. Through regular audits, data analysis, and implementation of best practices, we continuously refine our operations for optimal quality.</p>
                     </div>
                 </div>
             </div>
-
-            <div class="quality-section reverse-grid">
-                <div class="quality-text">
-                    <h2>Quality Assurance Equipment</h2>
-                    <p>We have invested in state-of-the-art quality assurance equipment to ensure precise measurements and comprehensive testing of all our products. Our well-equipped quality control lab enables us to perform detailed inspections and maintain consistent quality.</p>
-                    <div class="quality-list">
-                        <ul>
-                            <li>Coordinate Measuring Machines (CMM)</li>
-                            <li>Optical Comparators</li>
-                            <li>Surface Roughness Testers</li>
-                            <li>Hardness Testing Equipment</li>
-                            <li>Material Composition Analyzers</li>
-                            <li>High-Precision Calipers and Micrometers</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="quality-image">
-                    <img src="img/quality-equipment.jpg" alt="Quality Assurance Equipment">
-                </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="contact.html" class="btn btn-primary">Learn More About Our Quality System</a>
             </div>
-
-            <div class="quality-cards">
-                <div class="quality-card">
-                    <i class="fas fa-clipboard-check"></i>
-                    <h3>100% Inspection</h3>
-                    <p>Every component we manufacture undergoes thorough inspection to ensure it meets all specifications and quality standards before delivery.</p>
-                </div>
-                <div class="quality-card">
-                    <i class="fas fa-users-cog"></i>
-                    <h3>Skilled Technicians</h3>
-                    <p>Our quality control team consists of highly trained technicians with expertise in precision measurement and quality assurance.</p>
-                </div>
-                <div class="quality-card tech-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Data-Driven Quality</h3>
-                    <p>We leverage advanced data analysis techniques to continuously monitor and improve our manufacturing processes for consistent quality.</p>
-                </div>
-            </div>
-
-            <!-- Standards Section -->
-            <section class="standards-section">
-                <div class="container">
-                    <h2>Industry Standards</h2>
-                    <p>We adhere to rigorous industry standards to ensure that our products meet global quality benchmarks. Our commitment to these standards reflects our dedication to excellence and customer satisfaction.</p>
-                    <div class="standards-grid">
-                        <div class="standard-card">
-                            <img src="img/quality-standard.svg" alt="Quality Standard">
-                            <h3>Quality Management</h3>
-                            <p>Our quality management system ensures consistent quality through documented processes and continuous improvement.</p>
-                        </div>
-                        <div class="standard-card">
-                            <img src="img/environmental-standard.svg" alt="Environmental Standard">
-                            <h3>Environmental Management</h3>
-                            <p>We are committed to minimizing environmental impact through responsible practices and waste reduction.</p>
-                        </div>
-                        <div class="standard-card">
-                            <img src="img/safety-standard.svg" alt="Safety Standard">
-                            <h3>Occupational Health & Safety</h3>
-                            <p>Safety is paramount in our operations, with strict protocols to protect our employees and visitors.</p>
-                        </div>
-                        <div class="standard-card">
-                            <img src="img/industry-standard.svg" alt="Industry Standard">
-                            <h3>Industry-Specific Standards</h3>
-                            <p>We comply with specific industry standards relevant to the sectors we serve, ensuring our components meet specialized requirements.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     </section>
-
+    
+    <!-- Quality Approach -->
+    <section class="section approach-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Quality Approach</h2>
+                <p>We follow a comprehensive approach to quality management that encompasses every stage of the manufacturing process, from material selection to final inspection.</p>
+            </div>
+            
+            <div class="approach-grid">
+                <div class="approach-card animate">
+                    <div class="approach-header">
+                        <div class="approach-number">1</div>
+                        <h3 class="approach-title">Material Control</h3>
+                    </div>
+                    <p class="approach-desc">We source materials from approved suppliers and conduct thorough incoming inspection. All materials are verified for chemical composition, mechanical properties, and dimensional accuracy before entering our production process.</p>
+                </div>
+                
+                <div class="approach-card animate">
+                    <div class="approach-header">
+                        <div class="approach-number">2</div>
+                        <h3 class="approach-title">Process Control</h3>
+                    </div>
+                    <p class="approach-desc">We implement statistical process control techniques and in-process inspections to monitor and maintain consistent quality throughout manufacturing. Key process parameters are continuously monitored to prevent deviations.</p>
+                </div>
+                
+                <div class="approach-card animate">
+                    <div class="approach-header">
+                        <div class="approach-number">3</div>
+                        <h3 class="approach-title">Documentation</h3>
+                    </div>
+                    <p class="approach-desc">Comprehensive documentation is maintained for all quality-related activities, including inspection records, test results, and process parameters. This ensures traceability and provides verification of compliance with requirements.</p>
+                </div>
+                
+                <div class="approach-card animate">
+                    <div class="approach-header">
+                        <div class="approach-number">4</div>
+                        <h3 class="approach-title">Inspection & Testing</h3>
+                    </div>
+                    <p class="approach-desc">All components undergo rigorous inspection and testing using advanced measurement equipment. Dimensional verification, surface finish assessment, and functional testing are performed to ensure conformance to specifications.</p>
+                </div>
+                
+                <div class="approach-card animate">
+                    <div class="approach-header">
+                        <div class="approach-number">5</div>
+                        <h3 class="approach-title">Non-Conformance Management</h3>
+                    </div>
+                    <p class="approach-desc">Any identified non-conformances are systematically documented, analyzed, and addressed through our corrective action process. Root cause analysis is conducted to prevent recurrence and drive continuous improvement.</p>
+                </div>
+                
+                <div class="approach-card animate">
+                    <div class="approach-header">
+                        <div class="approach-number">6</div>
+                        <h3 class="approach-title">Supplier Management</h3>
+                    </div>
+                    <p class="approach-desc">We maintain a rigorous supplier qualification and monitoring program. Regular supplier evaluations, audits, and performance reviews ensure that our supply chain meets our stringent quality requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Certifications -->
+    <section class="section certification-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quality Certifications</h2>
+                <p>We maintain rigorous quality standards and certifications that ensure our manufacturing processes and products meet the highest industry benchmarks. Our commitment to these standards is fundamental to our promise of excellence.</p>
+            </div>
+            
+            <div class="certification-grid">
+                <div class="certification-card animate">
+                    <div class="certification-image">
+                        <img src="img/quality-standard.svg" alt="ISO 9001:2015">
+                    </div>
+                    <h3 class="certification-title">ISO 9001:2015</h3>
+                    <p class="certification-desc">Our quality management system is certified to ISO 9001:2015, demonstrating our commitment to consistent quality through documented processes, continuous improvement protocols, and rigorous quality control at every stage.</p>
+                </div>
+                
+                <div class="certification-card animate">
+                    <div class="certification-image">
+                        <img src="img/environmental-standard.svg" alt="ISO 14001:2015">
+                    </div>
+                    <h3 class="certification-title">Environmental Management</h3>
+                    <p class="certification-desc">We follow ISO 14001 guidelines, implementing responsible practices and waste reduction initiatives to minimize environmental impact throughout our manufacturing operations while maintaining product quality.</p>
+                </div>
+                
+                <div class="certification-card animate">
+                    <div class="certification-image">
+                        <img src="img/industry-standard.svg" alt="Industry Standards">
+                    </div>
+                    <h3 class="certification-title">Industry-Specific Compliance</h3>
+                    <p class="certification-desc">We adhere to specialized industry requirements including IATF 16949 for automotive, AS9100 for aerospace, and other sector-specific standards ensuring components meet specialized quality requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Quality Equipment -->
+    <section class="section equipment-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quality Equipment</h2>
+                <p>Our state-of-the-art quality control facilities are equipped with advanced measurement and testing equipment to ensure precise verification of all critical parameters.</p>
+            </div>
+            
+            <div class="equipment-image animate">
+                <img src="img/quality-equipment.jpg" alt="Quality Control Equipment">
+            </div>
+            
+            <div class="equipment-list">
+                <div class="equipment-item animate">
+                    <i class="fas fa-ruler-combined"></i>
+                    <span class="equipment-name">Coordinate Measuring Machines (CMM)</span>
+                </div>
+                
+                <div class="equipment-item animate">
+                    <i class="fas fa-microscope"></i>
+                    <span class="equipment-name">Optical Measurement Systems</span>
+                </div>
+                
+                <div class="equipment-item animate">
+                    <i class="fas fa-balance-scale"></i>
+                    <span class="equipment-name">Surface Roughness Testers</span>
+                </div>
+                
+                <div class="equipment-item animate">
+                    <i class="fas fa-hammer"></i>
+                    <span class="equipment-name">Hardness Testing Equipment</span>
+                </div>
+                
+                <div class="equipment-item animate">
+                    <i class="fas fa-vial"></i>
+                    <span class="equipment-name">Material Composition Analyzers</span>
+                </div>
+                
+                <div class="equipment-item animate">
+                    <i class="fas fa-cog"></i>
+                    <span class="equipment-name">Gear Measurement Systems</span>
+                </div>
+                
+                <div class="equipment-item animate">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span class="equipment-name">Dimensional Inspection Tools</span>
+                </div>
+                
+                <div class="equipment-item animate">
+                    <i class="fas fa-flask"></i>
+                    <span class="equipment-name">Non-Destructive Testing Equipment</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Quality Process -->
+    <section class="section quality-process-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quality Control Process</h2>
+                <p>Our systematic quality control process ensures that every component meets our stringent quality standards and customer specifications.</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step animate">
+                    <div class="process-content">
+                        <h3 class="process-title">Incoming Material Inspection</h3>
+                        <p>All raw materials undergo thorough inspection before entering our production process. We verify material certificates, conduct dimensional checks, and perform material testing as needed to ensure that only conforming materials are used.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step animate">
+                    <div class="process-content">
+                        <h3 class="process-title">First Article Inspection</h3>
+                        <p>Before starting production runs, we perform detailed first article inspection to verify that manufacturing processes are properly set up and capable of producing components that meet all specifications.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step animate">
+                    <div class="process-content">
+                        <h3 class="process-title">In-Process Inspection</h3>
+                        <p>At critical stages throughout the manufacturing process, our quality control technicians perform inspections to verify conformance to specifications. Statistical process control techniques are employed to monitor process stability.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step animate">
+                    <div class="process-content">
+                        <h3 class="process-title">Final Inspection</h3>
+                        <p>Every completed component undergoes comprehensive final inspection to verify all critical dimensions, surface finish, and other specifications. Advanced measurement equipment ensures precise verification of all parameters.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step animate">
+                    <div class="process-content">
+                        <h3 class="process-title">Functional Testing</h3>
+                        <p>When applicable, components undergo functional testing to verify performance characteristics. This includes verification of mechanical properties, load testing, wear resistance, and other functional requirements.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step animate">
+                    <div class="process-content">
+                        <h3 class="process-title">Documentation & Certification</h3>
+                        <p>Comprehensive quality documentation is prepared, including inspection reports, material certifications, test results, and compliance declarations. This ensures traceability and provides verification of quality to our customers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="container">
+        <div class="cta animate">
+            <div class="cta-content">
+                <h2 class="cta-title">Quality You Can Trust</h2>
+                <p class="cta-text">Contact us today to learn more about our quality management system and how our commitment to excellence can benefit your projects.</p>
+                <a href="contact.html" class="btn cta-btn">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+    
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-info">
-                    <h3>United Engineering Services</h3>
+                    <h3>United Engineering</h3>
+                    <p>Leading provider of precision-engineered components and manufacturing solutions for industries worldwide.</p>
                     <p>123 Industrial Area, Bangalore, Karnataka, India</p>
                     <p>Phone: +91 80 1234 5678</p>
                     <p>Email: info@unitedengineering.org</p>
-                    <p>GSTIN: 29ABCDE1234F1Z5</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
                 </div>
+                
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
@@ -344,21 +663,37 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-social">
-                    <h3>Connect With Us</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    </div>
+                
+                <div class="footer-links">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="products.html">Precision Gears</a></li>
+                        <li><a href="products.html">Shafts & Axles</a></li>
+                        <li><a href="products.html">Bearings</a></li>
+                        <li><a href="products.html">Custom Components</a></li>
+                        <li><a href="products.html">Specialty Systems</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Industries</h3>
+                    <ul>
+                        <li><a href="about.html">Manufacturing</a></li>
+                        <li><a href="about.html">Automotive</a></li>
+                        <li><a href="about.html">Aerospace</a></li>
+                        <li><a href="about.html">Medical</a></li>
+                        <li><a href="about.html">Machinery</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 United Engineering Services. All rights reserved.</p>
+            
+            <div class="footer-copyright">
+                <p>&copy; 2025 United Engineering. All rights reserved. GSTIN: 29ABCDE1234F1Z5</p>
             </div>
         </div>
     </footer>
-
+    
+    <!-- JavaScript -->
     <script src="js/script.js"></script>
 </body>
 </html>

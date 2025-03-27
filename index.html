@@ -3,167 +3,337 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>United Engineering - Precision Machinery Company</title>
+    <title>United Engineering - Precision Machinery Solutions</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="United Engineering delivers precision-engineered components and solutions for various industries. Our expertise in manufacturing ensures quality and reliability.">
+    <meta name="keywords" content="precision engineering, machinery components, gears, shafts, axles, bearings, custom manufacturing">
+    
+    <!-- Favicon -->
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-    <meta name="description" content="United Engineering is a leading provider of high-quality precision machinery components, serving industries across India and beyond with expert manufacturing capabilities.">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container">
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="img/united_engineering_logo.png" alt="United Engineering Logo" class="logo-img">
+                    <img src="img/united_engineering_logo.png" alt="United Engineering Logo">
                 </a>
             </div>
+            
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="services-quality.html">Services & Quality</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="capabilities.html" class="nav-link">Capabilities</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
             </nav>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
-
+    
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" style="background-image: url('img/hero_banner_img/homa_page_hero.jpg'); background-attachment: fixed;">
         <div class="container">
-            <div class="hero-content">
-                <h2>Precision Engineering Solutions for Your Industry Needs</h2>
-                <p>United Engineering is a leading provider of high-quality precision machinery components, serving industries across India and beyond.</p>
-                <a href="products.html" class="btn">Explore Our Products</a>
-            </div>
-            <div class="gear-animation">
-                <img src="img/gear.svg" alt="Rotating Gear" class="rotating-gear">
+            <div class="hero-content animate">
+                <h1 class="hero-title">Precision Engineering <span>Solutions</span> for Industry Excellence</h1>
+                <p class="hero-text">United Engineering delivers high-quality precision machinery components and custom manufacturing solutions to meet your exact specifications. With cutting-edge technology and expert craftsmanship, we ensure reliability and performance.</p>
+                <div class="hero-buttons">
+                    <a href="products.html" class="btn btn-primary btn-icon">
+                        EXPLORE PRODUCTS
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="contact.html" class="btn btn-outline">GET A QUOTE</a>
+                </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Features Section -->
-    <section class="features">
+    <section class="section features">
         <div class="container">
-            <h2>Why Choose United Engineering</h2>
+            <div class="section-title">
+                <h2>Why Choose United Engineering</h2>
+                <p>We combine technical expertise, advanced manufacturing processes, and unwavering commitment to quality to deliver exceptional value to our clients.</p>
+            </div>
+            
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="icon">
+                <div class="feature-card animate">
+                    <div class="feature-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
-                    <h3>Precision Engineering</h3>
-                    <p>State-of-the-art machinery and processes to deliver components with exacting specifications.</p>
+                    <h3 class="feature-title">Precision Engineering</h3>
+                    <p class="feature-desc">Our state-of-the-art machinery and meticulous processes deliver components with exacting tolerances and superior finish quality.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="icon">
+                
+                <div class="feature-card animate">
+                    <div class="feature-icon">
                         <i class="fas fa-medal"></i>
                     </div>
-                    <h3>Quality Assurance</h3>
-                    <p>Rigorous quality control at every production stage to guarantee superior products.</p>
+                    <h3 class="feature-title">Quality Assurance</h3>
+                    <p class="feature-desc">Rigorous quality control at every stage ensures that our products consistently meet or exceed industry standards and client specifications.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="icon">
+                
+                <div class="feature-card animate">
+                    <div class="feature-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3>Customer Focus</h3>
-                    <p>Dedicated support and service to ensure your complete satisfaction.</p>
+                    <h3 class="feature-title">Customer Focus</h3>
+                    <p class="feature-desc">We prioritize client relationships through responsive communication, collaborative problem-solving, and commitment to customer satisfaction.</p>
                 </div>
-                <div class="feature-card tech-hint">
-                    <div class="icon">
+                
+                <div class="feature-card animate">
+                    <div class="feature-icon">
                         <i class="fas fa-microchip"></i>
                     </div>
-                    <h3>Innovation</h3>
-                    <p>Continuously adopting cutting-edge technologies to optimize operations and enhance client services.</p>
+                    <h3 class="feature-title">Innovation</h3>
+                    <p class="feature-desc">We continuously adopt cutting-edge technologies and optimize manufacturing processes to enhance efficiency, quality, and service delivery.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Products Preview Section -->
-    <section class="products-preview">
+    
+    <!-- Products Section -->
+    <section class="section products">
         <div class="container">
-            <h2>Our Products</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    <img src="img/gears.jpg" alt="Precision Gears">
-                    <h3>Precision Gears</h3>
-                    <p>High-quality gears crafted to exact specifications for diverse applications.</p>
+            <div class="section-title">
+                <h2>Our Products</h2>
+                <p>Explore our range of precision-engineered components designed to meet diverse industry requirements with exceptional quality and performance.</p>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-card animate" data-category="gears">
+                    <div class="product-image">
+                        <img src="img/gears.jpg" alt="Precision Gears">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">Precision Gears</h3>
+                        <p class="product-desc">High-quality gears crafted to exact specifications for diverse applications, ensuring smooth power transmission.</p>
+                        <div class="product-footer">
+                            <span class="product-category">Gears</span>
+                            <a href="products.html" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card">
-                    <img src="img/shafts.jpg" alt="Shafts and Axles">
-                    <h3>Shafts and Axles</h3>
-                    <p>Robust and reliable shafts and axles for industrial machinery.</p>
+                
+                <div class="product-card animate" data-category="shafts">
+                    <div class="product-image">
+                        <img src="img/shafts.jpg" alt="Shafts and Axles">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">Shafts and Axles</h3>
+                        <p class="product-desc">Robust and reliable shafts and axles engineered to withstand high torque and provide consistent performance.</p>
+                        <div class="product-footer">
+                            <span class="product-category">Shafts</span>
+                            <a href="products.html" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-card">
-                    <img src="img/custom-parts.jpg" alt="Custom Machined Components">
-                    <h3>Custom Components</h3>
-                    <p>Bespoke components tailored to your specific needs.</p>
+                
+                <div class="product-card animate" data-category="custom">
+                    <div class="product-image">
+                        <img src="img/custom-parts.jpg" alt="Custom Components">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">Custom Components</h3>
+                        <p class="product-desc">Bespoke precision components tailored to your specific requirements, designed and manufactured to solve unique challenges.</p>
+                        <div class="product-footer">
+                            <span class="product-category">Custom</span>
+                            <a href="products.html" class="product-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="center">
-                <a href="products.html" class="btn">View All Products</a>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="products.html" class="btn btn-primary">View All Products</a>
             </div>
         </div>
     </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter">
+    
+    <!-- Statistics Section -->
+    <section class="section stats">
+        <div class="container stats-container">
+            <div class="stats-grid">
+                <div class="stat-item animate">
+                    <div class="stat-number counter" data-target="20">0</div>
+                    <div class="stat-label">Years of Excellence</div>
+                </div>
+                
+                <div class="stat-item animate">
+                    <div class="stat-number counter" data-target="500">0</div>
+                    <div class="stat-label">Satisfied Clients</div>
+                </div>
+                
+                <div class="stat-item animate">
+                    <div class="stat-number counter" data-target="10000">0</div>
+                    <div class="stat-label">Components Delivered</div>
+                </div>
+                
+                <div class="stat-item animate">
+                    <div class="stat-number counter" data-target="5">0</div>
+                    <div class="stat-label">Industry Certifications</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Preview -->
+    <section class="section">
         <div class="container">
-            <h2>Stay Updated</h2>
-            <p>Subscribe to our newsletter for the latest industry insights and company updates.</p>
-            <form action="#" method="POST" class="newsletter-form">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit" class="btn-submit">Subscribe</button>
-            </form>
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We offer comprehensive manufacturing and engineering services to support your product development and production needs.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card animate">
+                    <div class="feature-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3 class="feature-title">Precision Machining</h3>
+                    <p class="feature-desc">Advanced CNC machining capabilities for complex components with tight tolerances and excellent surface finishes.</p>
+                </div>
+                
+                <div class="feature-card animate">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="feature-title">Custom Manufacturing</h3>
+                    <p class="feature-desc">Bespoke manufacturing solutions tailored to your specific requirements and industry challenges.</p>
+                </div>
+                
+                <div class="feature-card animate">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="feature-title">Prototyping</h3>
+                    <p class="feature-desc">Rapid prototyping to validate designs and optimize components before full production.</p>
+                </div>
+                
+                <div class="feature-card animate">
+                    <div class="feature-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3 class="feature-title">Process Optimization</h3>
+                    <p class="feature-desc">Analysis and refinement of manufacturing processes to enhance efficiency, quality, and cost-effectiveness.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="capabilities.html" class="btn btn-primary">Explore Our Capabilities</a>
+            </div>
         </div>
     </section>
-
+    
+    <!-- CTA Section -->
+    <section class="container">
+        <div class="cta animate">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Your Engineering Projects?</h2>
+                <p class="cta-text">Contact our team today to discuss your precision engineering requirements and discover how we can deliver exceptional solutions for your business.</p>
+                <a href="contact.html" class="btn cta-btn">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter -->
+    <section class="section newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title">Stay Updated</h2>
+                <p class="newsletter-text">Subscribe to our newsletter for the latest industry insights, company updates, and engineering innovations.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-info">
                     <h3>United Engineering</h3>
+                    <p>Leading provider of precision-engineered components and manufacturing solutions for industries worldwide.</p>
                     <p>123 Industrial Area, Bangalore, Karnataka, India</p>
                     <p>Phone: +91 80 1234 5678</p>
                     <p>Email: info@unitedengineering.org</p>
-                    <p>GSTIN: 29ABCDE1234F1Z5</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
                 </div>
+                
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="products.html">Products</a></li>
-                        <li><a href="services-quality.html">Services & Quality</a></li>
+                        <li><a href="capabilities.html">Capabilities</a></li>
                         <li><a href="careers.html">Careers</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-social">
-                    <h3>Connect With Us</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    </div>
+                
+                <div class="footer-links">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="products.html">Precision Gears</a></li>
+                        <li><a href="products.html">Shafts & Axles</a></li>
+                        <li><a href="products.html">Bearings</a></li>
+                        <li><a href="products.html">Custom Components</a></li>
+                        <li><a href="products.html">Specialty Systems</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Industries</h3>
+                    <ul>
+                        <li><a href="about.html">Manufacturing</a></li>
+                        <li><a href="about.html">Automotive</a></li>
+                        <li><a href="about.html">Aerospace</a></li>
+                        <li><a href="about.html">Medical</a></li>
+                        <li><a href="about.html">Machinery</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 United Engineering. All rights reserved.</p>
+            
+            <div class="footer-copyright">
+                <p>&copy; 2025 United Engineering. All rights reserved. GSTIN: 29ABCDE1234F1Z5</p>
             </div>
         </div>
     </footer>
-
+    
+    <!-- JavaScript -->
     <script src="js/script.js"></script>
 </body>
 </html>
